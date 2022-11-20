@@ -60,3 +60,12 @@
     text-decoration: none;
     color: inherit;
   }
+
+  .flex {
+    display: flex;
+  }
+
+  .flex-cen {
+    justify-content: center;
+    align-items: center;
+  }
