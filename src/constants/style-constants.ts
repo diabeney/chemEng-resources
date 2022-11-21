@@ -17,8 +17,14 @@ export const COLORS = {
     }
 };
 
+export const SearchStyles = {
+    marginLeft: 'auto',
+    fontFamily: 'Raleway'
+}
+
+
 export interface ContainerProps {
-   display: string,
+    display: string,
     width: string,
     height: string,
     padding: string,
@@ -27,5 +33,12 @@ export interface ContainerProps {
 
 export interface ButtonProps {
     variant: string;
+    padding?: string;
 }
 
+export interface GridProps extends ContainerProps  {
+    gap: string;
+    rows: number;
+    columns: number;
+    evenColumns: boolean;
+}

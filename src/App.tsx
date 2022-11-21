@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { ThemeProvider } from "styled-components";
-import { COLORS } from "./constants/style-constants";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import Articles from "./Pages/Articles";

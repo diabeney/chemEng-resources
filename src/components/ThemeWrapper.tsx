@@ -1,14 +1,19 @@
 import { COLORS } from "../constants/style-constants";
-import { themeProps } from "../Pages/Home";
-
 import { useState, createContext } from "react";
 
-const obj = {
-  theme: {} as themeProps,
-  handleTheme: (f: any) => f,
+type themeProps = {
+  foreground: string;
+  background: string;
+  accent: string;
+  mode: string;
 };
 
-export const ToggleTheme = createContext(obj);
+const ToggleThemeContext = {
+  theme: {} as themeProps,
+  handleTheme: (f: unknown) => f,
+};
+
+export const ToggleTheme = createContext(ToggleThemeContext);
 
 function ThemeWrapper({ children }: any) {
   const [theme, setTheme] = useState(COLORS.LIGHT);
