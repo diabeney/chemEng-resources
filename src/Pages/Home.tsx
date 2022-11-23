@@ -2,19 +2,19 @@ import NavBar from "../components/NavBar";
 import { Mark } from "../styles/reusableComponents";
 import { PrimaryButton } from "../styles/reusableComponents";
 import HeroImage from "../assets/11257388_417-removebg-preview.png";
-import { RiArrowRightLine, RiBookLine } from "react-icons/ri";
+import {
+  RiArrowRightLine,
+  RiBook3Line,
+  RiArticleLine,
+  RiCodeSLine,
+  RiCheckboxCircleFill,
+} from "react-icons/ri";
 import CreativeThinking from "../assets/creative-thinking.svg";
 import { COLORS, HomeTexts } from "../constants/style-constants";
 import Dots from "../assets/download.png";
-import Books from "../assets/books.svg";
-
 import * as HomeComponents from "../styles/styledComponents";
-
-const options = {
-  perPage: 3,
-  width: "100%",
-  background: "yellow",
-};
+import BackgroundImage from "../assets/thisisengineering-raeng-ovWUKV1btXk-unsplash.jpg";
+import { ActivitiesText } from "../constants/style-constants";
 
 function Home() {
   return (
@@ -78,11 +78,57 @@ function Home() {
       <HomeComponents.ProductivityContainer>
         <h1>
           <img src={Dots} alt="" />
-          Get access to powerful resources to boost your productivity
+          Get access to <Mark>powerful resources</Mark> to boost your
+          productivity.
         </h1>
         <div>What you need</div>
-        <HomeComponents.ResourceContainer></HomeComponents.ResourceContainer>
+        <HomeComponents.ResourceContainer>
+          <HomeComponents.ResourceCard>
+            <section>
+              <RiBook3Line size={48} color="inherit" />
+            </section>
+            <h2>Books</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </HomeComponents.ResourceCard>
+          <HomeComponents.ResourceCard>
+            <section>
+              <RiArticleLine size={48} color="inherit" />
+            </section>
+            <h2>Articles</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </HomeComponents.ResourceCard>
+          <HomeComponents.ResourceCard>
+            <section>
+              <RiCodeSLine size={48} color="inherit" />
+            </section>
+            <h2>Softwares</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </HomeComponents.ResourceCard>
+        </HomeComponents.ResourceContainer>
       </HomeComponents.ProductivityContainer>
+      <HomeComponents.Activities backgroundImage={BackgroundImage}>
+        <div>
+          <h1>Why Choose Engineering?</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            alias, saepe dolore nihil et atque voluptatem blanditiis tempora
+            totam voluptas?
+          </p>
+        </div>
+        <section>
+          {ActivitiesText.map((item) => {
+            return (
+              <article key={item}>
+                <RiCheckboxCircleFill
+                  color={COLORS.CARDS.GREEN.textColor}
+                  size={32}
+                />
+                <h1>{item}</h1>
+              </article>
+            );
+          })}
+        </section>
+      </HomeComponents.Activities>
     </HomeComponents.Wrapper>
   );
 }

@@ -35,6 +35,8 @@ export const enum HomeTexts {
     CARD_FOUR_PARAGRAPTH = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus',
 }
 
+export const ActivitiesText = ['Opptunity to make an impact','Opportunity to make an impact','Opportunity to make an ','Opportunity to an impact','Opportuni to make an impact']
+
 
 // <------- COLORS ----------->
 
@@ -42,7 +44,7 @@ export const enum HomeTexts {
 export const  COLORS = {
     LIGHT: {
         background: '#FEFEFE',
-        foreground: 'hsl(220, 15%, 16%)',
+        foreground: 'hsl(220, 15%, 26%)',
         accent: 'hsl(237,63%,71%)',
         accent900: 'hsl(237,63%,61%)',
         mode: 'light',
@@ -90,6 +92,7 @@ export interface ContainerProps {
     height: string,
     padding: string,
     theme: any,
+    backgroundImage: any,
 }
 
 export interface ButtonProps {

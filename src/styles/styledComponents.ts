@@ -306,37 +306,49 @@ export const HeroContainer = styled.div`
 export const ResourceContainer  = styled.section`
 width: 100%;
 padding-top: 2em;
+display: grid;
+gap: 2em;
+
+  @media (min-width: 40em) {
+  grid-template-columns: repeat(2 , 1fr);
+  }
+  @media (min-width: 50em) {
+  grid-template-columns: repeat(3,1fr);
+}
 
 `
 
 export const ResourceCard = styled.article`
-  width: 20rem;
-  background-color: red;
+  width: 95%;
+  place-self: center;
+  padding: 1.2em;
+  border-radius: 1em;
+  box-shadow: ${({theme}) => theme.mode === 'dark' ? `rgba(255, 255, 255, 0.2)` : `rgba(0, 0, 0, 0.02)`} 0px 1px 3px 0px, ${({theme}) => theme.mode === 'dark' ? `rgba(255, 255, 255, 0.2)` :  `rgba(0, 0, 0, 0.2)`} 0px 0px 0px 1px;
 
-  & img {
-    width: 5rem;
-    aspect-ratio: 1/1;
-
+  & section {
+    padding : 1em;
+    width: fit-content;
+    border-radius: .8em;
+    color: #ffe;
+    background-color: ${({theme}) => theme.accent};
   }
 
-   & section {
-
-   h1 {
+  h2 {
+    font-size: 1.5em;
     padding-block: .6em;
-      text-align: left;
-      font-size: 1.4em;
-   }
-
-   p {
-    font-size: 1em;
-   }
-
   }
 
+  p {
+    font-size: 1em;
+  }
+
+ 
 `
 
 export const ProductivityContainer = styled(Container)`
   width: 100%;
+  max-width: 1400px;
+margin-inline: auto;
   padding-block: 3em;
   background-color: ${({theme}) => theme.mode === 'light' ?  `#Fff` : `hsl(237,23%,10%)`};
 
@@ -347,6 +359,7 @@ export const ProductivityContainer = styled(Container)`
     text-align:center;
     position: relative;
     z-index: 10;
+   
   
     & img {
       position: absolute;
@@ -372,6 +385,8 @@ export const ProductivityContainer = styled(Container)`
     & h1 {
       font-size: 3em;
       padding-top: 0.5em;
+       width: 70%;
+    margin-inline: auto;
     }
 
     & div {
@@ -379,3 +394,78 @@ export const ProductivityContainer = styled(Container)`
     }
   }
 `
+
+export const Activities = styled(Container)`
+  width: 100vw;
+  min-height: 100vh;
+  max-width: 1400px;
+  background: linear-gradient(to bottom, hsla(220, 15%, 16%,0.8),hsla(237,63%,0%,.6)), url(${({backgroundImage}) => backgroundImage});
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin-inline: auto;
+  padding-block: 3em;
+  display: flex;
+  flex-direction: column; 
+  gap: 2em;
+
+    div {
+      width: 100%;
+      padding: .4em .2em;
+      position: sticky: 
+      top: 0;
+
+      h1 {
+        font-size: 2.5em;
+        color: white;
+      }
+
+      p {
+        color: white;
+      }
+    }
+
+    section {
+      width: 100%;
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      article {
+        width: 100%;
+        background-color: ${({theme}) => theme.background};
+        padding: 1.8em 1.6em;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: .4em;
+        border-radius: .4em;
+        color: ${({theme}) => theme.accent};
+        
+        &:hover {
+        background-color: ${({theme}) => theme.accent};
+          color: ${({theme}) => theme.background};
+        }
+
+        
+      }
+    }
+ 
+
+    @media (min-width: 50em) {
+      flex-direction: row;
+      div {
+        width: 50%;
+
+        h1 {
+          font-size: 3rem;
+        }
+      }
+  
+      section {
+        width: 50%;
+      }
+    }
+  
+  `
