@@ -15,6 +15,7 @@
   */
   html, body {
     height: 100%;
+    overflow-x: hidden;
   }
   /*
     Typographic tweaks!
@@ -79,6 +80,7 @@
 
   .flex {
     display: flex;
+    gap: .3em;
   }
 
   .flex-cen {
@@ -86,8 +88,3 @@
     align-items: center;
   }
 
-  @media  (min-width: 50em) {
-    .menu {
-      display: none;
-    }
-  }

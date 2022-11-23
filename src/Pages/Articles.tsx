@@ -1,7 +1,7 @@
 import React from "react";
 
 function Articles() {
-  return <div>Articles</div>;
+  return <></>;
 }
 
 export default Articles;

@@ -6,7 +6,9 @@ import { RiMenu4Fill } from "react-icons/ri";
 import { RiCloseLine } from "react-icons/ri";
 import { useContext, useState } from "react";
 import { ToggleTheme } from "./ThemeWrapper";
-import { PrimaryButton } from "../styles/styledComponents";
+import { PrimaryButton } from "../styles/reusableComponents";
+import { NavStyles } from "../constants/style-constants";
+import { Menu, NavWrapper } from "../styles/styledComponents";
 
 function NavBar() {
   const [navIsOpen, setNavIsOpen] = useState(false);
@@ -18,16 +20,13 @@ function NavBar() {
 
   return (
     <>
-      <div
-        className="menu"
-        style={{ position: "absolute", top: "3%", right: "4%", zIndex: "100" }}
-      >
+      <Menu>
         <RiMenu4Fill
           size={32}
           onClick={toggleNavBar}
           color={theme.foreground}
         />
-      </div>
+      </Menu>
       <NavWrapper
         style={{
           transform: navIsOpen ? "translateX(0)" : "translateX(-100%)",
@@ -35,12 +34,7 @@ function NavBar() {
         }}
       >
         <RiCloseLine
-          style={{
-            marginLeft: "auto",
-            position: "absolute",
-            right: "4%",
-            top: "3%",
-          }}
+          style={NavStyles.CloseStyles}
           color="inherit"
           size={32}
           onClick={toggleNavBar}
@@ -77,126 +71,5 @@ function NavBar() {
     </>
   );
 }
-
-const NavWrapper = styled.nav`
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  gap: 2rem;
-  flex-direction: column;
-  border-bottom: 1px solid hsl(0, 0%, 50%);
-  background-color: ${({ theme }) => theme.background};
-  color: ${({ theme }) => theme.foreground};
-
-  & .menu {
-    display: block;
-  }
-
-  & .logo {
-    width: fit-content;
-    padding: 1rem 0.8rem;
-  }
-
-  & .search {
-    width: 100vw;
-    padding-inline: 1rem;
-    font-family: "Raleway";
-
-    & input {
-      width: 100%;
-      font-family: inherit;
-      padding: 0.2rem 0.6rem;
-      border: 1px solid ${({ theme }) => theme.foreground};
-      background-color: ${({ theme }) => theme.background};
-      transition: all 300ms ease;
-      color: ${({ theme }) => theme.foreground};
-
-      &:focus {
-        border: 1px solid ${({ theme }) => theme.accent};
-      }
-    }
-  }
-
-  & ul {
-    display: flex;
-    width: 100%;
-    height: fit-content;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 1rem 0.8rem;
-
-    & li {
-      list-style: none;
-      border-bottom: 1px solid hsl(0, 0%, 50%);
-
-      & a {
-        font-family: "Raleway";
-        font-weight: 500;
-
-        &:hover {
-          color: ${({ theme }) => theme.accent};
-        }
-      }
-    }
-  }
-
-  & .buttons {
-    padding: 1rem;
-    width: 100vw;
-    gap: 1rem;
-    margin-left: 0;
-
-    & div {
-      aspect-ratio: 1/1;
-      width: 2rem;
-      height: 2rem;
-      margin-block: auto;
-      border-radius: 50%;
-      background-color: ${({ theme }) => theme.accent};
-      cursor: pointer;
-      transition: background-color 250ms ease-in;
-
-      &:hover {
-        background-color: ${({ theme }) => theme.accent900};
-      }
-    }
-  }
-
-  @media (min-width: 50em) {
-    height: fit-content;
-    flex-direction: row;
-    align-items: center;
-    transform: translateX(0) !important;
-
-    & > svg {
-      display: none;
-    }
-
-    & .search {
-      margin-left: auto;
-      width: 15rem;
-
-      & input {
-        width: 100%;
-      }
-    }
-
-    & ul {
-      width: fit-content;
-      height: 100%;
-      flex-direction: row;
-      align-items: center;
-      padding: 0;
-
-      & li {
-        border: none;
-      }
-    }
-    & .buttons {
-      width: fit-content;
-    }
-  }
-`;
 
 export default NavBar;
