@@ -51,7 +51,7 @@ export const  COLORS = {
     },
     DARK: {
         foreground: '#FEFEFE',
-        background: 'hsl(220, 15%, 16%)',
+        background: 'hsl(237,23%,10%)',
         accent: 'hsl(237,63%,71%)',
         accent900: 'hsl(237,63%,61%)',
         mode: 'dark'

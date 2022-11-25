@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
+import Home from "./Pages/Home/Home";
 import Articles from "./Pages/Articles";
 import Contribute from "./Pages/Contribute";
 import Resources from "./Pages/Resources";
