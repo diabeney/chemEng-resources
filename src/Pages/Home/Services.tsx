@@ -57,8 +57,12 @@ export const Card = styled.article<CardProps>`
     width: fit-content;
     padding: 2em;
     border-radius: 50%;
-    background-color: ${({ textColor }) => textColor};
+    background-color: ${({ backgroundColor }) => backgroundColor};
     margin-inline: auto;
+
+    &:hover {
+      background-color: ${({ textColor }) => textColor};
+    }
 
     & img {
       width: 3rem;
@@ -69,13 +73,13 @@ export const Card = styled.article<CardProps>`
     font-size: 1.6em !important;
     padding-block: 0.2em;
     line-height: 1.5;
-    color: ${({ headingColor }) => headingColor};
+    color: ${({ theme }) => theme.foreground};
   }
 
   p {
     font-size: 1em;
     text-align: center;
-    color: ${({ textColor }) => textColor};
+    color: ${({ theme }) => theme.foreground};
   }
 `;
 

@@ -11,7 +11,7 @@ function EngineeringBenefits() {
     <ActivitiesWrapper backgroundImage={BackgroundImage}>
       <Activities>
         <div>
-          <h1>Why Choose Engineering?</h1>
+          <h1>Why choose Chemical Engineering?</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
             alias, saepe dolore nihil et atque voluptatem blanditiis tempora
@@ -52,7 +52,7 @@ export const ActivitiesWrapper = styled(Container)`
 `;
 
 export const Activities = styled(Container)`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   max-width: 1400px;
   margin-inline: auto;
@@ -80,7 +80,7 @@ export const Activities = styled(Container)`
 
     section {
       width: 100%;
-      padding: 1em;
+      padding: .6em;
       display: flex;
       flex-direction: column;
       gap: 1em;

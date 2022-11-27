@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { Container } from "../../styles/reusableComponents";
 import { Link } from "react-router-dom";
@@ -68,11 +67,12 @@ const DateText = styled.p`
   font-size: 1.5em;
 `;
 const NewsCard = styled(Link)`
-  width: fit-content;
+  width: 100%;
   position: relative;
   display: block;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  flex-grow: 1;
 
   & img {
     object-fit: cover;
@@ -80,19 +80,22 @@ const NewsCard = styled(Link)`
     width: 100%;
     height: 10rem;
     transform: scale(1.3);
-    transform: scale(1.3);
   }
 
   &:hover img {
     transform: scale(1);
   }
+
+  @media (min-width: 50em) {
+    width: fit-content;
+  }
 `;
 const NewsText = styled.article`
-  width: 20rem;
+  width: 18rem;
   padding: 1em;
   position: relative;
   transform: translate(10%, -20%);
-  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+  box-shadow: rgba(0, 0, 0, 0.05) -4px 9px 25px -6px;
   background-color: ${({ theme }) => theme.background};
 
   h2 {
@@ -106,21 +109,24 @@ const NewsContainer = styled.section`
   display: flex;
   gap: 2em;
   flex-direction: column;
+  flex-wrap: wrap;
 
   @media (min-width: 50em) {
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: center;
+    padding: 1em;
   }
 `;
 
 const NewsWrapper = styled(Container)`
   height: fit-content;
   width: 100vw;
+  max-width: 1400px;
+  margin-inline: auto;
   padding: 1.2em;
 
   h1 {
-    padding-block: 1em;
+    padding: 1em;
     font-size: 2.5em;
   }
 `;

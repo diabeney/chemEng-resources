@@ -1,7 +1,4 @@
 import styled from "styled-components";
-import { CardProps } from "../constants/style-constants";
-import { Container } from "./reusableComponents";
-import { COLORS } from "../constants/style-constants";
 
 
 // <---------- Navbar ----------->
@@ -13,7 +10,7 @@ export const Menu = styled.div`
   margin: 0;
   display: flex;
   justify-content: flex-end;
-  padding: 0.6em;
+  padding: 1em 0.6em;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
   background-color: ${({ theme }) => theme.background};
 

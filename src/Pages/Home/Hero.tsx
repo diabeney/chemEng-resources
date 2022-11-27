@@ -13,12 +13,8 @@ function Hero() {
         <HeroContainer>
           <TextBox>
             <h1>{HomeTexts.HERO_TITLE}</h1>
-            <h2>
-              {HomeTexts.HERO_SUBTITLE}
-              <Mark>{HomeTexts.HERO_MARK}</Mark>
-            </h2>
             <p>{HomeTexts.HERO_PARAGRAPH}</p>
-            <PrimaryButton variant="primary">
+            <PrimaryButton variant="primary" padding=".8em 1em">
               <span className="flex flex-cen">
                 Get started
                 <RiArrowRightLine />
@@ -39,19 +35,13 @@ export const TextBox = styled.section`
   color: ${({ theme }) => theme.foreground};
 
   & h1 {
-    font-size: 2.5em;
-    padding-block: 0.2em;
-    font-weight: 800;
-  }
-
-  & h2 {
-    padding-block: 0.2em;
-    font-size: 2em;
-    font-weight: 600;
+    font-size: 2.8em;
+    padding-top: 2em;
+    line-height: 1.2;
   }
 
   & p {
-    padding-block: 0.6em;
+    padding-block: 1em;
     font-weight: 500;
   }
 
@@ -65,10 +55,15 @@ export const TextBox = styled.section`
 
   @media (min-width: 60em) {
     & h1 {
-      margin-top: 0;
+      margin-top: 1em;
+      padding-block: 0.2em;
       font-size: 3.5em;
       font-weight: 700;
       line-height: 1.1;
+    }
+
+    button {
+      margin-block: 0.6em;
     }
   }
 `;

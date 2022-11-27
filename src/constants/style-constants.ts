@@ -4,10 +4,10 @@ import React from 'react';
 
 export const NavStyles = {
         CloseStyles: {
-              marginLeft: "auto",
-              position: "absolute",
-              right: "4%",
-              top: "3%",
+            marginLeft: "auto",
+            position: "absolute",
+            right: "4%",
+            top: "3%",
         } as React.CSSProperties,
 }
 
@@ -20,9 +20,8 @@ export const SearchStyles = {
 // <-------- STATIC TEXTS --------->
 
 export const enum HomeTexts {
-    HERO_TITLE = 'Planning on starting a major in engineering?',
-    HERO_SUBTITLE = ' An insight to all engineering majors -',
-    HERO_PARAGRAPH = ' An insight to all engineering majors -',
+    HERO_TITLE = 'Planning on starting a major in chemical engineering?',
+    HERO_PARAGRAPH = ' An insight to the chemical engineering major -Lorem ipsum dataum lie fiver in now  hagg hto jhaiejkkflsum',
     HERO_MARK = 'the guide you need.',
     SERVICES_TAG = 'How to do it?',
     CARD_ONE_HEADING = 'Read & Plan',
@@ -35,7 +34,7 @@ export const enum HomeTexts {
     CARD_FOUR_PARAGRAPTH = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus',
 }
 
-export const ActivitiesText = ['Opptunity to make an impact','Opportunity to make an impact','Opportunity to make an ','Opportunity to an impact','Opportuni to make an impact']
+export const ActivitiesText = ['Opptunity to make an impact','Opportunity to make an impact','Opportunity to make an ']
 
 
 // <------- COLORS ----------->
@@ -105,6 +104,7 @@ export interface GridProps extends ContainerProps  {
     rows: number;
     columns: number;
     evenColumns: boolean;
+    center: boolean;
 }
 
 export interface CardProps  {

@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
 import { RiMoonLine } from "react-icons/ri";
 import { RiSunLine } from "react-icons/ri";
 import { RiMenu4Fill } from "react-icons/ri";

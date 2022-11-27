@@ -1,21 +1,22 @@
 import { COLORS } from "../constants/style-constants";
 import { useState, createContext } from "react";
+import React from "react";
 
-type themeProps = {
+type ThemeProps = {
   foreground: string;
   background: string;
   accent: string;
   mode: string;
 };
 
-const ToggleThemeContext = {
-  theme: {} as themeProps,
-  handleTheme: (f: unknown) => f,
+type ThemeContextProps = {
+  theme: ThemeProps;
+  handleTheme: () => void;
 };
 
-export const ToggleTheme = createContext(ToggleThemeContext);
+export const ToggleTheme = createContext({} as ThemeContextProps);
 
-function ThemeWrapper({ children }: any) {
+function ThemeWrapper({ children }: React.PropsWithChildren) {
   const [theme, setTheme] = useState(COLORS.LIGHT);
 
   const handleTheme = () => {

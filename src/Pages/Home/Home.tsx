@@ -6,6 +6,7 @@ import Productivity from "./Productivity";
 import EngineeringBenefits from "./WhyEng";
 import News from "./News";
 import Join from "./Join";
+import NewsLetter from "./NewsLetter";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <EngineeringBenefits />
       <News />
       <Join />
+      <NewsLetter />
     </Wrapper>
   );
 }

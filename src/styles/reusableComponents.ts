@@ -33,9 +33,12 @@ export const PrimaryButton = styled.button<ButtonProps>`
 
 export const GridContainer = styled(Container)<Partial<GridProps>>`
     display: grid;
+    max-width: 1400px;
+    margin-inline: auto;
     grid-template-columns: ${({columns}) => `repeat(${columns || 1 },1fr)`};
     grid-template-rows: ${({rows}) => `repeat(${rows || 1},1fr)`};
-    gap: ${({gap}) => `${gap}rem` || `1rem`};
+    gap: ${({gap}) => gap ? `${gap}rem` :  `1rem`};
+    place-content: ${({center}) => center ? 'center': ''};
     
     @media(min-width: 50em) {
         grid-auto-flow: ${({evenColumns}) => evenColumns ? 'column' : ''};
