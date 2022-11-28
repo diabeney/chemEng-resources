@@ -3,6 +3,7 @@ import { GridContainer, Container } from "../../styles/reusableComponents";
 import { PrimaryButton } from "../../styles/reusableComponents";
 import NewsLetterImage from "../../assets/DrawKit Vector Illustration Team Work (6).svg";
 import { Mark } from "../../styles/reusableComponents";
+import React, { useState } from "react";
 
 function NewsLetter() {
   return (
@@ -37,6 +38,7 @@ const InputWrapper = styled.div`
   place-content: center;
   h1 {
     font-size: 3em;
+    line-height: 1.2;
   }
   p {
     padding-block: 1em;
