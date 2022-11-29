@@ -1,36 +1,71 @@
-import React from "react";
 import { HomeTexts } from "../../constants/style-constants";
 import HeroImage from "../../assets/11257388_417-removebg-preview.png";
 import { PrimaryButton } from "../../styles/reusableComponents";
 import { RiArrowRightLine } from "react-icons/ri";
-import { Mark } from "../../styles/reusableComponents";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
+const textboxAnimations = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const textAnimations = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
+
+const imageBoxAnimations = {
+  hidden: { x: 200, opacity: 0 },
+  show: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      delay: 1.2,
+      bounce: 0.6,
+      duration: 2,
+    },
+  },
+};
 
 function Hero() {
   return (
     <HeroContainer>
-      <TextBox>
-        <HeroContainer>
-          <TextBox>
-            <h1>{HomeTexts.HERO_TITLE}</h1>
-            <p>{HomeTexts.HERO_PARAGRAPH}</p>
-            <PrimaryButton variant="primary" padding=".8em 1em">
-              <span className="flex flex-cen">
-                Get started
-                <RiArrowRightLine />
-              </span>
-            </PrimaryButton>
-          </TextBox>
-          <ImageContainer>
-            <img src={HeroImage} />
-          </ImageContainer>
-        </HeroContainer>
+      <TextBox variants={textboxAnimations} initial="hidden" animate="show">
+        <motion.h1 variants={textAnimations}>{HomeTexts.HERO_TITLE}</motion.h1>
+        <motion.p variants={textAnimations}>
+          {HomeTexts.HERO_PARAGRAPH}
+        </motion.p>
+        <PrimaryButton
+          variant="primary"
+          padding=".8em 1em"
+          variants={textAnimations}
+        >
+          <span className="flex flex-cen">
+            Get started
+            <RiArrowRightLine />
+          </span>
+        </PrimaryButton>
       </TextBox>
+      <ImageContainer>
+        <motion.img
+          variants={imageBoxAnimations}
+          initial="hidden"
+          animate="show"
+          src={HeroImage}
+        />
+      </ImageContainer>
     </HeroContainer>
   );
 }
 
-export const TextBox = styled.section`
+export const TextBox = styled(motion.section)`
   padding: 1em 0.6em;
   color: ${({ theme }) => theme.foreground};
 

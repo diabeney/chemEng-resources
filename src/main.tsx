@@ -5,7 +5,9 @@ import "./styles/reset.css";
 import ThemeWrapper from "./components/ThemeWrapper";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <ThemeWrapper>
-    <App />
-  </ThemeWrapper>
+  <React.StrictMode>
+    <ThemeWrapper>
+      <App />
+    </ThemeWrapper>
+  </React.StrictMode>
 );

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { GridProps } from '../constants/style-constants';
 import { ContainerProps,ButtonProps } from "../constants/style-constants";
 import styled from "styled-components";
@@ -7,12 +8,13 @@ export const Container = styled.div<Partial<ContainerProps>>`
     width: ${({width}) => width || 'fit-content'};
     min-height: ${({height}) => height || 'fit-content'};
     padding: ${({padding}) => padding || '1rem'};
-    background-color: ${({theme}) => theme.background || '#fff'};
+    background-color: ${({backgroundColor}) => backgroundColor || 'inherit'};
     color: ${({theme}) => theme.foreground || 'inherit'};
+    position: relative;
 
 `
 
-export const PrimaryButton = styled.button<ButtonProps>`
+export const PrimaryButton = styled(motion.button)<ButtonProps>`
     padding: ${({padding}) => padding || `.4em 1em`};
     width: fit-content;
     font-family: inherit;
@@ -20,7 +22,6 @@ export const PrimaryButton = styled.button<ButtonProps>`
     background-color: ${({variant,theme}) => variant === 'primary' ? theme.foreground : theme.background};
     border: 2px solid ${({theme}) =>  theme.foreground};
     color: ${({variant,theme}) => variant === 'primary' ? theme.background : theme.foreground};
-    transition: all 250ms ease-in;
     cursor: pointer;
     
     &:hover {

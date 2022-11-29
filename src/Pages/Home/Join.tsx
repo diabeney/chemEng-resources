@@ -5,7 +5,12 @@ import JoinImage from "../../assets/hero.png";
 
 function Join() {
   return (
-    <Container height="100vh" width="100vw" padding="2em 0em">
+    <JoinContainer
+      height="100vh"
+      width="100vw"
+      display="grid"
+      padding="2em 0em"
+    >
       <JoinWrapper>
         <JoinText>
           <h1>Ready to make an impact?</h1>
@@ -21,7 +26,7 @@ function Join() {
           <img src={JoinImage} alt="Cube illustration" />
         </ImageBox>
       </JoinWrapper>
-    </Container>
+    </JoinContainer>
   );
 }
 
@@ -43,14 +48,18 @@ const JoinWrapper = styled.section`
   }
 
   @media (min-width: 50em) {
-    background-color: ${({ theme }) =>
-      theme.mode === "light" ? `rgb(243,244,247)` : `hsl(220, 15%, 16%)`};
+    background-color: ${({ theme }) => theme.secondary};
     width: 90%;
     border-radius: 0.8em;
     margin-inline: auto;
     flex-direction: row;
   }
 `;
+
+const JoinContainer = styled(Container)`
+  place-content: center;
+`;
+
 const JoinText = styled.section`
   display: grid;
   place-content: center;

@@ -5,6 +5,7 @@ import React from "react";
 type ThemeProps = {
   foreground: string;
   background: string;
+  secondary: string;
   accent: string;
   mode: string;
 };

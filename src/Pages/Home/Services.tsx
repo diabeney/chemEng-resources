@@ -4,13 +4,31 @@ import { COLORS } from "../../constants/style-constants";
 import CreativeThinking from "../../assets/creative-thinking.svg";
 import styled from "styled-components";
 import { CardProps } from "../../constants/style-constants";
+import { motion } from "framer-motion";
+
+const headingAnimation = {
+  hidden: { y: 100 },
+  show: {
+    y: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.5,
+      duration: 1.4,
+    },
+  },
+};
 
 function Services() {
   return (
     <ServicesPage>
-      <h1>
+      <motion.h1
+        variants={headingAnimation}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
         How to <Mark>benefit from us.</Mark>
-      </h1>
+      </motion.h1>
       <div>{HomeTexts.SERVICES_TAG}</div>
       <CardsContainer>
         <Card {...COLORS.CARDS.RED}>

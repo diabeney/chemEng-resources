@@ -3,26 +3,23 @@ import { GridContainer, Container } from "../../styles/reusableComponents";
 import { PrimaryButton } from "../../styles/reusableComponents";
 import NewsLetterImage from "../../assets/DrawKit Vector Illustration Team Work (6).svg";
 import { Mark } from "../../styles/reusableComponents";
-import React, { useState } from "react";
 
-function NewsLetter() {
+function Contact() {
   return (
     <Container width="100vw" padding="0">
       <GridContainer width="100%" padding="0" evenColumns={true}>
         <InputWrapper>
           <h1>
-            Don't miss out on any news <Mark>- seriously.</Mark>
+            Turn your dreams into a reality <Mark>- seriously.</Mark>
           </h1>
           <p>
-            Subscribe to our weekly newsletters to keep up with Lorem ipsum
-            dolor sit amet consectetur.
+            Lorem, ipsum dolor. to keep up with Lorem ipsum dolor sit amet
+            consectetur.
           </p>
-          <form>
-            <input type="text" placeholder="kofi@example.com" />
-            <PrimaryButton padding=".6em 2em" variant="primary">
-              Submit
-            </PrimaryButton>
-          </form>
+
+          <PrimaryButton padding=".6em 2em" variant="primary">
+            Get in touch
+          </PrimaryButton>
         </InputWrapper>
         <TextWrapper>
           <img src={NewsLetterImage} alt="" />
@@ -43,22 +40,6 @@ const InputWrapper = styled.div`
   p {
     padding-block: 1em;
   }
-  form {
-    display: flex;
-    gap: 1em;
-    flex-direction: column;
-
-    input {
-      max-width: 24rem;
-      height: 2.3em;
-      border-radius: 0.2em;
-
-      &:focus {
-        outline: none;
-        border: 2px solid ${({ theme }) => theme.accent};
-      }
-    }
-  }
 `;
 
 const TextWrapper = styled.section`
@@ -67,4 +48,4 @@ const TextWrapper = styled.section`
   }
 `;
 
-export default NewsLetter;
+export default Contact;

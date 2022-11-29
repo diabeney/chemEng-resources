@@ -44,6 +44,7 @@ export const  COLORS = {
     LIGHT: {
         background: '#FEFEFE',
         foreground: 'hsl(220, 15%, 26%)',
+        secondary: 'rgb(243,244,247)',
         accent: 'hsl(237,63%,71%)',
         accent900: 'hsl(237,63%,61%)',
         mode: 'light',
@@ -51,6 +52,7 @@ export const  COLORS = {
     DARK: {
         foreground: '#FEFEFE',
         background: 'hsl(237,23%,10%)',
+        secondary: 'hsl(220, 15%, 16%)',
         accent: 'hsl(237,63%,71%)',
         accent900: 'hsl(237,63%,61%)',
         mode: 'dark'
@@ -76,6 +78,10 @@ export const  COLORS = {
             backgroundColor: 'hsl(211, 100%, 95%)',
             headingColor: 'hsl(211, 100%, 65%)',
             textColor: 'hsl(211, 100%, 75%)'
+        },
+        LINKEDINBLUE: {
+            backgroundColor: 'hsl(211,100%,90%)',
+            textColor :'hsl(211,100%,36%)'
         }
     }
 };
@@ -90,8 +96,8 @@ export interface ContainerProps {
     width: string,
     height: string,
     padding: string,
-    theme: any,
     backgroundImage: any,
+    backgroundColor: string
 }
 
 export interface ButtonProps {
