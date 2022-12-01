@@ -4,8 +4,7 @@ import { Mark } from "../../styles/reusableComponents";
 import { RiBook3Line, RiArticleLine, RiCodeSLine } from "react-icons/ri";
 import styled from "styled-components";
 import { Container } from "../../styles/reusableComponents";
-import { COLORS } from "../../constants/style-constants";
-
+import { CARDS } from "../../constants/style-constants";
 function Productivity() {
   return (
     <ProductivityContainer>
@@ -70,7 +69,7 @@ export const ProductivityContainer = styled(Container)`
     margin-block: 1em;
     width: fit-content;
     margin-inline: auto;
-    background-color: ${COLORS.CARDS.GREEN.headingColor};
+    background-color: ${CARDS.GREEN.headingColor};
     padding: 0.4em 1em;
     color: #fff;
     border-radius: 3em;

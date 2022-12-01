@@ -1,19 +1,51 @@
 import { Mark } from "../../styles/reusableComponents";
 import { HomeTexts } from "../../constants/style-constants";
-import { COLORS } from "../../constants/style-constants";
 import CreativeThinking from "../../assets/creative-thinking.svg";
 import styled from "styled-components";
 import { CardProps } from "../../constants/style-constants";
 import { motion } from "framer-motion";
+import { CARDS } from "../../constants/style-constants";
+import { useScroll } from "framer-motion";
+import { ServicesConstants } from "../../constants/style-constants";
 
 const headingAnimation = {
-  hidden: { y: 100 },
+  hidden: { y: 200 },
   show: {
     y: 0,
     transition: {
       type: "spring",
       bounce: 0.5,
-      duration: 1.4,
+      duration: 2,
+    },
+  },
+};
+
+const servicesBoxAnimations = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const serviceAnimations = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: "easeOut",
+      duration: 0.5,
+    },
+  },
+  hover: {
+    rotate: 360,
+    transition: {
+      ease: "easeOut",
+      duration: 1,
     },
   },
 };
@@ -29,30 +61,58 @@ function Services() {
       >
         How to <Mark>benefit from us.</Mark>
       </motion.h1>
-      <div>{HomeTexts.SERVICES_TAG}</div>
-      <CardsContainer>
-        <Card {...COLORS.CARDS.RED}>
+      <motion.div
+        variants={headingAnimation}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+        {HomeTexts.SERVICES_TAG}
+      </motion.div>
+      <CardsContainer
+        variants={servicesBoxAnimations}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ amount: 0.8, once: true }}
+      >
+        <Card
+          {...CARDS.RED}
+          variants={serviceAnimations}
+          viewport={{ once: true }}
+        >
           <section>
             <img src={CreativeThinking} alt="Plan" />
           </section>
           <h1>{HomeTexts.CARD_ONE_HEADING}</h1>
           <p>{HomeTexts.CARD_ONE_PARAGRAPTH}</p>
         </Card>
-        <Card {...COLORS.CARDS.GREEN}>
+        <Card
+          {...CARDS.GREEN}
+          variants={serviceAnimations}
+          viewport={{ once: true }}
+        >
           <section>
             <img src={CreativeThinking} alt="Plan" />
           </section>
           <h1>{HomeTexts.CARD_TWO_HEADING}</h1>
           <p>{HomeTexts.CARD_TWO_PARAGRAPTH}</p>
         </Card>
-        <Card {...COLORS.CARDS.BROWN}>
+        <Card
+          {...CARDS.BROWN}
+          variants={serviceAnimations}
+          viewport={{ once: true }}
+        >
           <section>
             <img src={CreativeThinking} alt="Plan" />
           </section>
           <h1>{HomeTexts.CARD_THREE_HEADING}</h1>
           <p>{HomeTexts.CARD_THREE_PARAGRAPTH}</p>
         </Card>
-        <Card {...COLORS.CARDS.BLUE}>
+        <Card
+          {...CARDS.BLUE}
+          variants={serviceAnimations}
+          viewport={{ once: true }}
+        >
           <section>
             <img src={CreativeThinking} alt="Plan" />
           </section>
@@ -64,7 +124,7 @@ function Services() {
   );
 }
 
-export const Card = styled.article<CardProps>`
+export const Card = styled(motion.article)<CardProps>`
   position: relative;
   padding: 0.8em 1em;
   overflow: hidden;
@@ -101,7 +161,7 @@ export const Card = styled.article<CardProps>`
   }
 `;
 
-export const CardsContainer = styled.section`
+export const CardsContainer = styled(motion.section)`
   width: 90%;
   margin-inline: auto;
   z-index: 10;
@@ -127,6 +187,7 @@ export const ServicesPage = styled.section`
   width: 100%;
   max-width: 1400px;
   margin-inline: auto;
+
   color: ${({ theme }) => theme.foreground};
   & h1 {
     text-align: center;

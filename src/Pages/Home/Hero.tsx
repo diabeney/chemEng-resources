@@ -6,29 +6,37 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const textboxAnimations = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
+    y: 0,
     transition: {
-      staggerChildren: 0.4,
+      delayChildren: 0.6,
     },
   },
 };
 
 const textAnimations = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1 },
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: "easeOut",
+      duration: 0.5,
+    },
+  },
 };
 
 const imageBoxAnimations = {
-  hidden: { x: 200, opacity: 0 },
+  hidden: { scale: 0.5, opacity: 0 },
   show: {
-    x: 0,
+    scale: 1,
     opacity: 1,
     transition: {
       type: "spring",
-      delay: 1.2,
       bounce: 0.6,
+      delay: 1,
       duration: 2,
     },
   },
@@ -66,7 +74,7 @@ function Hero() {
 }
 
 export const TextBox = styled(motion.section)`
-  padding: 1em 0.6em;
+  padding: 1em;
   color: ${({ theme }) => theme.foreground};
 
   & h1 {
@@ -114,6 +122,7 @@ export const HeroContainer = styled.div`
   margin-inline: auto;
   gap: 1rem;
   top: 0;
+  padding-top: 3em;
   overflow hidden;
   left: 0;
   place-items: center;

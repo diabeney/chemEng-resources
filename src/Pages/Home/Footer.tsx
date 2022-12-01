@@ -10,6 +10,7 @@ import { ToggleTheme } from "../../components/ThemeWrapper";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { COLORS } from "../../constants/style-constants";
+import { CARDS } from "../../constants/style-constants";
 
 function Footer() {
   const { theme } = useContext(ToggleTheme);
@@ -58,19 +59,14 @@ function Footer() {
           </ul>
         </PageLinksContainer>
         <SocialLinksContaier>
-          <LinkWrapper backgroundColor={COLORS.CARDS.BLUE.backgroundColor}>
-            <RiTwitterFill size={32} color={COLORS.CARDS.BLUE.headingColor} />
+          <LinkWrapper backgroundColor={CARDS.BLUE.backgroundColor}>
+            <RiTwitterFill size={32} color={CARDS.BLUE.headingColor} />
           </LinkWrapper>
-          <LinkWrapper backgroundColor={COLORS.CARDS.RED.backgroundColor}>
-            <RiInstagramFill size={32} color={COLORS.CARDS.RED.headingColor} />
+          <LinkWrapper backgroundColor={CARDS.RED.backgroundColor}>
+            <RiInstagramFill size={32} color={CARDS.RED.headingColor} />
           </LinkWrapper>
-          <LinkWrapper
-            backgroundColor={COLORS.CARDS.LINKEDINBLUE.backgroundColor}
-          >
-            <RiLinkedinBoxFill
-              size={32}
-              color={COLORS.CARDS.LINKEDINBLUE.textColor}
-            />
+          <LinkWrapper backgroundColor={CARDS.LINKEDINBLUE.backgroundColor}>
+            <RiLinkedinBoxFill size={32} color={CARDS.LINKEDINBLUE.textColor} />
           </LinkWrapper>
         </SocialLinksContaier>
         <CopyrightBox>

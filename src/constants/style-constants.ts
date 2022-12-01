@@ -1,4 +1,5 @@
 import React from 'react';
+import ThemeWrapper, { ThemeProps } from '../components/ThemeWrapper';
 
 // <------- STYLES ------------>
 
@@ -34,14 +35,39 @@ export const enum HomeTexts {
     CARD_FOUR_PARAGRAPTH = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus',
 }
 
-export const ActivitiesText = ['Opptunity to make an impact','Opportunity to make an impact','Opportunity to make an ']
+export const ActivitiesText = ['Opptunity to make an impact','Opportunity to make an impact','Opportunity to make an '];
+export const ServicesConstants = [
+    {
+        color: 'RED',
+        heading: 'Read & Plan',
+        paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus',
+    },
+    {
+        color: 'GREEN',
+        heading: 'Get motivation',
+        paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus',
+    },
+    {
+        color: 'BROWN',
+        heading: 'Boost Productivity',
+        paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus',
+    },
+    {
+        color: 'BLUE',
+        heading: 'Excel',
+        paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus',
+    },
+]
 
+    // <------- COLORS ----------->
 
-// <------- COLORS ----------->
+export interface ColorProps {
+    light: ThemeProps,
+    dark: ThemeProps,
+}
 
-
-export const  COLORS = {
-    LIGHT: {
+export const  COLORS: ColorProps = {
+    light: {
         background: '#FEFEFE',
         foreground: 'hsl(220, 15%, 26%)',
         secondary: 'rgb(243,244,247)',
@@ -49,7 +75,7 @@ export const  COLORS = {
         accent900: 'hsl(237,63%,61%)',
         mode: 'light',
     },
-    DARK: {
+    dark: {
         foreground: '#FEFEFE',
         background: 'hsl(237,23%,10%)',
         secondary: 'hsl(220, 15%, 16%)',
@@ -57,8 +83,10 @@ export const  COLORS = {
         accent900: 'hsl(237,63%,61%)',
         mode: 'dark'
 
-    },
-    CARDS: {
+    }
+};
+
+export const CARDS = {
         RED: {
             backgroundColor: 'hsl(0, 100%, 95%)',
             headingColor: 'hsl(0, 100%, 70%)',
@@ -83,8 +111,8 @@ export const  COLORS = {
             backgroundColor: 'hsl(211,100%,90%)',
             textColor :'hsl(211,100%,36%)'
         }
-    }
-};
+}
+
 
 
 

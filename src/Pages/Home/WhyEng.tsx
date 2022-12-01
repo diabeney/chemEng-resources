@@ -2,8 +2,8 @@ import React from "react";
 import { ActivitiesText } from "../../constants/style-constants";
 import BackgroundImage from "../../assets/thisisengineering-raeng-ovWUKV1btXk-unsplash.jpg";
 import { RiCheckboxCircleFill } from "react-icons/ri";
-import { COLORS } from "../../constants/style-constants";
 import styled from "styled-components";
+import { CARDS } from "../../constants/style-constants";
 import { Container } from "../../styles/reusableComponents";
 
 function EngineeringBenefits() {
@@ -22,10 +22,7 @@ function EngineeringBenefits() {
           {ActivitiesText.map((item) => {
             return (
               <article key={item}>
-                <RiCheckboxCircleFill
-                  color={COLORS.CARDS.GREEN.textColor}
-                  size={32}
-                />
+                <RiCheckboxCircleFill color={CARDS.GREEN.textColor} size={32} />
                 <p>{item}</p>
               </article>
             );
