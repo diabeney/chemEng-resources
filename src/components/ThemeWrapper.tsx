@@ -26,7 +26,12 @@ const loadThemeMode = (key: string): string => {
 
 //
 function ThemeWrapper({ children }: React.PropsWithChildren) {
-  const [theme, setTheme] = useState(COLORS.light);
+  const mode = loadThemeMode("color-mode") as keyof ColorProps;
+  const [theme, setTheme] = useState(COLORS[mode]);
+
+  useEffect(() => {
+    localStorage.setItem("color-mode", theme.mode);
+  }, [theme]);
 
   const handleTheme = () => {
     if (theme.mode === "light") {
