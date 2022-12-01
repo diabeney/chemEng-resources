@@ -80,6 +80,7 @@ const NewsCard = styled(Link)`
     width: 100%;
     height: 10rem;
     transform: scale(1.3);
+    transition: transform 300ms linear;
   }
 
   &:hover img {

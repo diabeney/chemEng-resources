@@ -1,5 +1,7 @@
 import React from 'react';
-import ThemeWrapper, { ThemeProps } from '../components/ThemeWrapper';
+import  { ThemeProps } from '../components/ThemeWrapper';
+import { RiBook3Line, RiArticleLine, RiCodeSLine } from "react-icons/ri";
+
 
 // <------- STYLES ------------>
 
@@ -25,18 +27,17 @@ export const enum HomeTexts {
     HERO_PARAGRAPH = ' An insight to the chemical engineering major -Lorem ipsum dataum lie fiver in now  hagg hto jhaiejkkflsum',
     HERO_MARK = 'the guide you need.',
     SERVICES_TAG = 'How to do it?',
-    CARD_ONE_HEADING = 'Read & Plan',
-    CARD_ONE_PARAGRAPTH = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus',
-    CARD_TWO_HEADING = 'Get motivation',
-    CARD_TWO_PARAGRAPTH = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus',
-    CARD_THREE_HEADING = 'Boost Productivity',
-    CARD_THREE_PARAGRAPTH = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus',
-    CARD_FOUR_HEADING = 'Excel',
-    CARD_FOUR_PARAGRAPTH = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus',
 }
 
 export const ActivitiesText = ['Opptunity to make an impact','Opportunity to make an impact','Opportunity to make an '];
-export const ServicesConstants = [
+
+type ServiceConstantProps = {
+    color: keyof CardColorProps
+    heading: string
+    paragraph: string
+}[]
+
+export const ServicesConstants: ServiceConstantProps = [
     {
         color: 'RED',
         heading: 'Read & Plan',
@@ -56,6 +57,24 @@ export const ServicesConstants = [
         color: 'BLUE',
         heading: 'Excel',
         paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus',
+    },
+]
+
+export const ProductivityCards = [
+    {
+        name: 'Books',
+        icon: RiBook3Line,
+        paragraph: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
+    },
+    {
+        name: 'Articles',
+        icon: RiArticleLine,
+        paragraph: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
+    },
+    {
+        name: 'Softwares',
+        icon: RiCodeSLine,
+        paragraph: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
     },
 ]
 
@@ -86,7 +105,20 @@ export const  COLORS: ColorProps = {
     }
 };
 
-export const CARDS = {
+export interface CardColorProps {
+    RED: CardProps
+    GREEN: CardProps
+    BROWN: CardProps
+    BLUE: CardProps
+    LINKEDINBLUE: {
+        backgroundColor: string
+        textColor: string
+    }
+}
+
+
+
+export const CARDS: CardColorProps = {
         RED: {
             backgroundColor: 'hsl(0, 100%, 95%)',
             headingColor: 'hsl(0, 100%, 70%)',

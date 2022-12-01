@@ -4,43 +4,9 @@ import { PrimaryButton } from "../../styles/reusableComponents";
 import { RiArrowRightLine } from "react-icons/ri";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-
-const textboxAnimations = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      delayChildren: 0.6,
-    },
-  },
-};
-
-const textAnimations = {
-  hidden: { opacity: 0, y: 50 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      ease: "easeOut",
-      duration: 0.5,
-    },
-  },
-};
-
-const imageBoxAnimations = {
-  hidden: { scale: 0.5, opacity: 0 },
-  show: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      bounce: 0.6,
-      delay: 1,
-      duration: 2,
-    },
-  },
-};
+import { textboxAnimations } from "../../constants/framer-animations";
+import { textAnimations } from "../../constants/framer-animations";
+import { imageBoxAnimations } from "../../constants/framer-animations";
 
 function Hero() {
   return (

@@ -1,41 +1,42 @@
-import React from "react";
 import Dots from "../../assets/download.png";
 import { Mark } from "../../styles/reusableComponents";
-import { RiBook3Line, RiArticleLine, RiCodeSLine } from "react-icons/ri";
 import styled from "styled-components";
 import { Container } from "../../styles/reusableComponents";
 import { CARDS } from "../../constants/style-constants";
+import { ProductivityCards } from "../../constants/style-constants";
+import {
+  headingAnimationsProp,
+  serviceAnimations,
+} from "../../constants/framer-animations";
+import { motion } from "framer-motion";
+
 function Productivity() {
   return (
     <ProductivityContainer>
-      <h1>
+      <motion.h1 {...headingAnimationsProp}>
         <img src={Dots} alt="" />
         Get access to <Mark>powerful resources</Mark> to boost your
         productivity.
-      </h1>
-      <div>What you need</div>
+      </motion.h1>
+      <motion.div {...headingAnimationsProp}>What you need</motion.div>
       <ResourceContainer>
-        <ResourceCard>
-          <section>
-            <RiBook3Line size={48} color="inherit" />
-          </section>
-          <h2>Books</h2>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </ResourceCard>
-        <ResourceCard>
-          <section>
-            <RiArticleLine size={48} color="inherit" />
-          </section>
-          <h2>Articles</h2>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </ResourceCard>
-        <ResourceCard>
-          <section>
-            <RiCodeSLine size={48} color="inherit" />
-          </section>
-          <h2>Softwares</h2>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </ResourceCard>
+        {ProductivityCards.map((card) => {
+          return (
+            <ResourceCard
+              variants={serviceAnimations}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ amount: "all", once: true }}
+              key={card.name}
+            >
+              <section>
+                <card.icon size={48} color="inherit" />
+              </section>
+              <h2>{card.name}</h2>
+              <p>{card.paragraph}</p>
+            </ResourceCard>
+          );
+        })}
       </ResourceContainer>
     </ProductivityContainer>
   );
@@ -103,7 +104,7 @@ export const ResourceContainer = styled.section`
   }
 `;
 
-export const ResourceCard = styled.article`
+export const ResourceCard = styled(motion.article)`
   width: 95%;
   place-self: center;
   padding: 1.2em;

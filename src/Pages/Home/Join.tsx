@@ -2,6 +2,24 @@ import styled from "styled-components";
 import { Container } from "../../styles/reusableComponents";
 import { PrimaryButton } from "../../styles/reusableComponents";
 import JoinImage from "../../assets/hero.png";
+import { useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+
+const rotateImage = {
+  show: {
+    rotate: [0, 360],
+    transition: {
+      duration: 6,
+      ease: "easeOut",
+      times: [0, 0.2, 0.5, 0.8, 1],
+      repeat: Infinity,
+      repeatDelay: 0,
+    },
+  },
+  hidden: {
+    rotate: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  },
+};
 
 function Join() {
   return (
@@ -23,7 +41,13 @@ function Join() {
           </PrimaryButton>
         </JoinText>
         <ImageBox>
-          <img src={JoinImage} alt="Cube illustration" />
+          <motion.img
+            src={JoinImage}
+            alt="Cube illustration"
+            variants={rotateImage}
+            initial="hidden"
+            whileHover="show"
+          />
         </ImageBox>
       </JoinWrapper>
     </JoinContainer>

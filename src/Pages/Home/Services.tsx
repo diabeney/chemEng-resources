@@ -5,120 +5,40 @@ import styled from "styled-components";
 import { CardProps } from "../../constants/style-constants";
 import { motion } from "framer-motion";
 import { CARDS } from "../../constants/style-constants";
-import { useScroll } from "framer-motion";
 import { ServicesConstants } from "../../constants/style-constants";
+import {
+  headingAnimationsProp,
+  serviceAnimations,
+} from "../../constants/framer-animations";
 
-const headingAnimation = {
-  hidden: { y: 200 },
-  show: {
-    y: 0,
-    transition: {
-      type: "spring",
-      bounce: 0.5,
-      duration: 2,
-    },
-  },
-};
-
-const servicesBoxAnimations = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const serviceAnimations = {
-  hidden: { opacity: 0, y: 50 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      ease: "easeOut",
-      duration: 0.5,
-    },
-  },
-  hover: {
-    rotate: 360,
-    transition: {
-      ease: "easeOut",
-      duration: 1,
-    },
-  },
-};
-
-function Services() {
+export default function Services() {
   return (
     <ServicesPage>
-      <motion.h1
-        variants={headingAnimation}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-      >
+      <motion.h1 {...headingAnimationsProp}>
         How to <Mark>benefit from us.</Mark>
       </motion.h1>
-      <motion.div
-        variants={headingAnimation}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-      >
+      <motion.div {...headingAnimationsProp}>
         {HomeTexts.SERVICES_TAG}
       </motion.div>
-      <CardsContainer
-        variants={servicesBoxAnimations}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ amount: 0.8, once: true }}
-      >
-        <Card
-          {...CARDS.RED}
-          variants={serviceAnimations}
-          viewport={{ once: true }}
-        >
-          <section>
-            <img src={CreativeThinking} alt="Plan" />
-          </section>
-          <h1>{HomeTexts.CARD_ONE_HEADING}</h1>
-          <p>{HomeTexts.CARD_ONE_PARAGRAPTH}</p>
-        </Card>
-        <Card
-          {...CARDS.GREEN}
-          variants={serviceAnimations}
-          viewport={{ once: true }}
-        >
-          <section>
-            <img src={CreativeThinking} alt="Plan" />
-          </section>
-          <h1>{HomeTexts.CARD_TWO_HEADING}</h1>
-          <p>{HomeTexts.CARD_TWO_PARAGRAPTH}</p>
-        </Card>
-        <Card
-          {...CARDS.BROWN}
-          variants={serviceAnimations}
-          viewport={{ once: true }}
-        >
-          <section>
-            <img src={CreativeThinking} alt="Plan" />
-          </section>
-          <h1>{HomeTexts.CARD_THREE_HEADING}</h1>
-          <p>{HomeTexts.CARD_THREE_PARAGRAPTH}</p>
-        </Card>
-        <Card
-          {...CARDS.BLUE}
-          variants={serviceAnimations}
-          viewport={{ once: true }}
-        >
-          <section>
-            <img src={CreativeThinking} alt="Plan" />
-          </section>
-          <h1>{HomeTexts.CARD_FOUR_HEADING}</h1>
-          <p>{HomeTexts.CARD_FOUR_PARAGRAPTH}</p>
-        </Card>
+      <CardsContainer>
+        {ServicesConstants.map((item) => {
+          return (
+            <Card
+              key={item.color}
+              {...(CARDS[item.color] as CardProps)}
+              variants={serviceAnimations}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ amount: 0.8, once: true }}
+            >
+              <section>
+                <img src={CreativeThinking} alt="Image" />
+              </section>
+              <h1>{item.heading}</h1>
+              <p>{item.paragraph}</p>
+            </Card>
+          );
+        })}
       </CardsContainer>
     </ServicesPage>
   );
@@ -137,6 +57,7 @@ export const Card = styled(motion.article)<CardProps>`
     border-radius: 50%;
     background-color: ${({ backgroundColor }) => backgroundColor};
     margin-inline: auto;
+    transition: background-color 500ms cubic-bezier(0.01, 1.09, 0.78, 1);
 
     &:hover {
       background-color: ${({ textColor }) => textColor};
@@ -215,4 +136,3 @@ export const ServicesPage = styled.section`
     }
   }
 `;
-export default Services;

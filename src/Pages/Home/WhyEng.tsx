@@ -5,29 +5,43 @@ import { RiCheckboxCircleFill } from "react-icons/ri";
 import styled from "styled-components";
 import { CARDS } from "../../constants/style-constants";
 import { Container } from "../../styles/reusableComponents";
+import {
+  headingAnimationsProp,
+  textAnimations,
+  chemCardAnimations,
+  chemCardsContainerAnimations,
+} from "../../constants/framer-animations";
+import { motion } from "framer-motion";
 
 function EngineeringBenefits() {
   return (
     <ActivitiesWrapper backgroundImage={BackgroundImage}>
       <Activities>
         <div>
-          <h1>Why choose Chemical Engineering?</h1>
-          <p>
+          <motion.h1 {...headingAnimationsProp}>
+            Why choose Chemical Engineering?
+          </motion.h1>
+          <motion.p {...headingAnimationsProp}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
             alias, saepe dolore nihil et atque voluptatem blanditiis tempora
             totam voluptas?
-          </p>
+          </motion.p>
         </div>
-        <section>
+        <motion.section
+          variants={chemCardsContainerAnimations}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ amount: 0.6, once: true }}
+        >
           {ActivitiesText.map((item) => {
             return (
-              <article key={item}>
+              <motion.article key={item} variants={chemCardAnimations}>
                 <RiCheckboxCircleFill color={CARDS.GREEN.textColor} size={32} />
                 <p>{item}</p>
-              </article>
+              </motion.article>
             );
           })}
-        </section>
+        </motion.section>
       </Activities>
     </ActivitiesWrapper>
   );
