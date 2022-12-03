@@ -9,7 +9,6 @@ import {
 import { ToggleTheme } from "../../components/ThemeWrapper";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { COLORS } from "../../constants/style-constants";
 import { CARDS } from "../../constants/style-constants";
 
 function Footer() {
@@ -177,6 +176,7 @@ const PageLinksContainer = styled.section`
 
     li {
       padding-block: 0.6em;
+      transition: transform 250ms cubic-bezier(0.01, 1.09, 0.78, 1);
       &:hover {
         color: ${({ theme }) => theme.accent};
         transform: translateX(3px);
@@ -200,6 +200,10 @@ const LinkWrapper = styled.article<LinkWrapperProps>`
   align-items: center;
   padding: 0.8em;
   background-color: ${({ backgroundColor }) => backgroundColor};
+  transition: transform 300ms cubic-bezier(0.01, 1.09, 0.78, 1);
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
 
 export default Footer;

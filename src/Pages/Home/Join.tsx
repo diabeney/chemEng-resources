@@ -46,7 +46,7 @@ function Join() {
             alt="Cube illustration"
             variants={rotateImage}
             initial="hidden"
-            whileHover="show"
+            whileInView="show"
           />
         </ImageBox>
       </JoinWrapper>

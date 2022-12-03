@@ -2,6 +2,37 @@ import React from 'react';
 import  { ThemeProps } from '../components/ThemeWrapper';
 import { RiBook3Line, RiArticleLine, RiCodeSLine } from "react-icons/ri";
 
+// <------------- TYPES ----------->
+
+
+export interface ContainerProps {
+    display: string,
+    width: string,
+    height: string,
+    padding: string,
+    backgroundImage: any,
+    backgroundColor: string
+}
+
+export interface ButtonProps {
+    variant: string;
+    padding?: string;
+}
+
+export interface GridProps extends ContainerProps  {
+    gap: string;
+    rows: number;
+    columns: number;
+    evenColumns: boolean;
+    center: boolean;
+}
+
+export interface CardProps  {
+  backgroundColor: string;
+  headingColor: string;
+  textColor: string;
+};
+
 
 // <------- STYLES ------------>
 
@@ -148,33 +179,3 @@ export const CARDS: CardColorProps = {
 
 
 
-// <------------- TYPES ----------->
-
-
-export interface ContainerProps {
-    display: string,
-    width: string,
-    height: string,
-    padding: string,
-    backgroundImage: any,
-    backgroundColor: string
-}
-
-export interface ButtonProps {
-    variant: string;
-    padding?: string;
-}
-
-export interface GridProps extends ContainerProps  {
-    gap: string;
-    rows: number;
-    columns: number;
-    evenColumns: boolean;
-    center: boolean;
-}
-
-export interface CardProps  {
-  backgroundColor: string;
-  headingColor: string;
-  textColor: string;
-};

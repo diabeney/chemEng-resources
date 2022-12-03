@@ -3,26 +3,45 @@ import { GridContainer, Container } from "../../styles/reusableComponents";
 import { PrimaryButton } from "../../styles/reusableComponents";
 import NewsLetterImage from "../../assets/DrawKit Vector Illustration Team Work (6).svg";
 import { Mark } from "../../styles/reusableComponents";
+import { motion } from "framer-motion";
+import { imageBoxAnimations } from "../../constants/framer-animations";
+import { textAnimations } from "../../constants/framer-animations";
 
 function Contact() {
   return (
     <Container width="100vw" padding="0">
       <GridContainer width="100%" padding="0" evenColumns={true}>
         <InputWrapper>
-          <h1>
+          <motion.h1
+            variants={textAnimations}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ amount: 0.8, once: true }}
+          >
             Turn your dreams into a reality <Mark>- seriously.</Mark>
-          </h1>
-          <p>
+          </motion.h1>
+          <motion.p
+            variants={textAnimations}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ amount: 0.8, once: true }}
+          >
             Lorem, ipsum dolor. to keep up with Lorem ipsum dolor sit amet
             consectetur.
-          </p>
+          </motion.p>
 
           <PrimaryButton padding=".6em 2em" variant="primary">
             Get in touch
           </PrimaryButton>
         </InputWrapper>
         <TextWrapper>
-          <img src={NewsLetterImage} alt="" />
+          <motion.img
+            src={NewsLetterImage}
+            alt="Contact Image"
+            variants={imageBoxAnimations}
+            initial="hidden"
+            whileInView="show"
+          />
         </TextWrapper>
       </GridContainer>
     </Container>
