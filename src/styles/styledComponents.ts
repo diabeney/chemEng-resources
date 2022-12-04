@@ -20,7 +20,7 @@ export const Menu = styled.div`
 `;
 
 export const NavWrapper = styled.nav`
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -29,6 +29,7 @@ export const NavWrapper = styled.nav`
   border-bottom: 1px solid hsl(0, 0%, 50%);
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.foreground};
+  transition: transform 350ms cubic-bezier(0.01, 1.09, 0.78, 1);
 
   & .menu {
     display: block;

@@ -176,6 +176,21 @@ export const CARDS: CardColorProps = {
         }
 }
 
+export const YEARS = ["First", "Second", "Third", "Fourth"];
+
+export type CoursesProps = {
+  First: string[];
+  Second: string[];
+  Third: string[];
+  Fourth: string[];
+};
+
+export const COURSES: CoursesProps = {
+  First: ["Algebra", "Applied Electricity", "Inorganic Chemistry for Engineers", 'Technical Drawing', 'Practical Chemistry', 'Organic Chemistry for Engineers', 'Communication Skills I & II',"General Physics", 'Calculus with Analysis', 'Basic Mechanics', 'Physical Chemistry for Engineers', 'Basic Electronics', 'Introduction to Information Technology'],
+  Second: ['Chemical Process Calculations I & II', 'Chemical Engineering Thermodynamics I & II', 'Fluid Transport' , 'Analytical Chemistry for Chemical Engineers', 'Chemical Process Industries', 'Computer Application for Engineers', 'Differential Equations', 'Engineering In Society','Heat Transfer Process', 'Calculus of Several Variables', 'Drawing for Engineers', 'Strength for Materials', 'Practical Chemistry II'],
+  Third: ["7", "45", "33"],
+  Fourth: ["3", "53", "4"],
+};
 
 
 

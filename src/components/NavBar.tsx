@@ -43,10 +43,10 @@ function NavBar() {
         </div>
         <ul>
           <li>
-            <NavLink to="articles">Articles</NavLink>
+            <NavLink to="resources">Resources</NavLink>
           </li>
           <li>
-            <NavLink to="resources">Resources</NavLink>
+            <NavLink to="articles">Articles</NavLink>
           </li>
           <li>
             <NavLink to="contribute">Contribute</NavLink>

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Articles from "./Pages/Articles";
 import Contribute from "./Pages/Contribute";
-import Resources from "./Pages/Resources";
+import Resources from "./Pages/Resources/Resources";
 import NotFound from "./Pages/NotFound";
 import { ToggleTheme } from "./components/ThemeWrapper";
 

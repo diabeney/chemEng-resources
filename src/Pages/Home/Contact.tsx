@@ -41,6 +41,7 @@ function Contact() {
             variants={imageBoxAnimations}
             initial="hidden"
             whileInView="show"
+            viewport={{ once: true }}
           />
         </TextWrapper>
       </GridContainer>
