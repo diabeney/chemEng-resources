@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { RiMoonLine } from "react-icons/ri";
 import { RiSunLine } from "react-icons/ri";
 import { RiMenu4Fill } from "react-icons/ri";
@@ -8,6 +8,7 @@ import { ToggleTheme } from "./ThemeWrapper";
 import { PrimaryButton } from "../styles/reusableComponents";
 import { NavStyles } from "../constants/style-constants";
 import { Menu, NavWrapper } from "../styles/styledComponents";
+import styled from "styled-components";
 
 function NavBar() {
   const [navIsOpen, setNavIsOpen] = useState(false);
@@ -18,7 +19,7 @@ function NavBar() {
   };
 
   return (
-    <>
+    <NavContainer>
       <Menu>
         <RiMenu4Fill
           size={32}
@@ -39,7 +40,7 @@ function NavBar() {
           onClick={toggleNavBar}
         />
         <div className="logo">
-          <span>engResources</span>
+          <Link to="/">engResources</Link>
         </div>
         <ul>
           <li>
@@ -67,8 +68,14 @@ function NavBar() {
           <PrimaryButton variant="sec">Sign Up</PrimaryButton>
         </div>
       </NavWrapper>
-    </>
+    </NavContainer>
   );
 }
+
+const NavContainer = styled.div`
+  width: 100vw;
+  max-width: 1400px;
+  margin-inline: auto;
+`;
 
 export default NavBar;

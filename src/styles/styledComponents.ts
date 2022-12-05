@@ -21,7 +21,7 @@ export const Menu = styled.div`
 
 export const NavWrapper = styled.nav`
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   gap: 2rem;
@@ -106,9 +106,12 @@ export const NavWrapper = styled.nav`
   }
 
   @media (min-width: 50em) {
-    height: fit-content;
+    height: 5em;
     flex-direction: row;
     align-items: center;
+    margin-inline: auto;
+    width: 100vw;
+    max-width: 1400px;
     transform: translateX(0) !important;
 
     & > svg {

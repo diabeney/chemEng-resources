@@ -33,6 +33,7 @@ const AccordionButton = styled.div`
   justify-content: space-between;
   padding-inline: 1em;
   margin-block: 1.5em;
+  cursor: pointer;
 `;
 
 export default Accordion;

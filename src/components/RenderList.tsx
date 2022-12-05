@@ -1,5 +1,7 @@
-import { ReactNode } from "react";
+import { ReactNode, useContext } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { SidebarHandlerContext } from "../Pages/Resources/Resources";
 
 type ListProps = {
   data: string[];
@@ -7,11 +9,20 @@ type ListProps = {
 };
 
 function RenderList({ data, renderEmpty = <h1>Empty list</h1> }: ListProps) {
+  const { toggleSideBar } = useContext(SidebarHandlerContext);
+
   if (!data.length) renderEmpty;
   return (
     <AccordionItem style={{ paddingInline: "1em" }}>
       {data.map((item) => (
-        <ListItem key={item}>{item}</ListItem>
+        <ListItem key={item}>
+          <Link
+            to={item.replace(/\s/gi, "-").toLowerCase()}
+            onClick={() => toggleSideBar()}
+          >
+            {item}
+          </Link>
+        </ListItem>
       ))}
     </AccordionItem>
   );
@@ -22,13 +33,16 @@ const AccordionItem = styled.ul`
 `;
 
 const ListItem = styled.li`
-  padding: 0.5em;
-  margin-block: 0.3em;
-  border-radius: 0.4em;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.secondary};
+  width: 100%;
+  a {
+    display: block;
+    width: 100%;
+    padding: 0.5em;
+    margin-block: 0.3em;
+    border-radius: 0.4em;
+    &:hover {
+      background-color: ${({ theme }) => theme.secondary};
+    }
   }
 `;
 

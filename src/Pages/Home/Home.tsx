@@ -12,7 +12,6 @@ import Footer from "./Footer";
 function Home() {
   return (
     <Wrapper>
-      <NavBar />
       <Hero />
       <Services />
       <Productivity />

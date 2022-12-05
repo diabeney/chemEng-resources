@@ -7,17 +7,22 @@ import Contribute from "./Pages/Contribute";
 import Resources from "./Pages/Resources/Resources";
 import NotFound from "./Pages/NotFound";
 import { ToggleTheme } from "./components/ThemeWrapper";
+import CourseDetails from "./Pages/Resources/CourseDetails";
+import NavBar from "./components/NavBar";
 
 function App() {
   const { theme } = useContext(ToggleTheme);
   return (
     <ThemeProvider theme={theme}>
       <Router>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/contribute" element={<Contribute />} />
-          <Route path="/resources" element={<Resources />} />
+          <Route path="/resources" element={<Resources />}>
+            <Route path=":id" element={<CourseDetails />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

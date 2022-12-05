@@ -3,12 +3,18 @@ import styled from "styled-components";
 import Accordion from "../../components/Accordion";
 import { YEARS } from "../../constants/style-constants";
 
-export default function SideBar() {
-  const [accodionIndex, setAccordionIndex] = useState<number | null>(null);
+type SidebarProps = {
+  isActive: boolean;
+};
 
+export default function SideBar({ isActive }: SidebarProps) {
+  const [accordionIndex, setAccordionIndex] = useState<number | null>(null);
+  const sideBarStyles = {
+    display: isActive ? "block" : "none",
+  };
   const toggleAccordion = (item: string) => {
     const index = YEARS.indexOf(item);
-    if (index === accodionIndex) {
+    if (index === accordionIndex) {
       setAccordionIndex(null);
     } else {
       setAccordionIndex(YEARS.indexOf(item));
@@ -16,13 +22,13 @@ export default function SideBar() {
   };
 
   return (
-    <SideBarWrapper>
+    <SideBarWrapper style={sideBarStyles}>
       {YEARS.map((year) => (
         <Accordion
           key={year}
           handleOpenAccordion={toggleAccordion}
           item={year}
-          isActive={accodionIndex === YEARS.indexOf(year)}
+          isActive={accordionIndex === YEARS.indexOf(year)}
         />
       ))}
     </SideBarWrapper>
@@ -30,16 +36,18 @@ export default function SideBar() {
 }
 
 const SideBarWrapper = styled.section`
-  width: 30%;
-  height: 100vh;
+  width: 100%;
+  height: calc(100vh - 5em);
   padding: 1em;
   overflow-y: scroll;
-  position: fixed;
-  top: 74px;
-  border: 1px solid ${({ theme }) => theme.secondary};
+  position: sticky;
+  padding-top: 3em;
+  border-bottom: 1px solid ${({ theme }) => theme.secondary};
   background-color: inherit;
 
-  h2 {
-    /* text-align: center; */
+  @media (min-width: 50em) {
+    top: 5em;
+    padding-top: 0;
+    display: block !important;
   }
 `;
