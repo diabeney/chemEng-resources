@@ -42,36 +42,22 @@ function Resources() {
 }
 
 const ResourcesWrapper = styled.div`
-  display: grid;
+  display: block;
   max-width: 1400px;
   margin-inline: auto;
-  grid-template-columns: 100% auto;
   color: ${({ theme }) => theme.foreground};
   background-color: ${({ theme }) => theme.background};
   height: 300vh;
-  position: relative;
-  top: 4em;
-
   @media (min-width: 50em) {
+    display: grid;
     grid-template-columns: 30% 1fr;
     top: 5em;
   }
 `;
 
-const OutletContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  margin-top: 4em;
-
-  @media (min-width: 50em) {
-    padding-top: 2em;
-    margin-top: 0;
-  }
-`;
-
 const MenuWrapper = styled.button`
   display: flex;
-  position: absolute;
+  position: sticky;
   width: 100vw;
   height: 3em;
   top: 0em;
@@ -86,6 +72,15 @@ const MenuWrapper = styled.button`
 
   @media (min-width: 50em) {
     display: none;
+  }
+`;
+
+const OutletContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  margin-top: 5em;
+  padding: 2em;
+  @media (min-width: 50em) {
   }
 `;
 

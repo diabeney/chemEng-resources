@@ -9,6 +9,7 @@ import NotFound from "./Pages/NotFound";
 import { ToggleTheme } from "./components/ThemeWrapper";
 import CourseDetails from "./Pages/Resources/CourseDetails";
 import NavBar from "./components/NavBar";
+import ResourcesIndex from "./Pages/Resources/ResourcesIndex";
 
 function App() {
   const { theme } = useContext(ToggleTheme);
@@ -21,6 +22,7 @@ function App() {
           <Route path="/articles" element={<Articles />} />
           <Route path="/contribute" element={<Contribute />} />
           <Route path="/resources" element={<Resources />}>
+            <Route index element={<ResourcesIndex />} />
             <Route path=":id" element={<CourseDetails />} />
           </Route>
           <Route path="*" element={<NotFound />} />

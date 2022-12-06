@@ -3,9 +3,10 @@ import styled from "styled-components";
 
 // <---------- Navbar ----------->
 
-export const Menu = styled.div`
+export const Menu = styled.div` 
+  position: sticky;
+  top: 0;
   z-index: 100;
-  position: absolute;
   width: 100%;
   margin: 0;
   display: flex;
@@ -21,6 +22,7 @@ export const Menu = styled.div`
 
 export const NavWrapper = styled.nav`
   position: fixed;
+  top: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -111,6 +113,8 @@ export const NavWrapper = styled.nav`
     align-items: center;
     margin-inline: auto;
     width: 100vw;
+    position: fixed;
+    top: 0;
     max-width: 1400px;
     transform: translateX(0) !important;
 

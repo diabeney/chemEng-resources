@@ -10,6 +10,8 @@ import { NavStyles } from "../constants/style-constants";
 import { Menu, NavWrapper } from "../styles/styledComponents";
 import styled from "styled-components";
 
+const NavLinks = ["Resources", "Articles", "Contribute"];
+
 function NavBar() {
   const [navIsOpen, setNavIsOpen] = useState(false);
   const { theme, handleTheme } = useContext(ToggleTheme);
@@ -40,18 +42,30 @@ function NavBar() {
           onClick={toggleNavBar}
         />
         <div className="logo">
-          <Link to="/">engResources</Link>
+          <Link
+            onClick={() => {
+              setNavIsOpen(false);
+            }}
+            to="/"
+          >
+            ChemEngResources
+          </Link>
         </div>
         <ul>
-          <li>
-            <NavLink to="resources">Resources</NavLink>
-          </li>
-          <li>
-            <NavLink to="articles">Articles</NavLink>
-          </li>
-          <li>
-            <NavLink to="contribute">Contribute</NavLink>
-          </li>
+          {NavLinks.map((link) => {
+            return (
+              <li key={link}>
+                <NavLink
+                  onClick={() => {
+                    setNavIsOpen(false);
+                  }}
+                  to={link.toLowerCase()}
+                >
+                  {link}
+                </NavLink>
+              </li>
+            );
+          })}
         </ul>
         <div className="search">
           <input type="search" placeholder="Search" />
@@ -76,6 +90,12 @@ const NavContainer = styled.div`
   width: 100vw;
   max-width: 1400px;
   margin-inline: auto;
+  position: relative;
+  /* height: 100vh; */
+
+  @media (min-width: 50em) {
+    height: auto;
+  }
 `;
 
 export default NavBar;

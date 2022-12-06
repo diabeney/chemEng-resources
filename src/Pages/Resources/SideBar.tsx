@@ -37,15 +37,17 @@ export default function SideBar({ isActive }: SidebarProps) {
 
 const SideBarWrapper = styled.section`
   width: 100%;
-  height: calc(100vh - 5em);
+  height: 100vh;
   padding: 1em;
   overflow-y: scroll;
-  position: sticky;
   padding-top: 3em;
+  position: absolute;
+  top: 3em;
   border-bottom: 1px solid ${({ theme }) => theme.secondary};
   background-color: inherit;
 
   @media (min-width: 50em) {
+    position: sticky;
     top: 5em;
     padding-top: 0;
     display: block !important;

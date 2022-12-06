@@ -45,7 +45,7 @@ export const TextBox = styled(motion.section)`
 
   & h1 {
     font-size: 2.8em;
-    padding-top: 2em;
+    /* padding-top: 2em; */
     line-height: 1.2;
   }
 
