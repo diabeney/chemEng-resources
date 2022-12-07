@@ -4,6 +4,7 @@ import SideBar from "./SideBar";
 import { Outlet } from "react-router-dom";
 import { createContext, useState } from "react";
 import { RiCloseLine, RiMenuUnfoldLine } from "react-icons/ri";
+import { motion } from "framer-motion";
 
 type sideBarContextProps = {
   toggleSideBar: () => void;
@@ -47,7 +48,7 @@ const ResourcesWrapper = styled.div`
   margin-inline: auto;
   color: ${({ theme }) => theme.foreground};
   background-color: ${({ theme }) => theme.background};
-  height: 300vh;
+  height: fit-content;
   @media (min-width: 50em) {
     display: grid;
     grid-template-columns: 30% 1fr;
@@ -55,7 +56,7 @@ const ResourcesWrapper = styled.div`
   }
 `;
 
-const MenuWrapper = styled.button`
+const MenuWrapper = styled(motion.button)`
   display: flex;
   position: sticky;
   width: 100vw;
@@ -77,10 +78,9 @@ const MenuWrapper = styled.button`
 
 const OutletContainer = styled.div`
   width: 100%;
-  height: 100%;
-  margin-top: 5em;
   padding: 2em;
   @media (min-width: 50em) {
+    margin-top: 5em;
   }
 `;
 

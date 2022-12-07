@@ -26,11 +26,11 @@ const loadThemeMode = (key: string): string => {
 
 //
 function ThemeWrapper({ children }: React.PropsWithChildren) {
-  const mode = loadThemeMode("color-mode") as keyof ColorProps;
+  const mode = loadThemeMode("chemEng-theme-mode") as keyof ColorProps;
   const [theme, setTheme] = useState(COLORS[mode]);
 
   useEffect(() => {
-    localStorage.setItem("color-mode", theme.mode);
+    localStorage.setItem("chemEng-theme-mode", theme.mode);
   }, [theme]);
 
   const handleTheme = () => {

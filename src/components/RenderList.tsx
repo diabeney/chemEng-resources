@@ -2,6 +2,7 @@ import { ReactNode, useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { SidebarHandlerContext } from "../Pages/Resources/Resources";
+import { motion } from "framer-motion";
 
 type ListProps = {
   data: string[];
@@ -28,11 +29,13 @@ function RenderList({ data, renderEmpty = <h1>Empty list</h1> }: ListProps) {
   );
 }
 
-const AccordionItem = styled.ul`
+const AccordionItem = styled(motion.ul)`
   padding-inline: 1em;
 `;
 
 const ListItem = styled.li`
+  position: relative;
+  z-index: 1000;
   width: 100%;
   a {
     display: block;

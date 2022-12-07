@@ -1,7 +1,9 @@
+import { CARDS, COLORS } from './../constants/style-constants';
 import { motion } from 'framer-motion';
 import { GridProps } from '../constants/style-constants';
 import { ContainerProps,ButtonProps } from "../constants/style-constants";
 import styled from "styled-components";
+import { TagProps } from './../constants/style-constants';
 
 export const Container = styled.div<Partial<ContainerProps>>`
     display: ${({display}) => display ? display : 'block'};
@@ -50,5 +52,110 @@ export const GridContainer = styled(Container)<Partial<GridProps>>`
 
 export const Mark = styled.mark`
     background: transparent;
-    color: ${({theme}) => theme.accent}
+    color: ${({theme}) => theme.accent};
 `
+
+
+/* Resources Styled Component */
+
+export const Mainheading = styled.h2`
+    font-size: 2.5em;
+    padding-bottom: .6em;
+    @media(min-width: 50em) {
+        font-size: 3em;
+    }
+`
+
+export const Subheading = styled.h3`
+    font-size: 1.8em;
+    padding-block: .8em;
+    @media(min-width: 50em) {
+        font-size: 2em;
+    }
+`
+
+export const Lowheading = styled.h4`
+    font-size: 1.2em;
+    padding-block: .6em;
+    @media(min-width: 50em) {
+        font-size: 1.5em;
+    }
+`
+
+export const Paragraph = styled.p `
+    font-size: 1em;
+    @media(min-width: 50em) {
+        font-size: 1.2em;
+    }   
+`
+
+
+
+export const LevelTag = styled.span<TagProps>`
+    padding: .2em .6em;
+    background-color: ${({level}) => level === 'Advanced' ? `${CARDS.BROWN.backgroundColor}` : `${CARDS.GREEN.backgroundColor}`};
+    border-radius: .2em;
+    color: ${({level}) => level === 'Advanced' ? `${CARDS.BROWN.textColor}` : `${CARDS.GREEN.textColor}`};
+    width: fit-content;
+`
+
+type NoticeProps = {
+    variant: 'Info' | 'Warning' | 'In Progress'
+}
+
+const NoticeBackgroundColors = {
+    BLUE: {
+        background: 'hsla(211, 100%, 85%,.3)',
+    },
+    RED: {
+        background: 'hsla(0, 100%, 85%,.3)'
+    },
+    BROWN: {
+        background: 'hsla(36, 100%, 85%,.3)'
+    }
+
+}
+
+export const Notice = styled.section<NoticeProps>`
+    width: 100%;
+    height: fit-content;
+    padding: 1em;
+    margin-block: 1em;
+    background-color: ${({variant}) => variant === 'Info' ? `${NoticeBackgroundColors.BLUE.background}` : `${NoticeBackgroundColors.RED.background}` };
+    border-left:3px solid  ${({variant}) => variant === 'Info' ? `${CARDS.BLUE.textColor}`: `${CARDS.RED.textColor}`};
+
+    h4 {
+        color: ${({variant}) => variant ===  'Info' ? `${CARDS.BLUE.headingColor}`: `${CARDS.RED.headingColor}`};
+    }
+`
+
+export const ListContainer = styled.div`
+    width: 100%;
+    margin-inline: auto;
+    padding: 1em;
+    border-radius: 1em;
+    margin-block: 1em;
+    height: fit-content;
+    background-color: ${({theme}) => theme.secondary};
+    ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        list-style-type: circle; 
+        list-style-position: inside;
+
+        li {
+            padding-block: .6em;
+        }
+    }
+`
+
+export const ContentInProgress = styled(Notice) `
+    background-color: ${({variant}) => variant === 'In Progress' ? `${NoticeBackgroundColors.BROWN.background}` : ''};
+    border-left: 3px solid ${CARDS.BROWN.textColor};
+    h4 {
+        color: ${CARDS.BROWN.textColor};
+    }
+`
+

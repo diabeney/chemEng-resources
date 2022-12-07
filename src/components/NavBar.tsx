@@ -91,7 +91,6 @@ const NavContainer = styled.div`
   max-width: 1400px;
   margin-inline: auto;
   position: relative;
-  /* height: 100vh; */
 
   @media (min-width: 50em) {
     height: auto;

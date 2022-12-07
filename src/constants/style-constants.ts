@@ -1,3 +1,4 @@
+import { Paragraph } from './../styles/reusableComponents';
 import React from 'react';
 import  { ThemeProps } from '../components/ThemeWrapper';
 import { RiBook3Line, RiArticleLine, RiCodeSLine } from "react-icons/ri";
@@ -163,7 +164,7 @@ export const CARDS: CardColorProps = {
         BROWN: {
             backgroundColor: 'hsl(36, 100%, 95%)',
             headingColor: 'hsl(36, 100%, 25%)',
-            textColor: 'hsl(36, 100%, 35%)'
+            textColor: 'hsl(36, 100%, 45%)'
         },
         BLUE: {
             backgroundColor: 'hsl(211, 100%, 95%)',
@@ -188,9 +189,26 @@ export type CoursesProps = {
 export const COURSES: CoursesProps = {
   First: ["Algebra", "Applied Electricity", "Inorganic Chemistry for Engineers", 'Technical Drawing', 'Practical Chemistry', 'Organic Chemistry for Engineers', 'Communication Skills I & II',"General Physics", 'Calculus with Analysis', 'Basic Mechanics', 'Physical Chemistry for Engineers', 'Basic Electronics', 'Introduction to Information Technology'],
   Second: ['Chemical Process Calculations I & II', 'Chemical Engineering Thermodynamics I & II', 'Fluid Transport' , 'Analytical Chemistry for Chemical Engineers', 'Chemical Process Industries', 'Computer Application for Engineers', 'Differential Equations', 'Engineering In Society','Heat Transfer Process', 'Calculus of Several Variables', 'Drawing for Engineers', 'Strength for Materials', 'Practical Chemistry II'],
-  Third: ["7", "45", "33"],
-  Fourth: ["3", "53", "4"],
+  Third: ["Still", "In", "Progress"],
+  Fourth: ["Still", "In", "Progress"],
 };
 
+export type TagProps = {
+    level: 'Advanced' | 'Basic'
+}
 
+type InfoProps = {
+    title: string,
+    paragraph: string
+}
+
+export type AllCoursesProps = {
+    name: string,
+    tag: TagProps,
+    discription: string,
+    books: string[],
+    info?: InfoProps,
+    warning?: InfoProps,
+    contents: string[]
+}
 

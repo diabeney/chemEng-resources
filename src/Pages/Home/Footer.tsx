@@ -11,6 +11,14 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CARDS } from "../../constants/style-constants";
 
+const footerLinks = [
+  "Home",
+  "FAQs",
+  "Services",
+  "Learn More",
+  "Terms & Conditions",
+];
+
 function Footer() {
   const { theme } = useContext(ToggleTheme);
   const year = new Date().getFullYear();
@@ -30,21 +38,13 @@ function Footer() {
         <PageLinksContainer>
           <ul>
             <h3>Useful Links</h3>
-            <li>
-              <Link to="hello">Home</Link>
-            </li>
-            <li>
-              <Link to="cares">FAQs</Link>
-            </li>
-            <li>
-              <Link to="care">Services</Link>
-            </li>
-            <li>
-              <Link to="care">Learn More</Link>
-            </li>
-            <li>
-              <Link to="care">Terms & Conditions</Link>
-            </li>
+            {footerLinks.map((link) => {
+              return (
+                <li key={link}>
+                  <Link to={link.toLowerCase()}>{link}</Link>
+                </li>
+              );
+            })}
           </ul>
           <ul>
             <h3>Contact Us</h3>

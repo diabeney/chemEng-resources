@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import Accordion from "../../components/Accordion";
 import { YEARS } from "../../constants/style-constants";
+import { motion } from "framer-motion";
 
 type SidebarProps = {
   isActive: boolean;
@@ -22,20 +23,22 @@ export default function SideBar({ isActive }: SidebarProps) {
   };
 
   return (
-    <SideBarWrapper style={sideBarStyles}>
+    <SideBarWrapper layout style={sideBarStyles}>
       {YEARS.map((year) => (
-        <Accordion
-          key={year}
-          handleOpenAccordion={toggleAccordion}
-          item={year}
-          isActive={accordionIndex === YEARS.indexOf(year)}
-        />
+        <>
+          <Accordion
+            key={year}
+            handleOpenAccordion={toggleAccordion}
+            item={year}
+            isActive={accordionIndex === YEARS.indexOf(year)}
+          />
+        </>
       ))}
     </SideBarWrapper>
   );
 }
 
-const SideBarWrapper = styled.section`
+const SideBarWrapper = styled(motion.section)`
   width: 100%;
   height: 100vh;
   padding: 1em;
@@ -48,7 +51,9 @@ const SideBarWrapper = styled.section`
 
   @media (min-width: 50em) {
     position: sticky;
+    margin-top: 5em;
     top: 5em;
+    height: calc(100vh - 5em);
     padding-top: 0;
     display: block !important;
   }
