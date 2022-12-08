@@ -30,21 +30,21 @@ function News() {
           <img src={NewsImage} alt="News Image" />
           <NewsText>
             <DateText>{currentDate}</DateText>
-            <h2>Ghana makes an impressive win against Portugal</h2>
+            <h2>Intro to ChatGPT</h2>
           </NewsText>
         </NewsCard>
         <NewsCard to="hello">
           <img src={NewsImage} alt="News Image" />
           <NewsText>
             <DateText>{currentDate}</DateText>
-            <h2>Ghana makes an impressive win against Portugal</h2>
+            <h2>What is framer-motion</h2>
           </NewsText>
         </NewsCard>
         <NewsCard to="hello">
           <img src={NewsImage} alt="News Image" />
           <NewsText>
             <DateText>{currentDate}</DateText>
-            <h2>Ghana makes an impressive win against Portugal</h2>
+            <h2>Styled Component crash course</h2>
           </NewsText>
         </NewsCard>
       </NewsContainer>
