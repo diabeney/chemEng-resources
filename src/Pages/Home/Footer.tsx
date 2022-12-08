@@ -10,6 +10,9 @@ import { ToggleTheme } from "../../components/ThemeWrapper";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CARDS } from "../../constants/style-constants";
+import { motion } from "framer-motion";
+import { chemCardsContainerAnimations } from "../../constants/framer-animations";
+import { chemCardAnimations } from "../../constants/framer-animations";
 
 const footerLinks = [
   "Home",
@@ -24,8 +27,13 @@ function Footer() {
   const year = new Date().getFullYear();
   return (
     <Container width="100vw" padding="0" backgroundColor={theme.secondary}>
-      <FooterWrapper>
-        <NewsletterContainer>
+      <FooterWrapper
+        variants={chemCardsContainerAnimations}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.8 }}
+      >
+        <NewsletterContainer variants={chemCardAnimations}>
           <h2>Get latest updates</h2>
           <p>Subscribe to our weekly newsletters to Lorem, ipsum dolor.</p>
           <form>
@@ -35,7 +43,7 @@ function Footer() {
             </button>
           </form>
         </NewsletterContainer>
-        <PageLinksContainer>
+        <PageLinksContainer variants={chemCardAnimations}>
           <ul>
             <h3>Useful Links</h3>
             {footerLinks.map((link) => {
@@ -57,7 +65,7 @@ function Footer() {
             </li>
           </ul>
         </PageLinksContainer>
-        <SocialLinksContaier>
+        <SocialLinksContaier variants={chemCardAnimations}>
           <LinkWrapper backgroundColor={CARDS.BLUE.backgroundColor}>
             <RiTwitterFill size={32} color={CARDS.BLUE.headingColor} />
           </LinkWrapper>
@@ -96,7 +104,7 @@ const CopyrightBox = styled.section`
   }
 `;
 
-const FooterWrapper = styled.footer`
+const FooterWrapper = styled(motion.section)`
   width: 100%;
   max-width: 1400px;
   margin-inline: auto;
@@ -115,7 +123,7 @@ const FooterWrapper = styled.footer`
   }
 `;
 
-const NewsletterContainer = styled.section`
+const NewsletterContainer = styled(motion.section)`
   padding: 1em;
   height: fit-content;
 
@@ -167,7 +175,7 @@ const NewsletterContainer = styled.section`
   }
 `;
 
-const PageLinksContainer = styled.section`
+const PageLinksContainer = styled(motion.section)`
   display: flex;
   gap: 0.8em;
 
@@ -185,7 +193,7 @@ const PageLinksContainer = styled.section`
   }
 `;
 
-const SocialLinksContaier = styled.section`
+const SocialLinksContaier = styled(motion.section)`
   display: flex;
   align-items: center;
   gap: 1em;
