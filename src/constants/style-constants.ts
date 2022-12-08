@@ -122,6 +122,7 @@ export const  COLORS: ColorProps = {
         background: '#FEFEFE',
         foreground: 'hsl(220, 15%, 26%)',
         secondary: 'rgb(243,244,247)',
+        secondary500: 'rgb(203,204,207)',
         accent: 'hsl(237,63%,71%)',
         accent900: 'hsl(237,63%,61%)',
         mode: 'light',
@@ -130,6 +131,7 @@ export const  COLORS: ColorProps = {
         foreground: '#FEFEFE',
         background: 'hsl(237,23%,10%)',
         secondary: 'hsl(220, 15%, 16%)',
+        secondary500: 'hsl(220,15%,36%)',
         accent: 'hsl(237,63%,71%)',
         accent900: 'hsl(237,63%,61%)',
         mode: 'dark'
@@ -179,36 +181,36 @@ export const CARDS: CardColorProps = {
 
 export const YEARS = ["First", "Second", "Third", "Fourth"];
 
+export type YearCourseProps = {
+    course: string,
+    done: boolean
+}[]
+
 export type CoursesProps = {
-  First: string[];
-  Second: string[];
-  Third: string[];
-  Fourth: string[];
+  First: YearCourseProps;
+  Second: YearCourseProps;
+  Third: YearCourseProps;
+  Fourth: YearCourseProps;
 };
+const setCourseData = (course: string) => ({ course, done: false });
+
+export const FIRST_YEAR_COURSES = ["Algebra", "Applied Electricity", "Inorganic Chemistry for Engineers", 'Technical Drawing', 'Practical Chemistry', 'Organic Chemistry for Engineers', 'Communication Skills I & II',"General Physics", 'Calculus with Analysis', 'Basic Mechanics', 'Physical Chemistry for Engineers', 'Basic Electronics', 'Introduction to Information Technology'];
+export const SECOND_YEAR_COURSES = ['Chemical Process Calculations I & II', 'Chemical Engineering Thermodynamics I & II', 'Fluid Transport' , 'Analytical Chemistry for Chemical Engineers', 'Chemical Process Industries', 'Computer Application for Engineers', 'Differential Equations', 'Engineering In Society','Heat Transfer Process', 'Calculus of Several Variables', 'Drawing for Engineers', 'Strength for Materials', 'Practical Chemistry II'];
+export const THIRD_YEAR_COURSES = ["Still", "In", "Progress"];
+export const FOURTH_YEAR_COURESES = ["Still", "In", "Progress"];
 
 export const COURSES: CoursesProps = {
-  First: ["Algebra", "Applied Electricity", "Inorganic Chemistry for Engineers", 'Technical Drawing', 'Practical Chemistry', 'Organic Chemistry for Engineers', 'Communication Skills I & II',"General Physics", 'Calculus with Analysis', 'Basic Mechanics', 'Physical Chemistry for Engineers', 'Basic Electronics', 'Introduction to Information Technology'],
-  Second: ['Chemical Process Calculations I & II', 'Chemical Engineering Thermodynamics I & II', 'Fluid Transport' , 'Analytical Chemistry for Chemical Engineers', 'Chemical Process Industries', 'Computer Application for Engineers', 'Differential Equations', 'Engineering In Society','Heat Transfer Process', 'Calculus of Several Variables', 'Drawing for Engineers', 'Strength for Materials', 'Practical Chemistry II'],
-  Third: ["Still", "In", "Progress"],
-  Fourth: ["Still", "In", "Progress"],
+  First: FIRST_YEAR_COURSES.map(course => setCourseData(course)),
+  Second: SECOND_YEAR_COURSES.map(course => setCourseData(course)),
+  Third: THIRD_YEAR_COURSES.map(course => setCourseData(course)),
+  Fourth: FOURTH_YEAR_COURESES.map(course => setCourseData(course)),
 };
 
+
+
+
 export type TagProps = {
-    level: 'Advanced' | 'Basic'
+    level: 'General' | 'Specific'
 }
 
-type InfoProps = {
-    title: string,
-    paragraph: string
-}
-
-export type AllCoursesProps = {
-    name: string,
-    tag: TagProps,
-    discription: string,
-    books: string[],
-    info?: InfoProps,
-    warning?: InfoProps,
-    contents: string[]
-}
 

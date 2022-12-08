@@ -7,6 +7,7 @@ export type ThemeProps = {
   foreground: string;
   background: string;
   secondary: string;
+  secondary500: string;
   accent: string;
   accent900: string;
   mode: string;

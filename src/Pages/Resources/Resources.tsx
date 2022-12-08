@@ -77,10 +77,11 @@ const MenuWrapper = styled(motion.button)`
 `;
 
 const OutletContainer = styled.div`
-  width: 100%;
   padding: 2em;
+  width: 100%;
   @media (min-width: 50em) {
     margin-top: 5em;
+    width: 90%;
   }
 `;
 

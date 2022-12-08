@@ -1,7 +1,6 @@
 import React from "react";
-import { AllCoursesProps } from "../constants/style-constants";
 
-function RenderCourses({}: AllCoursesProps) {
+function RenderCourses() {
   return <div>RenderCourses</div>;
 }
 

@@ -6,6 +6,14 @@ import { Lowheading } from "../../styles/reusableComponents";
 import { LevelTag } from "../../styles/reusableComponents";
 import { Notice } from "../../styles/reusableComponents";
 import { ContentInProgress } from "../../styles/reusableComponents";
+import List from "../../components/List";
+
+const contents = [
+  "What is this page?",
+  "Who this page is for?",
+  "What to look out for.",
+  "Conventions used.",
+];
 
 function ResourcesIndex() {
   return (
@@ -18,12 +26,7 @@ function ResourcesIndex() {
       </Paragraph>
       <ListContainer>
         <Lowheading>Contents on this page</Lowheading>
-        <ul>
-          <li>What is this page?</li>
-          <li>Who this page is for.</li>
-          <li>What to look out for.</li>
-          <li>Conventions used.</li>
-        </ul>
+        <List data={contents} />
       </ListContainer>
       <Subheading>What is this page?</Subheading>
       <Paragraph>
@@ -50,15 +53,15 @@ function ResourcesIndex() {
       </Paragraph>
       <Lowheading>&bull;Tags</Lowheading>
       <div style={{ paddingBlock: "1em" }}>
-        <LevelTag level="Basic">Basic</LevelTag>|
-        <LevelTag level="Advanced">Advanced</LevelTag>
+        <LevelTag level="General">General</LevelTag>|
+        <LevelTag level="Specific">Specific</LevelTag>
       </div>
       <Paragraph>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis,
-        nobis? <LevelTag level="Basic">Basic</LevelTag> denotes a Lorem, ipsum
-        dolor sit amet consectetur adipisicing elit. Harum, deserunt whereas{" "}
-        <LevelTag level="Advanced">Advanced</LevelTag> denotes Lorem ipsum dolor
-        sit amet, consectetur adipisicing elit. Placeat, unde!
+        nobis? <LevelTag level="General">General</LevelTag> denotes a Lorem,
+        ipsum dolor sit amet consectetur adipisicing elit. Harum, deserunt
+        whereas <LevelTag level="Specific">Specific</LevelTag> denotes Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Placeat, unde!
       </Paragraph>
       <Lowheading>2. Notice</Lowheading>
       <Paragraph>

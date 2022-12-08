@@ -1,10 +1,14 @@
-import { useParams } from "react-router-dom";
-import styled from "styled-components";
+import useSerializedParams from "../../hooks/useSerializedParams";
+import Algebra from "./CoursePages/Algebra";
+const values = [{ name: "Algebra", element: <Algebra done={false} /> }];
 
 function CourseDetails() {
-  const { id } = useParams();
+  const { serializedParams } = useSerializedParams();
+  const renderElement = values.find(
+    (item) => item.name.toUpperCase() === serializedParams
+  );
 
-  return <h2>This is {id?.replaceAll("-", " ")}</h2>;
+  if (renderElement) return renderElement.element;
 }
 
 export default CourseDetails;

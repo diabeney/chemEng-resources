@@ -25,14 +25,12 @@ export default function SideBar({ isActive }: SidebarProps) {
   return (
     <SideBarWrapper layout style={sideBarStyles}>
       {YEARS.map((year) => (
-        <>
-          <Accordion
-            key={year}
-            handleOpenAccordion={toggleAccordion}
-            item={year}
-            isActive={accordionIndex === YEARS.indexOf(year)}
-          />
-        </>
+        <Accordion
+          key={year}
+          handleOpenAccordion={toggleAccordion}
+          item={year}
+          isActive={accordionIndex === YEARS.indexOf(year)}
+        />
       ))}
     </SideBarWrapper>
   );

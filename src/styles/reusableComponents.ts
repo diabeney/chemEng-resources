@@ -93,10 +93,12 @@ export const Paragraph = styled.p `
 
 export const LevelTag = styled.span<TagProps>`
     padding: .2em .6em;
-    background-color: ${({level}) => level === 'Advanced' ? `${CARDS.BROWN.backgroundColor}` : `${CARDS.GREEN.backgroundColor}`};
+    background-color: ${({level}) => level === 'Specific' ? `${CARDS.BROWN.backgroundColor}` : `${CARDS.GREEN.backgroundColor}`};
     border-radius: .2em;
-    color: ${({level}) => level === 'Advanced' ? `${CARDS.BROWN.textColor}` : `${CARDS.GREEN.textColor}`};
+    color: ${({level}) => level === 'Specific' ? `${CARDS.BROWN.textColor}` : `${CARDS.GREEN.textColor}`};
     width: fit-content;
+    height: fit-content;
+    font-size: 1em;
 `
 
 type NoticeProps = {

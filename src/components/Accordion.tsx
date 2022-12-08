@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import RenderList from "./RenderList";
+import RenderSidebarList from "./RenderList";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { COURSES, CoursesProps } from "../constants/style-constants";
 import { motion } from "framer-motion";
+import CourseDetails from "../Pages/Resources/CourseDetails";
 
 type AccordionProps = {
   item: string;
@@ -15,6 +16,7 @@ function Accordion({ item, isActive, handleOpenAccordion }: AccordionProps) {
     transition: "transform 100ms cubic-bezier(0.01, 1.09, 0.78, 1)",
     transform: isActive ? "rotate(90deg)" : "rotate(0deg)",
   };
+
   return (
     <>
       <AccordionButton onClick={() => handleOpenAccordion(item)} layout>
@@ -23,7 +25,9 @@ function Accordion({ item, isActive, handleOpenAccordion }: AccordionProps) {
           <RiArrowRightSLine />
         </span>
       </AccordionButton>
-      {isActive && <RenderList data={COURSES[item as keyof CoursesProps]} />}
+      {isActive && (
+        <RenderSidebarList data={COURSES[item as keyof CoursesProps]} />
+      )}
     </>
   );
 }
