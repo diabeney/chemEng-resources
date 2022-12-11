@@ -95,12 +95,9 @@ export const CardsContainer = styled(motion.section)`
   @media (min-width: 30em) {
     grid-template-columns: repeat(2, 1fr);
   }
-  @media (min-width: 40em) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 
   @media (min-width: 60em) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 

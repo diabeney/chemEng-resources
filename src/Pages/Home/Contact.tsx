@@ -18,7 +18,7 @@ function Contact() {
             whileInView="show"
             viewport={{ amount: 0.8, once: true }}
           >
-            Turn your dreams into a reality <Mark>- seriously.</Mark>
+            Turn your dreams into a reality <Mark>- honestly.</Mark>
           </motion.h1>
           <motion.p
             variants={textAnimations}
@@ -26,8 +26,8 @@ function Contact() {
             whileInView="show"
             viewport={{ amount: 0.8, once: true }}
           >
-            Lorem, ipsum dolor. to keep up with Lorem ipsum dolor sit amet
-            consectetur.
+            Read our guide on how to prepare yourself this worthwhile and
+            ever-changing profession.
           </motion.p>
 
           <PrimaryButton padding=".6em 2em" variant="primary">

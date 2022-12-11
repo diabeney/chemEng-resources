@@ -15,16 +15,19 @@ import { motion } from "framer-motion";
 
 function EngineeringBenefits() {
   return (
-    <ActivitiesWrapper backgroundImage={BackgroundImage}>
+    <ActivitiesWrapper backgroundImage={BackgroundImage} padding="0">
       <Activities>
         <div>
           <motion.h1 {...headingAnimationsProp}>
             Why choose Chemical Engineering?
           </motion.h1>
           <motion.p {...headingAnimationsProp}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            alias, saepe dolore nihil et atque voluptatem blanditiis tempora
-            totam voluptas?
+            Chemical Engineering is the branch of engineering that deals with
+            chemical production and the manufacture of products through chemical
+            processes. Chemical engineers apply the principles of chemistry,
+            biology, physics and math to design equipment, systems and processes
+            for refining raw materials and for mixing, compounding and
+            processing chemicals to make valuable products.
           </motion.p>
         </div>
         <motion.section

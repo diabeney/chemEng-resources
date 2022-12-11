@@ -10,12 +10,14 @@ import { ToggleTheme } from "./components/ThemeWrapper";
 import CourseDetails from "./Pages/Resources/CourseDetails";
 import NavBar from "./components/NavBar";
 import ResourcesIndex from "./Pages/Resources/ResourcesIndex";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const { theme } = useContext(ToggleTheme);
   return (
     <ThemeProvider theme={theme}>
       <Router>
+        <ScrollToTop />
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />

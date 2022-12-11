@@ -9,6 +9,7 @@ function CourseDetails() {
   );
 
   if (renderElement) return renderElement.element;
+  return null;
 }
 
 export default CourseDetails;

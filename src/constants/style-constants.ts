@@ -56,12 +56,12 @@ export const SearchStyles = {
 
 export const enum HomeTexts {
     HERO_TITLE = 'Planning on starting a major in chemical engineering?',
-    HERO_PARAGRAPH = ' An insight to the chemical engineering major -Lorem ipsum dataum lie fiver in now  hagg hto jhaiejkkflsum',
+    HERO_PARAGRAPH = ' An insight to the chemical engineering major - what a chemial engineer does and the correct path to becoming a successful chemical engineer.',
     HERO_MARK = 'the guide you need.',
     SERVICES_TAG = 'How to do it?',
 }
 
-export const ActivitiesText = ['Opptunity to make an impact','Opportunity to make an impact','Opportunity to make an '];
+export const ActivitiesText = ['Opptunity to make an impact','Exciting career prospects','Modern and relevant', 'Develop a wide range of skills'];
 
 type ServiceConstantProps = {
     color: keyof CardColorProps
@@ -73,40 +73,36 @@ export const ServicesConstants: ServiceConstantProps = [
     {
         color: 'RED',
         heading: 'Read & Plan',
-        paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus',
+        paragraph: 'Read about chemical engineering and make a decision based on your interests.',
     },
     {
         color: 'GREEN',
         heading: 'Get motivation',
-        paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus',
-    },
-    {
-        color: 'BROWN',
-        heading: 'Boost Productivity',
-        paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus',
+        paragraph: 'Be introduced to well known chemical engineers and stay motivated.',
     },
     {
         color: 'BLUE',
-        heading: 'Excel',
-        paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.Temporibus',
+        heading: 'Boost Productivity',
+        paragraph: 'Get access to all resources and guide you need to improve.',
     },
+   
 ]
 
 export const ProductivityCards = [
     {
         name: 'Books',
         icon: RiBook3Line,
-        paragraph: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
+        paragraph: 'Download popular books for every course you\'ll take.'
     },
     {
         name: 'Articles',
         icon: RiArticleLine,
-        paragraph: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
+        paragraph: 'Get updated on latest happenings in the industries and academia.'
     },
     {
         name: 'Softwares',
         icon: RiCodeSLine,
-        paragraph: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
+        paragraph: 'Get introduced to softwares used by chemical engineers.'
     },
 ]
 

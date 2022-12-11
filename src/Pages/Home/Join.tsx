@@ -33,8 +33,8 @@ function Join() {
         <JoinText>
           <h1>Ready to make an impact?</h1>
           <p>
-            Join a community of Chemical engineers to help review Lorem ipsum,
-            dolor sit amet consectetur adipisicing elit.
+            Join a community of Chemical engineers students to inspire those who
+            are considering studying Chemical Engineering.
           </p>
           <PrimaryButton variant="primary" padding=".4em 1.6em">
             Join Us

@@ -8,81 +8,93 @@ import { ToggleTheme } from "./ThemeWrapper";
 import { PrimaryButton } from "../styles/reusableComponents";
 import { NavStyles } from "../constants/style-constants";
 import { Menu, NavWrapper } from "../styles/styledComponents";
+import { RiSearch2Line } from "react-icons/ri";
 import styled from "styled-components";
+import Searchbar from "./Searchbar";
 
-const NavLinks = ["Resources", "Articles", "Contribute"];
+const NavLinks = ["Resources", "Contribute"];
 
 function NavBar() {
   const [navIsOpen, setNavIsOpen] = useState(false);
   const { theme, handleTheme } = useContext(ToggleTheme);
+  const [openSearch, setOpenSearch] = useState(false);
 
   const toggleNavBar = () => {
     setNavIsOpen((isOpen) => !isOpen);
   };
 
+  const toggleSearchbox = () => {
+    setOpenSearch((isOpen) => !isOpen);
+  };
+
   return (
-    <NavContainer>
-      <Menu>
-        <RiMenu4Fill
-          size={32}
-          onClick={toggleNavBar}
-          color={theme.foreground}
-        />
-      </Menu>
-      <NavWrapper
-        style={{
-          transform: navIsOpen ? "translateX(0)" : "translateX(-100%)",
-          zIndex: "101",
-        }}
-      >
-        <RiCloseLine
-          style={NavStyles.CloseStyles}
-          color="inherit"
-          size={32}
-          onClick={toggleNavBar}
-        />
-        <div className="logo">
-          <Link
-            onClick={() => {
-              setNavIsOpen(false);
-            }}
-            to="/"
-          >
-            ChemEngResources
-          </Link>
-        </div>
-        <ul>
-          {NavLinks.map((link) => {
-            return (
-              <li key={link}>
-                <NavLink
-                  onClick={() => {
-                    setNavIsOpen(false);
-                  }}
-                  to={link.toLowerCase()}
-                >
-                  {link}
-                </NavLink>
-              </li>
-            );
-          })}
-        </ul>
-        <div className="search">
-          <input type="search" placeholder="Search" />
-        </div>
-        <div className="buttons flex ">
-          <div onClick={handleTheme} className="flex flex-cen">
-            {theme.mode === "light" ? (
-              <RiMoonLine color={theme.background} />
-            ) : (
-              <RiSunLine color={theme.foreground} />
-            )}
+    <>
+      <NavContainer>
+        {openSearch && <Searchbar handleOpenSearchbar={toggleSearchbox} />}
+        <Menu>
+          <RiMenu4Fill
+            size={32}
+            onClick={toggleNavBar}
+            color={theme.foreground}
+          />
+        </Menu>
+        <NavWrapper
+          style={{
+            transform: navIsOpen ? "translateX(0)" : "translateX(-100%)",
+            zIndex: "101",
+          }}
+        >
+          <RiCloseLine
+            style={NavStyles.CloseStyles}
+            color="inherit"
+            size={32}
+            onClick={toggleNavBar}
+          />
+          <div className="logo">
+            <Link
+              onClick={() => {
+                setNavIsOpen(false);
+              }}
+              to="/"
+            >
+              ChemEngResources
+            </Link>
           </div>
-          <PrimaryButton variant="primary">Log In</PrimaryButton>
-          <PrimaryButton variant="sec">Sign Up</PrimaryButton>
-        </div>
-      </NavWrapper>
-    </NavContainer>
+          <ul>
+            {NavLinks.map((link) => {
+              return (
+                <li key={link}>
+                  <NavLink
+                    onClick={() => {
+                      setNavIsOpen(false);
+                    }}
+                    to={link.toLowerCase()}
+                  >
+                    {link}
+                  </NavLink>
+                </li>
+              );
+            })}
+          </ul>
+          <SearchButton onClick={toggleSearchbox} className="search">
+            <RiSearch2Line size={20} />
+            <span>
+              <p>Search</p>
+            </span>
+          </SearchButton>
+          <div className="buttons flex ">
+            <div onClick={handleTheme} className="flex flex-cen">
+              {theme.mode === "light" ? (
+                <RiMoonLine color={theme.background} />
+              ) : (
+                <RiSunLine color={theme.foreground} />
+              )}
+            </div>
+            <PrimaryButton variant="primary">Log In</PrimaryButton>
+          </div>
+        </NavWrapper>
+      </NavContainer>
+    </>
   );
 }
 
@@ -95,6 +107,13 @@ const NavContainer = styled.div`
   @media (min-width: 50em) {
     height: auto;
   }
+`;
+
+const SearchButton = styled.div`
+  display: flex;
+  gap: 0.4em;
+  justify-content: center;
+  align-items: center;
 `;
 
 export default NavBar;

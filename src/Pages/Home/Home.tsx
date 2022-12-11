@@ -16,7 +16,7 @@ function Home() {
       <Services />
       <Productivity />
       <EngineeringBenefits />
-      <News />
+      {/* <News /> */}
       <Join />
       <Contact />
       <Footer />

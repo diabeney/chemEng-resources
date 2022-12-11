@@ -4,8 +4,6 @@ import styled from "styled-components";
 // <---------- Navbar ----------->
 
 export const Menu = styled.div` 
-  position: sticky;
-  top: 0;
   z-index: 100;
   width: 100%;
   margin: 0;
@@ -43,23 +41,10 @@ export const NavWrapper = styled.nav`
   }
 
   & .search {
-    width: 100vw;
+    width: fit-content;
     padding-inline: 1rem;
     font-family: "Raleway";
-
-    & input {
-      width: 100%;
-      font-family: inherit;
-      padding: 0.2rem 0.6rem;
-      border: 1px solid ${({ theme }) => theme.foreground};
-      background-color: ${({ theme }) => theme.background};
-      transition: all 300ms ease;
-      color: ${({ theme }) => theme.foreground};
-
-      &:focus {
-        border: 1px solid ${({ theme }) => theme.accent};
-      }
-    }
+    cursor: pointer;
   }
 
   & ul {
@@ -108,7 +93,7 @@ export const NavWrapper = styled.nav`
   }
 
   @media (min-width: 50em) {
-    height: 5em;
+    height: 4em;
     flex-direction: row;
     align-items: center;
     margin-inline: auto;
@@ -116,6 +101,7 @@ export const NavWrapper = styled.nav`
     position: fixed;
     top: 0;
     max-width: 1400px;
+    padding-inline: 1em;
     transform: translateX(0) !important;
 
     & > svg {
@@ -124,11 +110,8 @@ export const NavWrapper = styled.nav`
 
     & .search {
       margin-left: auto;
-      width: 15rem;
-
-      & input {
-        width: 100%;
-      }
+      width: fit-content;
+      padding-left: 0;
     }
 
     & ul {

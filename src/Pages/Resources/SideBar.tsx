@@ -38,11 +38,11 @@ export default function SideBar({ isActive }: SidebarProps) {
 
 const SideBarWrapper = styled(motion.section)`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 3em);
   padding: 1em;
   overflow-y: scroll;
   padding-top: 3em;
-  position: absolute;
+  position: fixed;
   top: 3em;
   border-bottom: 1px solid ${({ theme }) => theme.secondary};
   background-color: inherit;
