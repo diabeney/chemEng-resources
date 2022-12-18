@@ -61,7 +61,7 @@ export const enum HomeTexts {
     SERVICES_TAG = 'How to do it?',
 }
 
-export const ActivitiesText = ['Opptunity to make an impact','Exciting career prospects','Modern and relevant', 'Develop a wide range of skills'];
+export const ActivitiesText = ['Opportunity to make an impact','Exciting career prospects','Modern and relevant', 'Develop a wide range of skills'];
 
 type ServiceConstantProps = {
     color: keyof CardColorProps
