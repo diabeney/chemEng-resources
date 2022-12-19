@@ -12,7 +12,9 @@ function Hero() {
   return (
     <HeroContainer>
       <TextBox variants={textboxAnimations} initial="hidden" animate="show">
-        <motion.h1 variants={textAnimations}>{HomeTexts.HERO_TITLE}</motion.h1>
+        <motion.h1 variants={textAnimations} className="hero-heading">
+          {HomeTexts.HERO_TITLE}
+        </motion.h1>
         <motion.p variants={textAnimations}>
           {HomeTexts.HERO_PARAGRAPH}
         </motion.p>
@@ -43,20 +45,9 @@ export const TextBox = styled(motion.section)`
   padding: 1em;
   color: ${({ theme }) => theme.foreground};
 
-  & h1 {
-    font-size: 2.8em;
-    /* padding-top: 2em; */
-    line-height: 1.2;
-  }
-
-  & p {
-    padding-block: 1em;
-    font-weight: 500;
-  }
-
   @media (min-width: 50em) {
     & h1 {
-      font-size: 2em;
+      font-size: 2rem;
       line-height: 1;
       margin-top: 1em;
     }
@@ -66,7 +57,7 @@ export const TextBox = styled(motion.section)`
     & h1 {
       margin-top: 1em;
       padding-block: 0.2em;
-      font-size: 3.5em;
+      font-size: 3.5rem;
       font-weight: 700;
       line-height: 1.1;
     }

@@ -89,8 +89,7 @@ function ResourcesIndex() {
         <Lowheading>This is a Warning</Lowheading>
         <Paragraph>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
-          officia. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Ducimus, consequatur.
+          officia. Lorem
         </Paragraph>
       </Notice>
       <Lowheading>&bull;In Progess</Lowheading>
@@ -101,8 +100,7 @@ function ResourcesIndex() {
         <Lowheading>This is content is still in progress</Lowheading>
         <Paragraph>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
-          officia. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Ducimus, consequatur.
+          officia. Lorem ipsum dolor sit amet
         </Paragraph>
       </ContentInProgress>
     </div>
