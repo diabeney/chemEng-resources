@@ -46,7 +46,6 @@ const SideBarWrapper = styled(motion.section)`
   top: 3em;
   border-bottom: 1px solid ${({ theme }) => theme.secondary};
   background-color: inherit;
-
   @media (min-width: 50em) {
     position: sticky;
     margin-top: 5em;

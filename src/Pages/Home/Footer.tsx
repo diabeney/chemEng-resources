@@ -59,7 +59,7 @@ function Footer() {
             <li>
               <a href="mailto:addodiabene69@gmail.com">info@chesources.com</a>
             </li>
-            <li>Operators , Akosombo</li>
+            <li>Operators, Akosombo</li>
             <li>
               <a href="tel:+233559959049">+233 559959049</a>
             </li>

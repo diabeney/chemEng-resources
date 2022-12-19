@@ -11,6 +11,7 @@ import { Menu, NavWrapper } from "../styles/styledComponents";
 import { RiSearch2Line } from "react-icons/ri";
 import styled from "styled-components";
 import Searchbar from "./Searchbar";
+import { Wrapper } from "../styles/styledComponents";
 
 const NavLinks = ["Resources", "Contribute"];
 
@@ -98,17 +99,6 @@ function NavBar() {
   );
 }
 
-const NavContainer = styled.div`
-  width: 100vw;
-  max-width: 1400px;
-  margin-inline: auto;
-  position: relative;
-
-  @media (min-width: 50em) {
-    height: auto;
-  }
-`;
-
 const SearchButton = styled.div`
   display: flex;
   gap: 0.4em;
@@ -116,4 +106,14 @@ const SearchButton = styled.div`
   align-items: center;
 `;
 
+const NavContainer = styled.div`
+  /* height: 100vh; */
+  width: 100vw;
+  max-width: 1400px;
+  margin-inline: auto;
+
+  @media (min-width: 50em) {
+    height: auto;
+  }
+`;
 export default NavBar;

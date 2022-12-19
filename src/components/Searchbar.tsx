@@ -32,7 +32,6 @@ const SearchWrapper = styled.div`
   backdrop-filter: blur(4px);
   background-color: ${({ theme }) =>
     theme.mode === "dark" ? `hsla(237,23%,8%,.8)` : `hsla(0,0%,20%,.6)`};
-  overflow: hidden;
 
   div {
     width: 100%;

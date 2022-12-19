@@ -22,6 +22,8 @@ export const NavWrapper = styled.nav`
   position: fixed;
   top: 0;
   width: 100vw;
+  max-width: 1400px;
+  margin-inline: auto;
   height: 100vh;
   display: flex;
   gap: 2rem;
@@ -93,14 +95,12 @@ export const NavWrapper = styled.nav`
   }
 
   @media (min-width: 50em) {
-    height: 4em;
     flex-direction: row;
     align-items: center;
-    margin-inline: auto;
     width: 100vw;
     position: fixed;
     top: 0;
-    max-width: 1400px;
+    height: fit-content;
     padding-inline: 1em;
     transform: translateX(0) !important;
 
@@ -132,7 +132,7 @@ export const NavWrapper = styled.nav`
 `;
 
 export const Wrapper = styled.section`
-  width: 100vw;
+  max-width: 100vw;
   background-color: ${({ theme }) => theme.background};
 `;
 

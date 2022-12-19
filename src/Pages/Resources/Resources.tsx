@@ -43,16 +43,15 @@ function Resources() {
 }
 
 const ResourcesWrapper = styled.div`
-  display: block;
   max-width: 1400px;
+  width: 100%;
   margin-inline: auto;
   color: ${({ theme }) => theme.foreground};
   background-color: ${({ theme }) => theme.background};
   height: fit-content;
+  display: grid;
   @media (min-width: 50em) {
-    display: grid;
     grid-template-columns: 30% 1fr;
-    top: 5em;
   }
 `;
 
@@ -79,6 +78,7 @@ const MenuWrapper = styled(motion.button)`
 const OutletContainer = styled.div`
   padding: 2em;
   width: 100%;
+  margin-inline: auto;
   @media (min-width: 50em) {
     margin-top: 5em;
     width: 90%;

@@ -89,7 +89,6 @@ export const HeroContainer = styled.div`
   gap: 1rem;
   top: 0;
   padding-top: 3em;
-  overflow hidden;
   left: 0;
   place-items: center;
   background-color: ${({ theme }) => theme.background};
