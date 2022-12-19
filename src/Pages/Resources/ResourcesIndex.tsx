@@ -77,8 +77,7 @@ function ResourcesIndex() {
         </Paragraph>
         <Paragraph>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
-          officia. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Sint, distinctio.
+          officia. Lorem.
         </Paragraph>
       </Notice>
       <Lowheading>&bull;Warning</Lowheading>
