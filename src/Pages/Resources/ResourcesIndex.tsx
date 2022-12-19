@@ -75,10 +75,6 @@ function ResourcesIndex() {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque,
           amet!
         </Paragraph>
-        <Paragraph>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
-          officia. Lorem.
-        </Paragraph>
       </Notice>
       <Lowheading>&bull;Warning</Lowheading>
       <Paragraph>
