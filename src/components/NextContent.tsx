@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { RiArrowRightLine } from "react-icons/ri";
 
 export type PrevAndNextContentProps = {
   elementName: string;
@@ -11,32 +12,46 @@ function NextContent({ elementName }: PrevAndNextContentProps) {
     <NextContentContainer
       to={`/resources/${elementName.replace(/\s/gi, "-").toLowerCase()}`}
     >
-      <h1>Next Page</h1>
-      <p>{elementName}</p>
+      <section>
+        <h1>Next Page</h1>
+        <p>{elementName}</p>
+      </section>
+      <div>
+        <RiArrowRightLine />
+      </div>
     </NextContentContainer>
   );
 }
 
 export const NextContentContainer = styled(Link)`
   width: 100%;
-  padding: 1em;
+  padding: 0.6em;
   border-radius: 1em;
-  background-color: ${({ theme }) => theme.secondary};
-  border: 2px solid ${({ theme }) => theme.accent};
+  display: grid;
+  grid-template-columns: auto 20%;
+  gap: 1em;
   cursor: pointer;
 
   &:hover {
-    border: 2px solid ${({ theme }) => theme.accent900};
-    background-color: ${({ theme }) => theme.secondary500};
+    background-color: ${({ theme }) => theme.secondary};
   }
 
   h1 {
-    text-align: right;
-    padding-block: 0.6em;
+    color: ${({ theme }) => theme.accent};
+    padding-block: 0.4em;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    font-size: 1em;
   }
 
   @media (min-width: 50em) {
-    width: 15rem;
+    max-width: 20rem;
 
     h1 {
       text-align: left;
