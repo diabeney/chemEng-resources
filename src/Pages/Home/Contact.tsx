@@ -60,6 +60,12 @@ const InputWrapper = styled.div`
   p {
     padding-block: 1em;
   }
+
+  @media (min-width: 50em) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
 `;
 
 const TextWrapper = styled.section`

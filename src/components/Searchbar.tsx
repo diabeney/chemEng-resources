@@ -1,12 +1,16 @@
 import styled from "styled-components";
 import List from "./List";
-import { MouseEvent, useEffect, useRef } from "react";
+import RenderList from "./RenderList";
+import { MouseEvent, useEffect, useRef, useState } from "react";
+import { CoursesComponents } from "../Pages/Resources/CourseDetails";
 type SearchProps = {
   handleOpenSearchbar: () => void;
 };
 
 export default function Searchbar({ handleOpenSearchbar }: SearchProps) {
-  const divRef = useRef(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState<string[]>([]);
+  const searchDivRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -15,27 +19,41 @@ export default function Searchbar({ handleOpenSearchbar }: SearchProps) {
       inputRef.current.focus();
     }
   }, []);
+
   const handleOpenModal = (e: MouseEvent) => {
-    if (e.target === inputRef.current || e.target === divRef.current) {
+    if (e.target === inputRef.current || e.target === searchDivRef.current) {
       return null;
     } else {
       handleOpenSearchbar();
     }
   };
+
+  const filterSearchInput = (value: string) => {
+    setSearchQuery(value);
+    let newArray: string[] = [];
+    if (!!value.length) {
+      let filteredArray = CoursesComponents.filter((course) =>
+        course.name.match(new RegExp(`${value}`, "ig"))
+      );
+      let foundCourses = filteredArray.map((item) => item.name);
+      newArray = [...foundCourses];
+    } else newArray = [];
+    setSearchResults(newArray);
+  };
   return (
     <SearchWrapper onClick={(e) => handleOpenModal(e)}>
-      <div ref={divRef}>
+      <div ref={searchDivRef}>
         <form>
-          <input type="text" placeholder="Search courses" ref={inputRef} />
+          <input
+            type="text"
+            placeholder="Search courses"
+            ref={inputRef}
+            value={searchQuery}
+            onChange={(e) => filterSearchInput(e.target.value)}
+          />
         </form>
         <SearchResults>
-          <List
-            data={[
-              "Algebra",
-              "Calculus of several Variables",
-              "Communication Skills",
-            ]}
-          />
+          <RenderList data={searchResults} />
         </SearchResults>
       </div>
     </SearchWrapper>
@@ -50,12 +68,14 @@ const SearchResults = styled.section`
     width: 100%;
     padding: 0;
 
-    li {
+    li a {
       padding: 1rem 0.6rem;
       margin-block: 0.6rem;
       border-radius: 0.2em;
       border: 1px solid ${({ theme }) => theme.secondary500};
       color: ${({ theme }) => theme.foreground};
+      display: block;
+      width: 100%;
 
       &:hover {
         background-color: ${({ theme }) => theme.accent};
@@ -92,7 +112,6 @@ const SearchWrapper = styled.div`
       width: 90%;
       display: flex;
       margin-inline: auto;
-
       border-bottom: 1px solid
         ${({ theme }) => (theme.mode === "light" ? theme.foreground : "#fef")};
       color: ${({ theme }) =>

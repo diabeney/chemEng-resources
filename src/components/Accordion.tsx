@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import RenderSidebarList from "./RenderList";
+import RenderSidebarList from "./RenderSidebarList";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { COURSES, CoursesProps } from "../constants/style-constants";
 import { motion } from "framer-motion";

@@ -20,7 +20,7 @@ type CoursesComponentProps = {
   name: string;
   element: JSX.Element;
 }[];
-const CoursesComponents: CoursesComponentProps = [
+export const CoursesComponents: CoursesComponentProps = [
   { name: "Algebra", element: <Algebra done={true} /> },
   { name: "Applied Electricity", element: <AppliedElectricity /> },
   {
@@ -48,7 +48,7 @@ const CoursesComponents: CoursesComponentProps = [
 function CourseDetails() {
   const { formattedParams } = useFormattedParams();
   const renderElement = CoursesComponents.find(
-    (item) => item.name.toUpperCase() === formattedParams
+    (item) => item.name.toLowerCase() === formattedParams
   );
 
   const renderElementIndex = CoursesComponents.findIndex((course) => {
