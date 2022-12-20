@@ -12,12 +12,12 @@ function Hero() {
   return (
     <HeroContainer>
       <TextBox variants={textboxAnimations} initial="hidden" animate="show">
-        <motion.h1 variants={textAnimations} className="hero-heading">
+        <Title variants={textAnimations} className="hero-heading">
           {HomeTexts.HERO_TITLE}
-        </motion.h1>
-        <motion.p variants={textAnimations}>
+        </Title>
+        <HeroParagraph variants={textAnimations}>
           {HomeTexts.HERO_PARAGRAPH}
-        </motion.p>
+        </HeroParagraph>
         <PrimaryButton
           variant="primary"
           padding=".8em 1em"
@@ -40,6 +40,19 @@ function Hero() {
     </HeroContainer>
   );
 }
+
+const Title = styled(motion.h1)`
+  font-size: 2rem;
+  padding-bottom: 0.8em;
+`;
+
+const HeroParagraph = styled(motion.p)`
+  font-size: 1rem;
+  padding-bottom: 2rem;
+  @media (min-width: 50em) {
+    font-size: 1.1rem;
+  }
+`;
 
 export const TextBox = styled(motion.section)`
   padding: 1em;

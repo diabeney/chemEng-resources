@@ -54,7 +54,7 @@ const InputWrapper = styled.div`
   display: grid;
   place-content: center;
   h1 {
-    font-size: 3em;
+    font-size: 2.2rem;
     line-height: 1.2;
   }
   p {

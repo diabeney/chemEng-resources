@@ -109,7 +109,7 @@ export const ServicesPage = styled.section`
   color: ${({ theme }) => theme.foreground};
   & h1 {
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2em;
   }
 
   & div {

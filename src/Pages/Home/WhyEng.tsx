@@ -7,11 +7,11 @@ import { CARDS } from "../../constants/style-constants";
 import { Container } from "../../styles/reusableComponents";
 import {
   headingAnimationsProp,
-  textAnimations,
   chemCardAnimations,
   chemCardsContainerAnimations,
 } from "../../constants/framer-animations";
 import { motion } from "framer-motion";
+import { Paragraph } from "../../styles/reusableComponents";
 
 function EngineeringBenefits() {
   return (
@@ -21,14 +21,14 @@ function EngineeringBenefits() {
           <motion.h1 {...headingAnimationsProp}>
             Why choose Chemical Engineering?
           </motion.h1>
-          <motion.p {...headingAnimationsProp}>
+          <Paragraph>
             Chemical Engineering is the branch of engineering that deals with
             chemical production and the manufacture of products through chemical
             processes. Chemical engineers apply the principles of chemistry,
             biology, physics and math to design equipment, systems and processes
             for refining raw materials and for mixing, compounding and
             processing chemicals to make valuable products.
-          </motion.p>
+          </Paragraph>
         </div>
         <motion.section
           variants={chemCardsContainerAnimations}
@@ -83,7 +83,7 @@ export const Activities = styled(Container)`
       top: 0;
 
       h1 {
-        font-size: 2.5em;
+        font-size: 2.2rem;
         color: white;
       }
 

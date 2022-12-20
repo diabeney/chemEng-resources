@@ -88,6 +88,10 @@ const JoinText = styled.section`
   display: grid;
   place-content: center;
   padding: 1em;
+
+  h1 {
+    font-size: 2.2rem;
+  }
   @media (min-width: 50em) {
     h1 {
       font-size: 3em;

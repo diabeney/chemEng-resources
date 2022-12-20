@@ -51,7 +51,7 @@ export const ProductivityContainer = styled(Container)`
     theme.mode === "light" ? `#Fff` : `hsl(220, 15%, 16%)`};
 
   & h1 {
-    font-size: 2em;
+    font-size: 2rem;
     line-height: 1.2;
     text-align: center;
     position: relative;

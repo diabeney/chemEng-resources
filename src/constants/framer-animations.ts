@@ -46,7 +46,7 @@ export const headingAnimation = {
     y: 0,
     transition: {
       type: "spring",
-      bounce: 0.5,
+      bounce: 0.2,
       duration: 2,
     },
   },
@@ -60,6 +60,8 @@ export const headingAnimationsProp = {
     once: true,
   },
 };
+
+
 
 
 export const serviceAnimations = {

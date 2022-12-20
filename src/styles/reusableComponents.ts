@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import { CARDS, COLORS } from './../constants/style-constants';
 import { motion } from 'framer-motion';
 import { GridProps } from '../constants/style-constants';
@@ -83,6 +84,7 @@ export const Lowheading = styled.h4`
 `
 
 export const Paragraph = styled.p `
+    color: ${({theme}) => theme.foreground};
     font-size: 1em;
     @media(min-width: 50em) {
         font-size: 1.2em;

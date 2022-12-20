@@ -31,7 +31,7 @@ function Footer() {
         variants={chemCardsContainerAnimations}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.8 }}
+        viewport={{ once: true, amount: 0.6 }}
       >
         <NewsletterContainer variants={chemCardAnimations}>
           <h2>Get latest updates</h2>
@@ -95,7 +95,6 @@ const CopyrightBox = styled.section`
   border-top: 1px solid
     ${({ theme }) =>
       theme.mode === "light" ? `rgb(223,224,227)` : `hsl(220, 15%,36%)`};
-
   @media (min-width: 30em) {
     grid-column: span 2;
   }
@@ -113,11 +112,9 @@ const FooterWrapper = styled(motion.section)`
   gap: 1em;
   margin-top: 3em;
   place-content: center;
-
   @media (min-width: 30em) {
     grid-template-columns: repeat(2, 1fr);
   }
-
   @media (min-width: 50em) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -126,11 +123,9 @@ const FooterWrapper = styled(motion.section)`
 const NewsletterContainer = styled(motion.section)`
   padding: 1em;
   height: fit-content;
-
   h2 {
     padding-block: 0.6em;
   }
-
   p {
     font-size: 1em;
   }
@@ -149,13 +144,11 @@ const NewsletterContainer = styled(motion.section)`
         ${({ theme }) =>
           theme.mode === "light" ? `rgb(233,234,237)` : `hsl(220,15%,16%)`};
       font-size: 1em;
-
       &:focus {
         outline: none;
         border-bottom: 1px solid ${({ theme }) => theme.accent};
       }
     }
-
     button {
       aspect-ratio: 1/1;
       height: 2.3em;
@@ -165,11 +158,9 @@ const NewsletterContainer = styled(motion.section)`
       background-color: ${({ theme }) => theme.accent};
     }
   }
-
   @media (min-width: 30em) {
     grid-column: span 2;
   }
-
   @media (min-width: 50em) {
     grid-column: span 1;
   }
@@ -178,10 +169,8 @@ const NewsletterContainer = styled(motion.section)`
 const PageLinksContainer = styled(motion.section)`
   display: flex;
   gap: 0.8em;
-
   ul {
     padding: 1em;
-
     li {
       padding-block: 0.6em;
       transition: transform 250ms cubic-bezier(0.01, 1.09, 0.78, 1);
