@@ -65,6 +65,10 @@ const InputWrapper = styled.div`
     h1 {
       font-size: 3rem;
     }
+
+    p {
+      font-size: 1.2rem;
+    }
   }
 `;
 

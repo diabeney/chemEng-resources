@@ -135,7 +135,13 @@ export const Activities = styled(Container)`
         width: 50%;
         padding: 2em;
       }
+
+       
+    p {
+      font-size: 1.2rem;
     }
+  }
+  
   
   `;
 

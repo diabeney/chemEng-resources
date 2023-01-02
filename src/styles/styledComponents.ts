@@ -45,7 +45,7 @@ export const NavWrapper = styled.nav`
   & .search {
     width: fit-content;
     padding-inline: 1rem;
-    font-family: "Raleway";
+    font-family: inherit;
     cursor: pointer;
   }
 
@@ -62,7 +62,7 @@ export const NavWrapper = styled.nav`
       border-bottom: 1px solid hsl(0, 0%, 50%);
 
       & a {
-        font-family: "Raleway";
+        font-family: inherit;
         font-weight: 500;
 
         &:hover {

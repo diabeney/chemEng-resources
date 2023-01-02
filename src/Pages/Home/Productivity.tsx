@@ -136,6 +136,12 @@ export const ResourceCard = styled(motion.article)`
   p {
     font-size: 1em;
   }
+
+  @media (min-width: 50em) {
+    p {
+      font-size: 1.2rem;
+    }
+  }
 `;
 
 export default Productivity;

@@ -50,7 +50,7 @@ const HeroParagraph = styled(motion.p)`
   font-size: 1rem;
   padding-bottom: 2rem;
   @media (min-width: 50em) {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 `;
 

@@ -46,12 +46,6 @@ export const NavStyles = {
         } as React.CSSProperties,
 }
 
-export const SearchStyles = {
-    marginLeft: 'auto',
-    fontFamily: 'Raleway'
-}
-
-
 // <-------- STATIC TEXTS --------->
 
 export const enum HomeTexts {

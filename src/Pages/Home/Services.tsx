@@ -80,6 +80,12 @@ export const Card = styled(motion.article)<CardProps>`
     text-align: center;
     color: ${({ theme }) => theme.foreground};
   }
+
+  @media (min-width: 50em) {
+    p {
+      font-size: 1.2rem;
+    }
+  }
 `;
 
 export const CardsContainer = styled(motion.section)`

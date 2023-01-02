@@ -92,11 +92,15 @@ const JoinText = styled.section`
   h1 {
     font-size: 2.2rem;
   }
+
   @media (min-width: 50em) {
     h1 {
       font-size: 3em;
     }
     width: 50%;
+    p {
+      font-size: 1.2rem;
+    }
   }
 `;
 
