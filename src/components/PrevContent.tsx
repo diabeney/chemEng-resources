@@ -21,6 +21,8 @@ function PrevContent({ elementName }: PrevAndNextContentProps) {
 
 const PrevContentContainer = styled(NextContentContainer)`
   grid-template-columns: 20% auto;
+  margin-left: 0;
+
   div {
   }
 

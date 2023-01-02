@@ -31,6 +31,7 @@ export const NextContentContainer = styled(Link)`
   grid-template-columns: auto 20%;
   gap: 1em;
   cursor: pointer;
+  margin-left: auto;
 
   &:hover {
     background-color: ${({ theme }) => theme.secondary};

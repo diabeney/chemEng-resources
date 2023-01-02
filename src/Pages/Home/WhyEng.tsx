@@ -109,6 +109,7 @@ export const Activities = styled(Container)`
         gap: .4em;
         border-radius: .4em;
         color: ${({ theme }) => theme.accent};
+        transition: background-color 300ms cubic-bezier(0.01, 1.09, 0.78, 1);
         
         &:hover {
         background-color: ${({ theme }) => theme.accent};

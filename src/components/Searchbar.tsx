@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import List from "./List";
 import RenderList from "./RenderList";
 import { MouseEvent, useEffect, useRef, useState } from "react";
 import { CoursesComponents } from "../Pages/Resources/CourseDetails";
@@ -143,6 +142,4 @@ const SearchWrapper = styled.div`
       margin-inline: auto;
     }
   }
-
-  /* backdrop-filter: blur(3px); */
 `;
