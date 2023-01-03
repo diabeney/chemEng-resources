@@ -162,4 +162,16 @@ export const ContentInProgress = styled(Notice) `
         color: ${CARDS.BROWN.textColor};
     }
 `
+export const BooksContainer = styled.div`
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+   
+   @media(min-width: 30em) {
+    grid-template-columns: repeat(2, 1fr);
+   }
+   @media(min-width: 50em) {
+    grid-template-columns: repeat(3, 1fr);
+   }
+`
 

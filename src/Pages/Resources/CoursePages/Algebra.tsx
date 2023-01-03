@@ -1,4 +1,3 @@
-import React from "react";
 import { Mainheading } from "../../../styles/reusableComponents";
 import { Subheading } from "../../../styles/reusableComponents";
 import { Lowheading } from "../../../styles/reusableComponents";
@@ -8,32 +7,34 @@ import InProgress from "../../../components/InProgress";
 import { Paragraph } from "../../../styles/reusableComponents";
 import List from "../../../components/List";
 import { ListContainer } from "../../../styles/reusableComponents";
-import HeadingAndText from "../../../components/HeadingAndText";
-
-type AlgebraProps = {
-  done: boolean;
-};
+import Book from "../../../components/Books";
+import { BooksContainer } from "../../../styles/reusableComponents";
+import PageLinks from "../../../components/PageLinks";
+import ReportIssue from "../../../components/ReportIssue";
 
 const contents = ["Must Learn Topics", "Popular Books", "Useful Resources"];
-const TopicsAndDescription = [
+const booksData = [
   {
-    name: "Complex Numbers",
-    description:
-      "In mathematics, a complex number is a number that can be written in the form a + bi, where a and b are real numbers and i is the imaginary unit. Complex numbers are also used to solve equations that have no real solutions, such as quadratic equations with negative discriminants. They are used in geometry to represent rotations and translations in the plane. Complex numbers are used in chemical engineering in a variety of ways. For example, they may be used to solve equations that arise in the design of chemical plants or in the analysis of chemical reactions. They may also be used to represent oscillating or rotating systems, such as mixing tanks or chemical reactors.",
+    title: "Linear Algebra and it's Application",
+    author: "Gilbert Strang",
+    img_url:
+      "https://cdn.asaha.com/assets/thumbs/997/9979cffe8c220442550f77b602cbdc49.jpg",
   },
   {
-    name: "Matrix algebra",
-    description:
-      "Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, esse!Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, ad!",
+    title: "Elementary Linear Algebra 10th edition",
+    author: "Howard Anton",
+    img_url:
+      "https://cdn.asaha.com/assets/thumbs/4e2/4e2b1f151d4594dfbcaeb31cbeb96561.jpg",
   },
   {
-    name: "Vector algebra and application",
-    description:
-      "Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, esse!Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, ad!",
+    title: "Schaum's Outline of Linear Algebra",
+    author: "Schaums",
+    img_url:
+      "https://cdn.asaha.com/assets/thumbs/d0e/d0ede8b0ffab15ca808db2ff3515cb03.jpg",
   },
 ];
 
-function Algebra({ done }: AlgebraProps) {
+function Algebra({ done }: { done: boolean }) {
   return (
     <>
       <Mainheading>Algebra</Mainheading>
@@ -118,6 +119,75 @@ function Algebra({ done }: AlgebraProps) {
         chemical plant.
       </Paragraph>
       <Subheading>{contents[1]}</Subheading>
+      <Notice variant="Warning">
+        <Lowheading>Attention</Lowheading>
+        <Paragraph>
+          Due to copyright issues, you cannot download the books directly here,
+          however you can search and download them on{" "}
+          <a
+            href="https://www.pdfdrive.com/"
+            target="_blank"
+            className="page__link"
+          >
+            PDFdrive
+          </a>
+        </Paragraph>
+      </Notice>
+      <BooksContainer>
+        {booksData.map((book) => {
+          return (
+            <Book
+              title={book.title}
+              author={book.author}
+              imgUrl={book.img_url}
+              key={book.title}
+            />
+          );
+        })}
+      </BooksContainer>
+      <Subheading>{contents[2]}</Subheading>
+      <Lowheading>Videos</Lowheading>
+      <Paragraph>
+        <PageLinks to="https://www.youtube.com/watch?v=yRwQ7A6jVLk&list=PLmqUUxWAllkGD6tKpbDgi7S4e45NYt_57">
+          &bull; Organic Chemistry Tutor - Introduction to Matrices - YouTube.
+        </PageLinks>
+      </Paragraph>
+      <Paragraph>
+        <PageLinks to="https://www.youtube.com/watch?v=JnTa9XtvmfI&t=35542s">
+          &bull; FreeCodeCamp - Linear Algebra Full College Course - YouTube.
+        </PageLinks>
+      </Paragraph>
+      <Paragraph>
+        <PageLinks to="https://www.youtube.com/watch?v=fNk_zzaMoSs">
+          &bull; 3Blue1Brown - Essence of Linear Algebra - YouTube.
+        </PageLinks>
+      </Paragraph>
+      <Paragraph>
+        <PageLinks to="https://www.youtube.com/watch?v=OQz1ydBcQSA">
+          &bull; Organic Chemistry Tutor - Complex numbers basic operations -
+          YouTube.
+        </PageLinks>
+      </Paragraph>
+      <Paragraph>
+        <PageLinks to="https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/vectors/v/vector-introduction-linear-algebra">
+          &bull; KhanAcademy - Vector Intro for Linear Algebra
+        </PageLinks>
+      </Paragraph>
+      <Lowheading>Questions and Answers</Lowheading>
+      <Paragraph>
+        <PageLinks to="https://web.pdx.edu/~erdman/LINALG/Linalg_pdf.pdf">
+          &bull;John M. Erdman, Portland State University - Exercises and
+          problems in Linear Algebra
+        </PageLinks>
+      </Paragraph>
+      <Paragraph>
+        <PageLinks to="https://byjus.com/maths/linear-algebra/">
+          &bull;BYJU'S - Linear Algebra
+        </PageLinks>
+      </Paragraph>
+      <br />
+      <br />
+      <ReportIssue />
     </>
   );
 }

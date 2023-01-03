@@ -6,6 +6,7 @@ import { Lowheading } from "../../styles/reusableComponents";
 import { LevelTag } from "../../styles/reusableComponents";
 import { Notice } from "../../styles/reusableComponents";
 import { ContentInProgress } from "../../styles/reusableComponents";
+import ReportIssue from "../../components/ReportIssue";
 import List from "../../components/List";
 
 const contents = [
@@ -128,6 +129,35 @@ function ResourcesIndex() {
           but please report any issue you find on the page.
         </Paragraph>
       </ContentInProgress>
+      <Subheading>Requirements for graduation</Subheading>
+      <Paragraph>1. Passing all required courses.</Paragraph>
+      <br />
+      <Paragraph>
+        2. Completing a minimum of <b>six weeks</b> engineering practice in
+        industry during the long vacation.
+      </Paragraph>
+      <br />
+      <Paragraph>
+        3. Achieving a minimum of <b>140 credit hours</b>.
+      </Paragraph>
+      <br />
+      <Paragraph>
+        4. Achieving a minimum cumulative weighted average(CWA) of <b>45%</b>.
+      </Paragraph>
+      <br />
+      <Paragraph>
+        5. Satisfying all other requirements of the Department, the college of
+        Engineering and the University.
+      </Paragraph>
+      <br />
+      <br />
+      <Paragraph>
+        You can read more about assessment and the grading system in the
+        official <a className="page__link">Chemical engineering brochure.</a>
+      </Paragraph>
+      <br />
+      <br />
+      <ReportIssue />
     </div>
   );
 }
