@@ -107,9 +107,9 @@ function ResourcesIndex() {
           concept.
         </Paragraph>
       </Notice>
-      <Lowheading>&bull;Warning</Lowheading>
+      <Lowheading>&bull;Problem</Lowheading>
       <Notice variant="Warning">
-        <Lowheading>Warning</Lowheading>
+        <Lowheading>Problem</Lowheading>
         <Paragraph>
           Contents in this block denotes information that should be avoided or
           that requires extra attention.

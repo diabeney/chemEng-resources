@@ -37,7 +37,7 @@ const booksData = [
 function Algebra({ done }: { done: boolean }) {
   return (
     <>
-      <Mainheading>Algebra</Mainheading>
+      <Mainheading>Algebra (MATH 151)</Mainheading>
       <div style={{ paddingBlock: "1em" }}>
         <LevelTag level="General">General</LevelTag>
       </div>
@@ -120,7 +120,7 @@ function Algebra({ done }: { done: boolean }) {
       </Paragraph>
       <Subheading>{contents[1]}</Subheading>
       <Notice variant="Warning">
-        <Lowheading>Attention</Lowheading>
+        <Lowheading>Problem</Lowheading>
         <Paragraph>
           Due to copyright issues, you cannot download the books directly here,
           however you can search and download them on{" "}
