@@ -5,7 +5,7 @@ import { LevelTag } from "../../../styles/reusableComponents";
 function AppliedElectricity() {
   return (
     <>
-      <Mainheading>Applied Electricity</Mainheading>
+      <Mainheading>Applied Electricity (EE 151)</Mainheading>
       <LevelTag level="General">General</LevelTag>
       <InProgress />
     </>
