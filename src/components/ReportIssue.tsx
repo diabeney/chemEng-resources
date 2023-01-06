@@ -3,9 +3,9 @@ import { Paragraph } from "../styles/reusableComponents";
 function ReportIssue() {
   return (
     <Paragraph>
-      Found an issue on this page? Please correct it{" "}
+      Found an issue on this page?{" "}
       <a target="_blank" className="page__link">
-        here.
+        Please correct it here.
       </a>
     </Paragraph>
   );

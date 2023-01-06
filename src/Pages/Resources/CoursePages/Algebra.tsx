@@ -11,8 +11,7 @@ import Book from "../../../components/Books";
 import { BooksContainer } from "../../../styles/reusableComponents";
 import PageLinks from "../../../components/PageLinks";
 import ReportIssue from "../../../components/ReportIssue";
-
-const contents = ["Must Learn Topics", "Popular Books", "Useful Resources"];
+import { contentsList } from "../../../constants/data";
 const booksData = [
   {
     title: "Linear Algebra and it's Application",
@@ -37,10 +36,10 @@ const booksData = [
 function Algebra({ done }: { done: boolean }) {
   return (
     <>
-      <Mainheading>Algebra (MATH 151)</Mainheading>
-      <div style={{ paddingBlock: "1em" }}>
-        <LevelTag level="General">General</LevelTag>
-      </div>
+      <Mainheading>Algebra</Mainheading>
+      <Paragraph style={{ paddingBlock: "1em" }}>
+        <LevelTag level="General">MATH 151</LevelTag>
+      </Paragraph>
       <Paragraph>
         Algebra is a branch of mathematics in which letters and symbols are used
         to represent numbers and quantities in equations and formulas. It is
@@ -51,9 +50,9 @@ function Algebra({ done }: { done: boolean }) {
       {done || <InProgress />}
       <ListContainer>
         <Lowheading>Contents on this page</Lowheading>
-        <List data={contents} />
+        <List data={contentsList} />
       </ListContainer>
-      <Subheading>{contents[0]}</Subheading>
+      <Subheading>{contentsList[0]}</Subheading>
       <Lowheading>&bull;Complex Numbers</Lowheading>
       <Paragraph>
         In mathematics, a complex number is a number that can be written in the
@@ -118,7 +117,7 @@ function Algebra({ done }: { done: boolean }) {
         the geometry of process equipment or the movement of materials within a
         chemical plant.
       </Paragraph>
-      <Subheading>{contents[1]}</Subheading>
+      <Subheading>{contentsList}</Subheading>
       <Notice variant="Warning">
         <Lowheading>Problem</Lowheading>
         <Paragraph>
@@ -145,7 +144,7 @@ function Algebra({ done }: { done: boolean }) {
           );
         })}
       </BooksContainer>
-      <Subheading>{contents[2]}</Subheading>
+      <Subheading>{contentsList[2]}</Subheading>
       <Lowheading>Videos</Lowheading>
       <Paragraph>
         <PageLinks to="https://www.youtube.com/watch?v=yRwQ7A6jVLk&list=PLmqUUxWAllkGD6tKpbDgi7S4e45NYt_57">

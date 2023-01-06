@@ -51,7 +51,7 @@ const ResourcesWrapper = styled.div`
   height: fit-content;
   display: grid;
   @media (min-width: 50em) {
-    grid-template-columns: 30% 1fr;
+    grid-template-columns: 30% auto;
   }
 `;
 
@@ -76,9 +76,10 @@ const MenuWrapper = styled(motion.button)`
 `;
 
 const OutletContainer = styled.div`
-  padding: 2em;
+  padding: 1em;
   width: 100%;
   margin-inline: auto;
+  display: grid;
   @media (min-width: 50em) {
     margin-top: 5em;
     width: 90%;

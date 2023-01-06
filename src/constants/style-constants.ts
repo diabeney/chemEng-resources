@@ -196,11 +196,9 @@ export const COURSES: CoursesProps = {
   Fourth: FOURTH_YEAR_COURESES.map(course => setCourseData(course)),
 };
 
-
-
-
 export type TagProps = {
     level: 'General' | 'Specific'
 }
 
+export const saveData = <T>(key: string, data: T ) => localStorage.setItem(key, JSON.stringify(data));
 

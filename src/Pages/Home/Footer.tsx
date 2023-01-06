@@ -140,9 +140,7 @@ const NewsletterContainer = styled(motion.section)`
       border: none;
       color: inherit;
       background: transparent;
-      border-bottom: 1px solid
-        ${({ theme }) =>
-          theme.mode === "light" ? `rgb(233,234,237)` : `hsl(220,15%,16%)`};
+      border-bottom: 1px solid ${({ theme }) => theme.secondary500};
       font-size: 1em;
       &:focus {
         outline: none;

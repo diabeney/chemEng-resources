@@ -86,14 +86,16 @@ function ResourcesIndex() {
       <Subheading>Conventions used</Subheading>
       <Lowheading>&bull;Tags</Lowheading>
       <div style={{ paddingBlock: "1em" }}>
-        <LevelTag level="General">General</LevelTag>|
-        <LevelTag level="Specific">Specific</LevelTag>
+        <LevelTag level="General">Course Code</LevelTag>|
+        <LevelTag level="Specific">Course Code</LevelTag>
       </div>
       <Paragraph>
-        The various pages use tags such as{" "}
-        <LevelTag level="General">General</LevelTag> - which denotes a general
-        information whereas the <LevelTag level="Specific">Specific</LevelTag>{" "}
-        denotes an information that's specific to KNUST.
+        The various pages use tags to show the codes of the courses in the
+        department. Tags with green background like{" "}
+        <LevelTag level="General">MATH 151</LevelTag> denotes a general course
+        whereas those with pale orange background like{" "}
+        <LevelTag level="Specific">CENG 251</LevelTag> denotes a course that's
+        specific to KNUST.
       </Paragraph>
       <Lowheading>2. Notice</Lowheading>
       <Paragraph>

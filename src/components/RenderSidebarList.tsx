@@ -34,7 +34,7 @@ function RenderSidebarList({
   if (!data.length) renderEmpty;
 
   return (
-    <AccordionItem style={{ paddingInline: "1em" }}>
+    <AccordionItem style={{ paddingInline: "0" }}>
       {updatedCourses.map((item) => (
         <ListItem key={item.course} done={item.done}>
           <Link
@@ -50,7 +50,6 @@ function RenderSidebarList({
 }
 
 const AccordionItem = styled(motion.ul)`
-  padding-inline: 1em;
   position: relative;
   z-index: 1;
 `;

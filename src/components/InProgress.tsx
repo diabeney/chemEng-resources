@@ -8,8 +8,8 @@ function InProgress() {
     <ContentInProgress variant="In Progress">
       <Lowheading>Still in development</Lowheading>
       <Paragraph>
-        This page is not yet complete Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Asperiores, ut!
+        This page is still being developed. You can still go ahead and read but
+        please report any issue you find on the page.
       </Paragraph>
     </ContentInProgress>
   );

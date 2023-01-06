@@ -23,7 +23,7 @@ export default function SideBar({ isActive }: SidebarProps) {
   };
 
   return (
-    <SideBarWrapper layout style={sideBarStyles}>
+    <SideBarWrapper style={sideBarStyles}>
       {YEARS.map((year) => (
         <Accordion
           key={year}
@@ -39,7 +39,7 @@ export default function SideBar({ isActive }: SidebarProps) {
 const SideBarWrapper = styled(motion.section)`
   width: 100%;
   height: calc(100vh - 3em);
-  padding: 1em;
+  padding: 1rem;
   overflow-y: scroll;
   padding-top: 3em;
   position: fixed;

@@ -2,6 +2,7 @@ import { COLORS } from "../constants/style-constants";
 import { useState, createContext, useEffect } from "react";
 import React from "react";
 import { ColorProps } from "../constants/style-constants";
+import { saveData } from "../constants/style-constants";
 
 export type ThemeProps = {
   foreground: string;
@@ -22,7 +23,7 @@ export const ToggleTheme = createContext({} as ThemeContextProps);
 
 const loadThemeMode = (key: string): string => {
   let themeMode = localStorage.getItem(key);
-  return themeMode ? themeMode : "light";
+  return themeMode ? JSON.parse(themeMode) : "light";
 };
 
 //
@@ -31,7 +32,7 @@ function ThemeWrapper({ children }: React.PropsWithChildren) {
   const [theme, setTheme] = useState(COLORS[mode]);
 
   useEffect(() => {
-    localStorage.setItem("chemEng-theme-mode", theme.mode);
+    saveData("chemEng-theme-mode", theme.mode);
   }, [theme]);
 
   const handleTheme = () => {

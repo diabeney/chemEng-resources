@@ -18,16 +18,6 @@ function Hero() {
         <HeroParagraph variants={textAnimations}>
           {HomeTexts.HERO_PARAGRAPH}
         </HeroParagraph>
-        <PrimaryButton
-          variant="primary"
-          padding=".8em 1em"
-          variants={textAnimations}
-        >
-          <span className="flex flex-cen">
-            Get started
-            <RiArrowRightLine />
-          </span>
-        </PrimaryButton>
       </TextBox>
       <ImageContainer>
         <motion.img
@@ -73,10 +63,6 @@ export const TextBox = styled(motion.section)`
       font-size: 3.5rem;
       font-weight: 700;
       line-height: 1.1;
-    }
-
-    button {
-      margin-block: 0.6em;
     }
   }
 `;
