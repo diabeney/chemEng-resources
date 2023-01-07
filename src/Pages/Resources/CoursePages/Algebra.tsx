@@ -158,7 +158,7 @@ function Algebra({ done }: { done: boolean }) {
       </Paragraph>
       <Paragraph>
         <PageLinks to="https://www.youtube.com/watch?v=fNk_zzaMoSs">
-          &bull; 3Blue1Brown - Essence of Linear Algebra - YouTube.
+          &bull; 3Blue1Brown - Essence of Linear Algebra - YouTube Playlist.
         </PageLinks>
       </Paragraph>
       <Paragraph>
