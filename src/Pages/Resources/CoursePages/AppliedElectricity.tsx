@@ -6,6 +6,7 @@ import { contentsList } from "../../../constants/data";
 import { ListContainer } from "../../../styles/reusableComponents";
 import { Lowheading } from "../../../styles/reusableComponents";
 import List from "../../../components/List";
+import { Subheading } from "../../../styles/reusableComponents";
 
 function AppliedElectricity() {
   return (
@@ -28,6 +29,7 @@ function AppliedElectricity() {
         <Lowheading>Contents on this page</Lowheading>
         <List data={contentsList} />
       </ListContainer>
+      <Subheading>{contentsList[0]}</Subheading>
     </>
   );
 }
