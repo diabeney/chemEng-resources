@@ -30,6 +30,10 @@ function AppliedElectricity() {
         <List data={contentsList} />
       </ListContainer>
       <Subheading>{contentsList[0]}</Subheading>
+      <Paragraph>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quis
+        doloremque fugiat corporis? Reiciendis, explicabo?
+      </Paragraph>
     </>
   );
 }
