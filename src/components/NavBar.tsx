@@ -13,7 +13,7 @@ import styled from "styled-components";
 import Searchbar from "./Searchbar";
 import { Wrapper } from "../styles/styledComponents";
 
-const NavLinks = ["Resources", "Contribute"];
+const NavLinks = ["Resources", "Lecturers", "Gallery", "Executives"];
 
 function NavBar() {
   const [navIsOpen, setNavIsOpen] = useState(false);

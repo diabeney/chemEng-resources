@@ -117,7 +117,7 @@ function Algebra({ done }: { done: boolean }) {
         the geometry of process equipment or the movement of materials within a
         chemical plant.
       </Paragraph>
-      <Subheading>{contentsList}</Subheading>
+      <Subheading>{contentsList[1]}</Subheading>
       <Notice variant="Warning">
         <Lowheading>Problem</Lowheading>
         <Paragraph>
