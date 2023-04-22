@@ -37,7 +37,7 @@ function Footer() {
           <h2>Get latest updates</h2>
           <p>Subscribe to our weekly newsletters to Lorem, ipsum dolor.</p>
           <form>
-            <input type="text" placeholder="kofi@example.com" />
+            <input type="text" placeholder="kofi@cheesa.com" />
             <button>
               <RiSendPlaneLine color={theme.background} />
             </button>

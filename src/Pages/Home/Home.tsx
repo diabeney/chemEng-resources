@@ -1,4 +1,3 @@
-import NavBar from "../../components/NavBar";
 import { Wrapper } from "../../styles/styledComponents";
 import Hero from "./Hero";
 import Services from "./Services";

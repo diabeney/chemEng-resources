@@ -185,8 +185,8 @@ export type CoursesProps = {
 const setCourseData = (course: string) => ({ course, done: false });
 
 export const FIRST_YEAR_COURSES = ["Algebra", "Applied Electricity", "Inorganic Chemistry for Engineers", 'Technical Drawing', 'Practical Chemistry', 'Organic Chemistry for Engineers', 'Communication Skills I & II',"General Physics", 'Calculus with Analysis', 'Basic Mechanics', 'Physical Chemistry for Engineers', 'Basic Electronics', 'Introduction to Information Technology'];
-export const SECOND_YEAR_COURSES = ['Chemical Process Calculations I & II', 'Chemical Engineering Thermodynamics I & II', 'Fluid Transport' , 'Analytical Chemistry for Chemical Engineers', 'Chemical Process Industries', 'Computer Application for Engineers', 'Differential Equations', 'Engineering In Society','Heat Transfer Process', 'Calculus of Several Variables', 'Drawing for Engineers', 'Strength for Materials', 'Practical Chemistry II'];
-export const THIRD_YEAR_COURSES = ["Still", "In", "Progress"];
+export const SECOND_YEAR_COURSES = ['Chemical Process Calculations I & II', 'Chemical Engineering Thermodynamics I & II', 'Fluid Transport' , 'Analytical Chemistry for Chemical Engineers', 'Chemical Process Industries', 'Computer Application for Engineers', 'Differential Equations', 'Engineering In Society','Heat Transfer Process', 'Calculus of Several Variables', 'Drawing for Engineers', 'Strength of Materials', 'Practical Chemistry II'];
+export const THIRD_YEAR_COURSES = ['Experimental Data Analysis', 'Mass Transfer Process', 'Mechanical Separation Processes', 'Chemical Engineering Laboratory I', 'Natural Gas', 'Polymer Technology', 'Silicate','Fertilizer Technology', 'French','Economics', 'Process Development Project' ];
 export const FOURTH_YEAR_COURESES = ["Still", "In", "Progress"];
 
 export const COURSES: CoursesProps = {
