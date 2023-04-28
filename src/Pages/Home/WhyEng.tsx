@@ -19,15 +19,19 @@ function EngineeringBenefits() {
       <Activities>
         <div>
           <motion.h1 {...headingAnimationsProp}>
-            Why choose Chemical Engineering?
+            Why use our E-library?
           </motion.h1>
           <Paragraph>
-            Chemical Engineering is the branch of engineering that deals with
-            chemical production and the manufacture of products through chemical
-            processes. Chemical engineers apply the principles of chemistry,
-            biology, physics and math to design equipment, systems and processes
-            for refining raw materials and for mixing, compounding and
-            processing chemicals to make valuable products.
+            Our collection covers a wide range of topics, from process design
+            and optimization to thermodynamics, transport phenomena, and
+            materials science. With easy search and download capabilities, you
+            will be able to find and access the resources you need in no time.
+          </Paragraph>{" "}
+          <br />
+          <Paragraph>
+            We are committed to providing the highest quality resources and
+            services to support your learning and research needs, and we are
+            constantly adding new resources to our collection.
           </Paragraph>
         </div>
         <motion.section

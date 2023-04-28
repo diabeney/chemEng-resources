@@ -1,7 +1,5 @@
 import { HomeTexts } from "../../constants/style-constants";
 import HeroImage from "../../assets/11257388_417-removebg-preview.png";
-import { PrimaryButton } from "../../styles/reusableComponents";
-import { RiArrowRightLine } from "react-icons/ri";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { textboxAnimations } from "../../constants/framer-animations";

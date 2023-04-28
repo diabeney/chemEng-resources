@@ -26,13 +26,9 @@ function Contact() {
             whileInView="show"
             viewport={{ amount: 0.8, once: true }}
           >
-            Read our guide on how to prepare yourself this worthwhile and
-            ever-changing profession.
+            Explore our library and discover the wealth of knowledge and
+            information waiting for you!
           </motion.p>
-
-          <PrimaryButton padding=".6em 2em" variant="primary">
-            Get in touch
-          </PrimaryButton>
         </InputWrapper>
         <TextWrapper>
           <motion.img

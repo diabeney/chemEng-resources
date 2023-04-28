@@ -94,8 +94,8 @@ function ResourcesIndex() {
         department. Tags with green background like{" "}
         <LevelTag level="General">MATH 151</LevelTag> denotes a general course
         whereas those with pale orange background like{" "}
-        <LevelTag level="Specific">CENG 251</LevelTag> denotes a course that's
-        specific to KNUST.
+        <LevelTag level="Specific">CENG 251</LevelTag> denotes an elective
+        course.
       </Paragraph>
       <Lowheading>2. Notice</Lowheading>
       <Paragraph>

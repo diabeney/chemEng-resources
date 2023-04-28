@@ -49,13 +49,13 @@ export const NavStyles = {
 // <-------- STATIC TEXTS --------->
 
 export const enum HomeTexts {
-    HERO_TITLE = 'Planning on starting a major in chemical engineering?',
-    HERO_PARAGRAPH = ' An insight to the chemical engineering major - what a chemial engineer does and the correct path to becoming a successful chemical engineer.',
+    HERO_TITLE = 'Your Gateway to the Latest Research and Resources.',
+    HERO_PARAGRAPH = 'Our library is dedicated to providing access to a vast collection of resources related to the field of Chemical Engineering, including books, journals, research papers, and other publications.',
     HERO_MARK = 'the guide you need.',
     SERVICES_TAG = 'How to do it?',
 }
 
-export const ActivitiesText = ['Opportunity to make an impact','Exciting career prospects','Modern and relevant', 'Develop a wide range of skills'];
+export const ActivitiesText = ['Transport Phenomena','Mass Transfer Processes','Chemical Process Calculations', 'Aspen Plus Tutorials'];
 
 type ServiceConstantProps = {
     color: keyof CardColorProps

@@ -13,7 +13,7 @@ import styled from "styled-components";
 import Searchbar from "./Searchbar";
 import { Wrapper } from "../styles/styledComponents";
 
-const NavLinks = ["Resources", "Lecturers", "Gallery", "Executives"];
+const NavLinks = ["Resources"];
 
 function NavBar() {
   const [navIsOpen, setNavIsOpen] = useState(false);
@@ -58,7 +58,7 @@ function NavBar() {
               }}
               to="/"
             >
-              ChemEngResources
+              E-Library
             </Link>
           </div>
           <ul>
