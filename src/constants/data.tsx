@@ -17,11 +17,7 @@ type CoursesComponentProps = {
   element: JSX.Element;
 }[];
 
-export const contentsList = [
-  "Must Learn Topics",
-  "Popular Books",
-  "Useful Resources",
-];
+export const contentsList = ["Topics", "Popular Books", "Useful Resources"];
 
 export const CoursesComponents: CoursesComponentProps = [
   { name: "Algebra", element: <Algebra done={true} /> },
@@ -38,7 +34,10 @@ export const CoursesComponents: CoursesComponentProps = [
   { name: "Organic chemistry for engineers", element: <OrganicChemistry /> },
   { name: "Communication Skills I & II", element: <CommunicationSkills /> },
   { name: "General Physics", element: <GeneralPhysics /> },
-  { name: "Calculus with analysis", element: <CalculusAnalysis /> },
+  {
+    name: "Calculus with analysis",
+    element: <CalculusAnalysis done={true} />,
+  },
   { name: "Basic Mechanics", element: <BasicMechanics /> },
   { name: "Physical Chemistry for engineers", element: <PhysicalChemistry /> },
   { name: "Basic Electronics", element: <BasicElectronics /> },

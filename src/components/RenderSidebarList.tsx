@@ -29,7 +29,7 @@ function RenderSidebarList({
   renderEmpty = <h1>Empty list</h1>,
 }: ListProps) {
   const { toggleSideBar } = useContext(SidebarHandlerContext);
-  const updatedCourses = setDone(data, ["Algebra"]);
+  const updatedCourses = setDone(data, ["Algebra", "Calculus With Analysis"]);
 
   if (!data.length) renderEmpty;
 
