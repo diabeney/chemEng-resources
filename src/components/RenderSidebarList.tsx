@@ -1,4 +1,4 @@
-import { ReactNode, useContext, useEffect } from "react";
+import { ReactNode, useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { SidebarHandlerContext } from "../Pages/Resources/Resources";

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import RenderList from "./RenderList";
-import { CoursesComponents } from "../constants/data";
+// import { CoursesComponents } from "../constants/data";
 import { MouseEvent, useEffect, useRef, useState } from "react";
+import { CoursesComponents } from "../Pages/Resources/CourseDetails";
 type SearchProps = {
   handleOpenSearchbar: () => void;
 };

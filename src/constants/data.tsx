@@ -20,8 +20,8 @@ type CoursesComponentProps = {
 export const contentsList = ["Topics", "Popular Books", "Useful Resources"];
 
 export const CoursesComponents: CoursesComponentProps = [
-  { name: "Algebra", element: <Algebra done={true} /> },
-  { name: "Applied Electricity", element: <AppliedElectricity /> },
+  // { name: "Algebra", element: <Algebra done={true} /> },
+  // { name: "Applied Electricity", element: <AppliedElectricity /> },
   {
     name: "Inorganic Chemistry for Engineers",
     element: <InorganicChemistry />,
