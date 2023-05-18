@@ -18,7 +18,7 @@ function CalculusAnalysis({ done }: { done: boolean }) {
   return (
     <>
       {done || <InProgress />}
-      <Mainheading>Calculus with analysis</Mainheading>
+      <Mainheading>Calculus with Analysis</Mainheading>
       <Paragraph style={{ paddingBlock: ".6rem" }}>
         <LevelTag level="General">MATH 152</LevelTag>
       </Paragraph>
