@@ -33,7 +33,7 @@ const booksData = [
   },
 ];
 
-function Algebra({ done }: { done: boolean }) {
+function Algebra() {
   return (
     <>
       <Mainheading>Algebra</Mainheading>
@@ -47,7 +47,6 @@ function Algebra({ done }: { done: boolean }) {
         equations. Understanding algebra is also important for studying other
         subjects in engineering, such as calculus and differential equations.
       </Paragraph>
-      {done || <InProgress />}
       <ListContainer>
         <Lowheading>Contents on this page</Lowheading>
         <List data={contentsList} />

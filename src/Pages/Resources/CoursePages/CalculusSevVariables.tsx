@@ -16,7 +16,7 @@ const contents = [...contentsList, "Applications"];
 function CalculusSevVariables() {
   return (
     <>
-      <Mainheading>Calculus with Several Variables</Mainheading>
+      <Mainheading>Calculus of Several Variables</Mainheading>
       <Paragraph style={{ paddingBlock: "1em" }}>
         <LevelTag level="General">MATH 252</LevelTag>
       </Paragraph>

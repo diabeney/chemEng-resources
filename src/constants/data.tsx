@@ -1,48 +1,65 @@
-import Algebra from "../Pages/Resources/CoursePages/Algebra";
-import AppliedElectricity from "../Pages/Resources/CoursePages/AppliedElectricity";
-import InorganicChemistry from "../Pages/Resources/CoursePages/InorganicChemistry";
-import GeneralPhysics from "../Pages/Resources/CoursePages/GeneralPhysics";
-import BasicElectronics from "../Pages/Resources/CoursePages/BasicElectronics";
-import CalculusAnalysis from "../Pages/Resources/CoursePages/CalculusAnalysis";
-import CommunicationSkills from "../Pages/Resources/CoursePages/CommunicationSkills";
-import OrganicChemistry from "../Pages/Resources/CoursePages/OrganicChemistry";
-import PhysicalChemistry from "../Pages/Resources/CoursePages/PhysicalChemistry";
-import PracticalChemistry from "../Pages/Resources/CoursePages/PracticalChemistry";
-import TechnicalDrawing from "../Pages/Resources/CoursePages/TechnicalDrawing";
-import InformationTechnology from "../Pages/Resources/CoursePages/InformationTechnology";
-import BasicMechanics from "../Pages/Resources/CoursePages/BasicMechanics";
+export const contentsList = ["Topics", "Recommended Books", "Useful Resources"];
 
-type CoursesComponentProps = {
-  name: string;
-  element: JSX.Element;
+type YearsProps = "First" | "Second" | "Third" | "Fourth";
+export const YEARS: YearsProps[] = ["First", "Second", "Third", "Fourth"];
+
+export type YearCourseProps = {
+  course: string;
+  done: boolean;
 }[];
 
-export const contentsList = ["Topics", "Popular Books", "Useful Resources"];
+export type CoursesProps = Record<YearsProps, YearCourseProps>;
 
-export const CoursesComponents: CoursesComponentProps = [
-  // { name: "Algebra", element: <Algebra done={true} /> },
-  // { name: "Applied Electricity", element: <AppliedElectricity /> },
-  {
-    name: "Inorganic Chemistry for Engineers",
-    element: <InorganicChemistry />,
-  },
-  { name: "Technical Drawing", element: <TechnicalDrawing /> },
-  {
-    name: "Practical Chemistry",
-    element: <PracticalChemistry />,
-  },
-  { name: "Organic chemistry for engineers", element: <OrganicChemistry /> },
-  { name: "Communication Skills I & II", element: <CommunicationSkills /> },
-  { name: "General Physics", element: <GeneralPhysics /> },
-  {
-    name: "Calculus with analysis",
-    element: <CalculusAnalysis done={true} />,
-  },
-  { name: "Basic Mechanics", element: <BasicMechanics /> },
-  { name: "Physical Chemistry for engineers", element: <PhysicalChemistry /> },
-  { name: "Basic Electronics", element: <BasicElectronics /> },
-  {
-    name: "Introduction to Information Technology",
-    element: <InformationTechnology />,
-  },
+const setCourseData = (course: string) => ({ course, done: false });
+
+export const FIRST_YEAR_COURSES = [
+  "Algebra",
+  "Applied Electricity",
+  "Inorganic Chemistry for Engineers",
+  "Technical Drawing",
+  "Practical Chemistry",
+  "Organic Chemistry for Engineers",
+  "Communication Skills I & II",
+  "General Physics",
+  "Calculus with Analysis",
+  "Basic Mechanics",
+  "Physical Chemistry for Engineers",
+  "Basic Electronics",
+  "Introduction to Information Technology",
 ];
+export const SECOND_YEAR_COURSES = [
+  "Chemical Process Calculations I & II",
+  "Chemical Engineering Thermodynamics I & II",
+  "Fluid Transport",
+  "Analytical Chemistry for Chemical Engineers",
+  "Chemical Process Industries",
+  "Computer Application for Engineers",
+  "Differential Equations",
+  "Engineering In Society",
+  "Heat Transfer Process",
+  "Calculus of Several Variables",
+  "Drawing for Engineers",
+  "Strength of Materials",
+  "Practical Chemistry II",
+];
+export const THIRD_YEAR_COURSES = [
+  "Experimental Data Analysis",
+  "Mass Transfer Process",
+  "Mechanical Separation Processes",
+  "Chemical Engineering Laboratory I",
+  "Natural Gas",
+  "Polymer Technology",
+  "Silicate",
+  "Fertilizer Technology",
+  "French",
+  "Economics",
+  "Process Development Project",
+];
+export const FOURTH_YEAR_COURESES = ["Still", "In", "Progress"];
+
+export const COURSES: CoursesProps = {
+  First: FIRST_YEAR_COURSES.map((course) => setCourseData(course)),
+  Second: SECOND_YEAR_COURSES.map((course) => setCourseData(course)),
+  Third: THIRD_YEAR_COURSES.map((course) => setCourseData(course)),
+  Fourth: FOURTH_YEAR_COURESES.map((course) => setCourseData(course)),
+};

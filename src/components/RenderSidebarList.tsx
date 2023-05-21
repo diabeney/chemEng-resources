@@ -3,8 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { SidebarHandlerContext } from "../Pages/Resources/Resources";
 import { motion } from "framer-motion";
-import { YearCourseProps } from "../constants/style-constants";
-
+import { YearCourseProps } from "../constants/data";
 type ListProps = {
   data: YearCourseProps;
   renderEmpty?: ReactNode;
@@ -29,7 +28,13 @@ function RenderSidebarList({
   renderEmpty = <h1>Empty list</h1>,
 }: ListProps) {
   const { toggleSideBar } = useContext(SidebarHandlerContext);
-  const updatedCourses = setDone(data, ["Algebra", "Calculus with Analysis"]);
+  const updatedCourses = setDone(data, [
+    "Algebra",
+    "Calculus with Analysis",
+    "Calculus of Several Variables",
+    "Chemical Process Calculations I & II",
+    "Inorganic Chemistry for Engineers",
+  ]);
 
   if (!data.length) renderEmpty;
 

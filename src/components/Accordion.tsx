@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import RenderSidebarList from "./RenderSidebarList";
 import { RiArrowRightSLine } from "react-icons/ri";
-import { COURSES, CoursesProps } from "../constants/style-constants";
 import { motion } from "framer-motion";
-import CourseDetails from "../Pages/Resources/CourseDetails";
+import { CoursesProps, COURSES } from "../constants/data";
 
 type AccordionProps = {
-  item: string;
+  item: keyof CoursesProps;
   isActive: boolean;
-  handleOpenAccordion: (item: string) => void;
+  handleOpenAccordion: (item: keyof CoursesProps) => void;
 };
 
 function Accordion({ item, isActive, handleOpenAccordion }: AccordionProps) {
@@ -25,9 +24,7 @@ function Accordion({ item, isActive, handleOpenAccordion }: AccordionProps) {
           <RiArrowRightSLine />
         </span>
       </AccordionButton>
-      {isActive && (
-        <RenderSidebarList data={COURSES[item as keyof CoursesProps]} />
-      )}
+      {isActive && <RenderSidebarList data={COURSES[item]} />}
     </>
   );
 }
@@ -36,7 +33,6 @@ const AccordionButton = styled(motion.div)`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  /* padding-inline: 1em; */
   margin-block: 1.5em;
   cursor: pointer;
 `;

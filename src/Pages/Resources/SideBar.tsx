@@ -1,9 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Accordion from "../../components/Accordion";
-import { YEARS } from "../../constants/style-constants";
 import { motion } from "framer-motion";
-
+import { YEARS, CoursesProps } from "../../constants/data";
 type SidebarProps = {
   isActive: boolean;
 };
@@ -13,7 +12,7 @@ export default function SideBar({ isActive }: SidebarProps) {
   const sideBarStyles = {
     display: isActive ? "block" : "none",
   };
-  const toggleAccordion = (item: string) => {
+  const toggleAccordion = (item: keyof CoursesProps) => {
     const index = YEARS.indexOf(item);
     if (index === accordionIndex) {
       setAccordionIndex(null);

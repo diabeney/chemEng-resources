@@ -16,16 +16,19 @@ import BasicMechanics from "./CoursePages/BasicMechanics";
 import PhysicalChemistry from "./CoursePages/PhysicalChemistry";
 import InformationTechnology from "./CoursePages/InformationTechnology";
 import CalculusSevVariables from "./CoursePages/CalculusSevVariables";
-
+import ChemicalProcessCalculations from "./CoursePages/Cpc";
 /* apparently, exporting the course components from an external file causes vite 
 hmr to update infinitely. the reason still unclear for now. so we're exporting the 
 components from this file rather
 */
 
 export const CoursesComponents = [
-  { name: "Algebra", element: <Algebra done={false} /> },
+  { name: "Algebra", element: <Algebra /> },
   { name: "Applied Electricity", element: <AppliedElectricity /> },
-  { name: "Inorganic Chemistry", element: <InorganicChemistry /> },
+  {
+    name: "Inorganic Chemistry for Engineers",
+    element: <InorganicChemistry />,
+  },
   { name: "Technical Drawing", element: <TechnicalDrawing /> },
   {
     name: "Practical Chemistry",
@@ -44,6 +47,10 @@ export const CoursesComponents = [
   {
     name: "Introduction to Information Technology",
     element: <InformationTechnology />,
+  },
+  {
+    name: "Chemical Process Calculations I & II",
+    element: <ChemicalProcessCalculations />,
   },
   {
     name: "Calculus of Several Variables",
