@@ -12,7 +12,7 @@ import { RiSearch2Line } from "react-icons/ri";
 import styled from "styled-components";
 import Searchbar from "./Searchbar";
 
-const NavLinks = ["Resources"];
+const NavLinks = ["Courses Overview"];
 
 function NavBar() {
   const [navIsOpen, setNavIsOpen] = useState(false);
@@ -57,7 +57,7 @@ function NavBar() {
               }}
               to="/"
             >
-              E-Library
+              CHEESA | E-Library
             </Link>
           </div>
           <ul>
@@ -68,7 +68,7 @@ function NavBar() {
                     onClick={() => {
                       setNavIsOpen(false);
                     }}
-                    to={link.toLowerCase()}
+                    to={link.toLowerCase().replaceAll(" ", "-")}
                   >
                     {link}
                   </NavLink>
@@ -90,7 +90,12 @@ function NavBar() {
                 <RiSunLine color={theme.foreground} />
               )}
             </div>
-            <PrimaryButton variant="primary">Log In</PrimaryButton>
+            <PrimaryButton
+              href="https://bit.ly/cheesaknustwebsite"
+              variant="primary"
+            >
+              Cheesa Website
+            </PrimaryButton>
           </div>
         </NavWrapper>
       </NavContainer>

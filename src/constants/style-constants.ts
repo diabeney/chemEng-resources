@@ -53,10 +53,22 @@ export const enum HomeTexts {
 }
 
 export const ActivitiesText = [
-  "Transport Phenomena",
-  "Mass Transfer Processes",
-  "Chemical Process Calculations",
-  "Aspen Plus Tutorials",
+  {
+    title: "Transport Phenomena",
+    url: "https://youtube.com/playlist?list=PLDea8VeK4MUTOXDUWy7RsNZTb5KUPjBVj&si=0up4Iqf0q9Z1VqWm",
+  },
+  {
+    title: "Mass Transfer Processes",
+    url: "https://youtube.com/playlist?list=PLwdnzlV3ogoVX_S_8DyKa7RudEazDL0o_&si=IOi_OMoKZ2X-yJM_",
+  },
+  {
+    title: "Chemical Process Calculations",
+    url: "https://youtube.com/playlist?list=PLD4476BAFA5A65111&si=GJiZzc542VzAP4hT",
+  },
+  {
+    title: "Aspen Tutorials",
+    url: "https://youtube.com/playlist?list=PL6BVDkN5_logxOSRdtTUc7IeEtNQBax6z&si=OpruJhMlapX6cxD7",
+  },
 ];
 
 type ServiceConstantProps = {
@@ -123,7 +135,7 @@ export const COLORS: ColorProps = {
   },
   dark: {
     foreground: "#FEFEFE",
-    background: "hsl(237,23%,10%)",
+    background: "hsl(212, 89%, 5%)",
     secondary: "hsl(220, 15%, 16%)",
     secondary500: "hsl(220,15%,36%)",
     accent: "hsl(237,63%,71%)",

@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { Container } from "../../styles/reusableComponents";
-import { PrimaryButton } from "../../styles/reusableComponents";
 import JoinImage from "../../assets/hero.png";
-import { useScroll, useTransform } from "framer-motion";
 import { motion } from "framer-motion";
 
 const rotateImage = {

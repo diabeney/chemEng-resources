@@ -1,6 +1,4 @@
-import React from "react";
 import { ActivitiesText } from "../../constants/style-constants";
-import BackgroundImage from "../../assets/thisisengineering-raeng-ovWUKV1btXk-unsplash.jpg";
 import { RiCheckboxCircleFill } from "react-icons/ri";
 import styled from "styled-components";
 import { CARDS } from "../../constants/style-constants";
@@ -15,7 +13,12 @@ import { Paragraph } from "../../styles/reusableComponents";
 
 function EngineeringBenefits() {
   return (
-    <ActivitiesWrapper backgroundImage={BackgroundImage} padding="0">
+    <ActivitiesWrapper
+      backgroundImage={
+        "https://ik.imagekit.io/i7gyrkpch/_MG_6757.jpg?updatedAt=1693572994477"
+      }
+      padding="0"
+    >
       <Activities>
         <div>
           <motion.h1 {...headingAnimationsProp}>
@@ -42,10 +45,15 @@ function EngineeringBenefits() {
         >
           {ActivitiesText.map((item) => {
             return (
-              <motion.article key={item} variants={chemCardAnimations}>
+              <motion.a
+                href={item.url}
+                target="_blank"
+                key={item.title}
+                variants={chemCardAnimations}
+              >
                 <RiCheckboxCircleFill color={CARDS.GREEN.textColor} size={32} />
-                <p>{item}</p>
-              </motion.article>
+                <p>{item.title}</p>
+              </motion.a>
             );
           })}
         </motion.section>
@@ -64,7 +72,7 @@ export const ActivitiesWrapper = styled(Container)`
     ),
     url(${({ backgroundImage }) => backgroundImage});
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   background-attachment: fixed;
   margin-inline: auto;
 `;
@@ -77,76 +85,70 @@ export const Activities = styled(Container)`
   padding-block: 3em;
   display: flex;
   background-color: transparent;
-  flex-direction: column; 
+  flex-direction: column;
   gap: 2em;
 
-    div {
+  div {
+    width: 100%;
+    padding: 0.4em 0.2em;
+    /* position: sticky; */
+    top: 0;
+
+    h1 {
+      font-size: 2.2rem;
+      color: white;
+    }
+
+    p {
+      color: white;
+    }
+  }
+
+  section {
+    width: 100%;
+    padding: 0.6em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    a {
       width: 100%;
-      padding: .4em .2em;
-      position: sticky: 
-      top: 0;
+      background-color: ${({ theme }) => theme.background};
+      padding: 1.8em 1.6em;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.4em;
+      border-radius: 0.4em;
+      color: ${({ theme }) => theme.accent};
+      transition: background-color 300ms cubic-bezier(0.01, 1.09, 0.78, 1);
+
+      &:hover {
+        background-color: ${({ theme }) => theme.accent};
+        color: ${({ theme }) => theme.background};
+      }
+    }
+  }
+
+  @media (min-width: 50em) {
+    flex-direction: row;
+    div {
+      width: 50%;
 
       h1 {
-        font-size: 2.2rem;
-        color: white;
-      }
-
-      p {
-        color: white;
+        font-size: 3rem;
       }
     }
 
     section {
-      width: 100%;
-      padding: .6em;
-      display: flex;
-      flex-direction: column;
-      gap: 1em;
-
-      article {
-        width: 100%;
-        background-color: ${({ theme }) => theme.background};
-        padding: 1.8em 1.6em;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: .4em;
-        border-radius: .4em;
-        color: ${({ theme }) => theme.accent};
-        transition: background-color 300ms cubic-bezier(0.01, 1.09, 0.78, 1);
-        
-        &:hover {
-        background-color: ${({ theme }) => theme.accent};
-          color: ${({ theme }) => theme.background};
-        }
-
-        
-      }
+      width: 50%;
+      padding: 2em;
     }
- 
 
-    @media (min-width: 50em) {
-      flex-direction: row;
-      div {
-        width: 50%;
-
-        h1 {
-          font-size: 3rem;
-        }
-      }
-  
-      section {
-        width: 50%;
-        padding: 2em;
-      }
-
-       
     p {
       font-size: 1.2rem;
     }
   }
-  
-  
-  `;
+`;
 
 export default EngineeringBenefits;

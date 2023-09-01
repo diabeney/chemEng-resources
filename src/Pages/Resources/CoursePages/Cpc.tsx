@@ -45,7 +45,7 @@ function ChemicalProcessCalculations() {
         <Paragraph>
           The majority of the courses you'd take as a chemical engineering major
           can be made much easier for you if you are proficient in CPC. It is
-          best approach it seriously.
+          best to approach it seriously.
         </Paragraph>
       </Notice>
       <Lowheading>&bull;Conversions</Lowheading>

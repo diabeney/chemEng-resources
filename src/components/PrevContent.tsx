@@ -6,7 +6,7 @@ import { RiArrowLeftLine } from "react-icons/ri";
 function PrevContent({ elementName }: PrevAndNextContentProps) {
   return (
     <PrevContentContainer
-      to={`/resources/${elementName.replace(/\s/gi, "-").toLowerCase()}`}
+      to={`/courses-overview/${elementName.replace(/\s/gi, "-").toLowerCase()}`}
     >
       <div>
         <RiArrowLeftLine />

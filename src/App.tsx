@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
@@ -19,7 +19,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/resources" element={<Resources />}>
+          <Route path="/courses-overview" element={<Resources />}>
             <Route index element={<ResourcesIndex />} />
             <Route path=":id" element={<CourseDetails />} />
           </Route>

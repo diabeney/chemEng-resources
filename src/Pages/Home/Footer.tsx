@@ -8,18 +8,20 @@ import {
 } from "react-icons/ri";
 import { ToggleTheme } from "../../components/ThemeWrapper";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { CARDS } from "../../constants/style-constants";
 import { motion } from "framer-motion";
 import { chemCardsContainerAnimations } from "../../constants/framer-animations";
 import { chemCardAnimations } from "../../constants/framer-animations";
 
 const footerLinks = [
-  "Home",
-  "FAQs",
-  "Services",
-  "Learn More",
-  "Terms & Conditions",
+  {
+    title: "About",
+    url: "https://test-cheesa.vercel.app/about",
+  },
+  {
+    title: "Executives",
+    url: "https://test-cheesa.vercel.app/executives",
+  },
 ];
 
 function Footer() {
@@ -35,9 +37,11 @@ function Footer() {
       >
         <NewsletterContainer variants={chemCardAnimations}>
           <h2>Get latest updates</h2>
-          <p>Subscribe to our weekly newsletters to Lorem, ipsum dolor.</p>
+          <p>
+            Subscribe to our weekly newsletters to get notifications from us.
+          </p>
           <form>
-            <input type="text" placeholder="kofi@cheesa.com" />
+            <input type="text" placeholder="yaw@domain.com" />
             <button>
               <RiSendPlaneLine color={theme.background} />
             </button>
@@ -48,8 +52,8 @@ function Footer() {
             <h3>Useful Links</h3>
             {footerLinks.map((link) => {
               return (
-                <li key={link}>
-                  <Link to={link.toLowerCase()}>{link}</Link>
+                <li key={link.title}>
+                  <a href={link.url}>{link.title}</a>
                 </li>
               );
             })}
@@ -57,28 +61,41 @@ function Footer() {
           <ul>
             <h3>Contact Us</h3>
             <li>
-              <a href="mailto:addodiabene69@gmail.com">info@chesources.com</a>
+              <a href="mailto:addodiabene69@gmail.com">chemeng@knust.edu.gh</a>
             </li>
-            <li>Operators, Akosombo</li>
+            <li>P.O. Box 320 KNUST PMB, Kumasi - Ghana</li>
             <li>
-              <a href="tel:+233559959049">+233 559959049</a>
+              <a href="tel:+233559959049">+233 3220 60234</a>
             </li>
           </ul>
         </PageLinksContainer>
         <SocialLinksContaier variants={chemCardAnimations}>
-          <LinkWrapper backgroundColor={CARDS.BLUE.backgroundColor}>
+          <LinkWrapper
+            href="https://twitter.com/Cheesa_knust19"
+            backgroundColor={CARDS.BLUE.backgroundColor}
+          >
             <RiTwitterFill size={32} color={CARDS.BLUE.headingColor} />
           </LinkWrapper>
-          <LinkWrapper backgroundColor={CARDS.RED.backgroundColor}>
+          <LinkWrapper
+            href="https://instagram.com/cheesaknust?igshid=ZGUzMzM3NWJiOQ=="
+            backgroundColor={CARDS.RED.backgroundColor}
+          >
             <RiInstagramFill size={32} color={CARDS.RED.headingColor} />
           </LinkWrapper>
-          <LinkWrapper backgroundColor={CARDS.LINKEDINBLUE.backgroundColor}>
+          <LinkWrapper
+            href="https://www.linkedin.com/company/chemical-engineering-students-association/"
+            backgroundColor={CARDS.LINKEDINBLUE.backgroundColor}
+          >
             <RiLinkedinBoxFill size={32} color={CARDS.LINKEDINBLUE.textColor} />
           </LinkWrapper>
         </SocialLinksContaier>
         <CopyrightBox>
           Copyright &copy; {year}, All rights reserved.
         </CopyrightBox>
+        <Note>
+          Made with &hearts; by{" "}
+          <a href="mailto:addodiabene69@gmail.com">Diabene</a>
+        </Note>
       </FooterWrapper>
     </Container>
   );
@@ -90,7 +107,7 @@ type LinkWrapperProps = {
 
 const CopyrightBox = styled.section`
   width: 100%;
-  padding-block: 1.5em;
+  padding-top: 1.5em;
   text-align: center;
   border-top: 1px solid
     ${({ theme }) =>
@@ -100,6 +117,17 @@ const CopyrightBox = styled.section`
   }
   @media (min-width: 50em) {
     grid-column: span 3;
+  }
+`;
+const Note = styled(CopyrightBox)`
+  padding-block: 1rem;
+  border-top: none;
+  a {
+    border-bottom: 1px solid hsl(211, 60%, 60%);
+
+    &:hover {
+      color: hsl(211, 60%, 60%);
+    }
   }
 `;
 
@@ -188,7 +216,7 @@ const SocialLinksContaier = styled(motion.section)`
   justify-content: center;
 `;
 
-const LinkWrapper = styled.article<LinkWrapperProps>`
+const LinkWrapper = styled.a<LinkWrapperProps>`
   border-radius: 50%;
   display: flex;
   justify-content: center;

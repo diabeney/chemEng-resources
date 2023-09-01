@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { GridContainer, Container } from "../../styles/reusableComponents";
-import { PrimaryButton } from "../../styles/reusableComponents";
 import NewsLetterImage from "../../assets/DrawKit Vector Illustration Team Work (6).svg";
 import { Mark } from "../../styles/reusableComponents";
 import { motion } from "framer-motion";

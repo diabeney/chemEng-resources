@@ -88,7 +88,7 @@ function CourseDetails() {
       </>
     );
 
-  return null;
+  return <h1>This item has not been updated yet</h1>;
 }
 
 const NextAndPrevContainer = styled.section`

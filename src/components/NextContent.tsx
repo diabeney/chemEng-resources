@@ -9,7 +9,7 @@ export type PrevAndNextContentProps = {
 function NextContent({ elementName }: PrevAndNextContentProps) {
   return (
     <NextContentContainer
-      to={`/resources/${elementName.replace(/\s/gi, "-").toLowerCase()}`}
+      to={`/courses-overview/${elementName.replace(/\s/gi, "-").toLowerCase()}`}
     >
       <section>
         <h1>Next Page</h1>
