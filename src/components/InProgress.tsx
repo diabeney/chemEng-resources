@@ -1,4 +1,3 @@
-import React from "react";
 import { ContentInProgress } from "../styles/reusableComponents";
 import { Paragraph } from "../styles/reusableComponents";
 import { Lowheading } from "../styles/reusableComponents";

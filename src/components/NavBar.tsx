@@ -11,7 +11,6 @@ import { Menu, NavWrapper } from "../styles/styledComponents";
 import { RiSearch2Line } from "react-icons/ri";
 import styled from "styled-components";
 import Searchbar from "./Searchbar";
-import { Wrapper } from "../styles/styledComponents";
 
 const NavLinks = ["Resources"];
 

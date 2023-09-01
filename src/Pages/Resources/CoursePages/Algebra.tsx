@@ -3,7 +3,6 @@ import { Subheading } from "../../../styles/reusableComponents";
 import { Lowheading } from "../../../styles/reusableComponents";
 import { Notice } from "../../../styles/reusableComponents";
 import { LevelTag } from "../../../styles/reusableComponents";
-import InProgress from "../../../components/InProgress";
 import { Paragraph } from "../../../styles/reusableComponents";
 import List from "../../../components/List";
 import { ListContainer } from "../../../styles/reusableComponents";

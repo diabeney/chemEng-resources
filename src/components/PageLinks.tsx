@@ -1,5 +1,3 @@
-import React from "react";
-
 type PageLinkProps = {
   to: string;
   children: string;

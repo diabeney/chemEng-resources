@@ -1,8 +1,6 @@
-import { ReactNode } from "react";
 import { Subheading } from "../styles/reusableComponents";
 import { Lowheading } from "../styles/reusableComponents";
 import { Paragraph } from "../styles/reusableComponents";
-import { LevelTag } from "../styles/reusableComponents";
 type HeadingAndTextProps = {
   headingType: "Sub" | "Low";
   headingText: string;
