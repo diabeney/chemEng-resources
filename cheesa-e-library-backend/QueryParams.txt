@@ -1,0 +1,35 @@
+/*
+This query strings allows you to fetch data from the backend
+depending on the classes' year group (e.g First year) ->
+*/
+
+*[_type == "year" && year == "second"]{
+  courses[]{
+    course_title,
+    course_code,
+    introduction,
+    topics[]{
+      topic_title,
+      topic_description
+    },
+    popular_books[]{
+      book_title,
+      book_author,
+      book_url,
+      book_image{
+      asset ->{
+        url
+      },
+      },
+    },
+    videos[]{
+      video_title,
+      video_url
+    },
+    qna[]{
+      question_n_anwers,
+      qna_url
+    }
+  }
+    
+}
