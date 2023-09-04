@@ -30,9 +30,13 @@ function NavBar() {
     <>
       <NavContainer>
         {openSearch && <Searchbar handleOpenSearchbar={toggleSearchbox} />}
-        <Link to="/">CHEESA</Link>
-        <Menu onClick={toggleNavBar}>
-          <p style={{ color: "inherit" }}>Menu</p>
+        <Menu>
+          <Link to="/" className="cheesa">
+            CHEESA | E-Library
+          </Link>
+          <span onClick={toggleNavBar}>
+            <p style={{ color: "inherit" }}>Menu</p>
+          </span>
         </Menu>
         <NavWrapper
           style={{
@@ -113,10 +117,17 @@ const NavContainer = styled.div`
   margin-inline: auto;
   display: flex;
   align-items: center;
-  padding-inline: 0.5rem;
-
+  .cheesa {
+    position: absolute;
+    color: ${({ theme }) => theme.foreground};
+    left: 10px;
+    top: 15px;
+  }
   @media (min-width: 50em) {
     height: auto;
+    .cheesa {
+      display: none;
+    }
   }
 `;
 export default NavBar;
