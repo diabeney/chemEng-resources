@@ -9,7 +9,12 @@ export default function Book({
   return (
     <BookWrapper>
       <ImageContainer>
-        <img src={imgUrl} alt={title} />
+        <img
+          src={imgUrl}
+          /*Just slicing up the title text 
+          displayed in the alt when image isn't loaded for easy reading */
+          alt={`${title.length > 15 ? title.slice(0, 15) : title}'s picture`}
+        />
       </ImageContainer>
       <DetailsContainer>
         <h3>{title}</h3>
