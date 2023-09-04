@@ -30,15 +30,15 @@ export default function Searchbar({ handleOpenSearchbar }: SearchProps) {
 
   const filterSearchInput = (value: string) => {
     setSearchQuery(value);
-    let newArray: string[] = [];
-    if (!!value.length) {
-      let filteredArray = CoursesComponents.filter((course) =>
-        course.name.match(new RegExp(`${value}`, "ig"))
-      );
-      let foundCourses = filteredArray.map((item) => item.name);
-      newArray = [...foundCourses];
-    } else newArray = [];
-    setSearchResults(newArray);
+    // let newArray: string[] = [];
+    // if (!!value.length) {
+    //   let filteredArray = CoursesComponents.filter((course) =>
+    //     course.name.match(new RegExp(`${value}`, "ig"))
+    //   );
+    //   let foundCourses = filteredArray.map((item) => item.name);
+    //   newArray = [...foundCourses];
+    // } else newArray = [];
+    // setSearchResults(newArray);
   };
   return (
     <SearchWrapper onClick={(e) => handleOpenModal(e)}>

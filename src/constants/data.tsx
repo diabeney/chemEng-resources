@@ -49,11 +49,17 @@ export const THIRD_YEAR_COURSES = [
   "Chemical Engineering Laboratory I",
   "Natural Gas",
   "Polymer Technology",
-  "Silicate",
+  "Silicate I & II",
   "Fertilizer Technology",
-  "French",
-  "Economics",
-  "Process Development Project",
+  "French I & II",
+  "Introduction to Economics I & II",
+  "Process Development Project I & II",
+  "Simultaneous Heat & Mass Transfer",
+  "Chemical Reaction Engineering",
+  "Food Processing Technology",
+  "Packaging Technology",
+  "Numerical Methods for Engineers",
+  "Material Science",
 ];
 export const FOURTH_YEAR_COURESES = ["Still", "In", "Progress"];
 

@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
 function useFormattedParams() {
-  const { id } = useParams();
+  const { id, year } = useParams();
   const formatParams = (param: string) =>
     param.replaceAll("-", " ").toLowerCase();
-  const formattedParams = formatParams(id!);
+  const currentCourse = formatParams(id!);
+  const activeYear = year || new Date().getFullYear().toString();
 
-  return { formattedParams };
+  return { currentCourse, activeYear };
 }
 
 export default useFormattedParams;

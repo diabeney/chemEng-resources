@@ -1,6 +1,6 @@
 type PageLinkProps = {
   to: string;
-  children: string;
+  children: React.ReactNode;
 };
 
 const PageLinks = ({ to, children }: PageLinkProps) => {

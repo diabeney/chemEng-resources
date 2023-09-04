@@ -4,12 +4,15 @@ import { RiArrowRightLine } from "react-icons/ri";
 
 export type PrevAndNextContentProps = {
   elementName: string;
+  year: string;
 };
 
-function NextContent({ elementName }: PrevAndNextContentProps) {
+function NextContent({ elementName, year }: PrevAndNextContentProps) {
   return (
     <NextContentContainer
-      to={`/courses-overview/${elementName.replace(/\s/gi, "-").toLowerCase()}`}
+      to={`/courses-overview/${year}/${elementName
+        .replace(/\s/gi, "-")
+        .toLowerCase()}`}
     >
       <section>
         <h1>Next Page</h1>

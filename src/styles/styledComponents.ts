@@ -1,18 +1,17 @@
 import styled from "styled-components";
 
-
 // <---------- Navbar ----------->
 
-export const Menu = styled.div` 
+export const Menu = styled.div`
   z-index: 100;
   width: 100%;
   margin: 0;
   display: flex;
   justify-content: flex-end;
   padding: 1em 0.6em;
-  border-bottom: 1px solid ${({theme}) => theme.secondary};
+  border-bottom: 1px solid ${({ theme }) => theme.secondary};
   background-color: ${({ theme }) => theme.background};
-
+  color: ${({ theme }) => theme.foreground};
   @media (min-width: 50em) {
     display: none;
   }
@@ -135,13 +134,3 @@ export const Wrapper = styled.section`
   max-width: 100vw;
   background-color: ${({ theme }) => theme.background};
 `;
-
-
-
-
-
-
-
-
-
-

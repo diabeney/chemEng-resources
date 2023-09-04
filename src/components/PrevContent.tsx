@@ -3,10 +3,12 @@ import { NextContentContainer } from "./NextContent";
 import { PrevAndNextContentProps } from "./NextContent";
 import { RiArrowLeftLine } from "react-icons/ri";
 
-function PrevContent({ elementName }: PrevAndNextContentProps) {
+function PrevContent({ elementName, year }: PrevAndNextContentProps) {
   return (
     <PrevContentContainer
-      to={`/courses-overview/${elementName.replace(/\s/gi, "-").toLowerCase()}`}
+      to={`/courses-overview/${year}/${elementName
+        .replace(/\s/gi, "-")
+        .toLowerCase()}`}
     >
       <div>
         <RiArrowLeftLine />

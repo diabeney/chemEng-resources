@@ -21,7 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/courses-overview" element={<Resources />}>
             <Route index element={<ResourcesIndex />} />
-            <Route path=":id" element={<CourseDetails />} />
+            <Route path=":year/:id" element={<CourseDetails />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

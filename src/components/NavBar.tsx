@@ -1,7 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { RiMoonLine } from "react-icons/ri";
 import { RiSunLine } from "react-icons/ri";
-import { RiMenu4Fill } from "react-icons/ri";
 import { RiCloseLine } from "react-icons/ri";
 import { useContext, useState } from "react";
 import { ToggleTheme } from "./ThemeWrapper";
@@ -31,12 +30,8 @@ function NavBar() {
     <>
       <NavContainer>
         {openSearch && <Searchbar handleOpenSearchbar={toggleSearchbox} />}
-        <Menu>
-          <RiMenu4Fill
-            size={32}
-            onClick={toggleNavBar}
-            color={theme.foreground}
-          />
+        <Menu onClick={toggleNavBar}>
+          <p style={{ color: "inherit" }}>Menu</p>
         </Menu>
         <NavWrapper
           style={{

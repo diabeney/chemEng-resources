@@ -3,8 +3,12 @@ import { Wrapper } from "../../styles/styledComponents";
 import SideBar from "./SideBar";
 import { Outlet } from "react-router-dom";
 import { createContext, useState } from "react";
-import { RiCloseLine, RiMenuUnfoldLine } from "react-icons/ri";
+import { RiCloseLine, RiH1, RiMenuUnfoldLine } from "react-icons/ri";
 import { motion } from "framer-motion";
+import { courses_query } from "../../constants/query";
+import { useFetch } from "../../hooks/useFetch";
+import { CourseResponse } from "../../types/types";
+import { UpdatedCourse } from "../../types/types";
 
 type sideBarContextProps = {
   toggleSideBar: () => void;
@@ -13,10 +17,20 @@ export const SidebarHandlerContext = createContext({} as sideBarContextProps);
 
 function Resources() {
   const [openSidebar, setOpenSidebar] = useState(false);
+  const { data, status } = useFetch<CourseResponse[]>(courses_query);
+  let updatedCourses: UpdatedCourse | undefined;
 
+  updatedCourses = data && {
+    first: data[3],
+    second: data[0],
+    third: data[2],
+    fourth: data[1],
+  };
   const toggleSideBar = () => {
     setOpenSidebar((isOpen) => !isOpen);
   };
+
+  console.log(updatedCourses);
 
   const menuStyles = {
     justifyContent: openSidebar ? "flex-end" : "flex-start",
@@ -33,9 +47,13 @@ function Resources() {
             )}
           </MenuWrapper>
           <SideBar isActive={openSidebar} />
-          <OutletContainer>
-            <Outlet />
-          </OutletContainer>
+          {status === "Success" ? (
+            <OutletContainer>
+              <Outlet context={{ courses: updatedCourses }} />
+            </OutletContainer>
+          ) : (
+            <h1>Fetching Data</h1>
+          )}
         </ResourcesWrapper>
       </Wrapper>
     </SidebarHandlerContext.Provider>

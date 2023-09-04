@@ -24,7 +24,9 @@ function Accordion({ item, isActive, handleOpenAccordion }: AccordionProps) {
           <RiArrowRightSLine />
         </span>
       </AccordionButton>
-      {isActive && <RenderSidebarList data={COURSES[item]} />}
+      {isActive && (
+        <RenderSidebarList data={COURSES[item]} currentYear={item} />
+      )}
     </>
   );
 }

@@ -7,6 +7,7 @@ import { YearCourseProps } from "../constants/data";
 type ListProps = {
   data: YearCourseProps;
   renderEmpty?: ReactNode;
+  currentYear: string;
 };
 
 const setDone = (data: YearCourseProps, courses: string[]) => {
@@ -26,6 +27,7 @@ const setDone = (data: YearCourseProps, courses: string[]) => {
 function RenderSidebarList({
   data,
   renderEmpty = <h1>Empty list</h1>,
+  currentYear,
 }: ListProps) {
   const { toggleSideBar } = useContext(SidebarHandlerContext);
   const updatedCourses = setDone(data, [
@@ -43,7 +45,9 @@ function RenderSidebarList({
       {updatedCourses.map((item) => (
         <ListItem key={item.course} done={item.done}>
           <Link
-            to={item.course.replace(/\s/gi, "-").toLowerCase()}
+            to={`${currentYear.toLowerCase()}/${item.course
+              .replace(/\s/gi, "-")
+              .toLowerCase()}`}
             onClick={() => toggleSideBar()}
           >
             {item.course}

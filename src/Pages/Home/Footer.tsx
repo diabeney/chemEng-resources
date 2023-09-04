@@ -94,7 +94,7 @@ function Footer() {
         </CopyrightBox>
         <Note>
           Made with &hearts; by{" "}
-          <a href="mailto:addodiabene69@gmail.com">Diabene</a>
+          <a href="https://dbn-portfolio.netlify.app/">Diabene</a>
         </Note>
       </FooterWrapper>
     </Container>
