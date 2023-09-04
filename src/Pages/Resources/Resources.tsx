@@ -3,7 +3,7 @@ import { Wrapper } from "../../styles/styledComponents";
 import SideBar from "./SideBar";
 import { Outlet } from "react-router-dom";
 import { createContext, useState } from "react";
-import { RiCloseLine, RiH1, RiMenuUnfoldLine } from "react-icons/ri";
+import { RiCloseLine, RiMenuUnfoldLine } from "react-icons/ri";
 import { motion } from "framer-motion";
 import { courses_query } from "../../constants/query";
 import { useFetch } from "../../hooks/useFetch";
@@ -29,8 +29,6 @@ function Resources() {
   const toggleSideBar = () => {
     setOpenSidebar((isOpen) => !isOpen);
   };
-
-  console.log(updatedCourses);
 
   const menuStyles = {
     justifyContent: openSidebar ? "flex-end" : "flex-start",
