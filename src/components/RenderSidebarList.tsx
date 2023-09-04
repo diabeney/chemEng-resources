@@ -30,13 +30,7 @@ function RenderSidebarList({
   currentYear,
 }: ListProps) {
   const { toggleSideBar } = useContext(SidebarHandlerContext);
-  const updatedCourses = setDone(data, [
-    "Algebra",
-    "Calculus with Analysis",
-    "Calculus of Several Variables",
-    "Chemical Process Calculations I & II",
-    "Inorganic Chemistry for Engineers",
-  ]);
+  const updatedCourses = setDone(data, []);
 
   if (!data.length) renderEmpty;
 

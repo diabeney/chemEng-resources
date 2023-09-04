@@ -1,15 +1,13 @@
 import styled from "styled-components";
-import RenderList from "./RenderList";
+// import RenderList from "./RenderList";
 // import { CoursesComponents } from "../constants/data";
 import { MouseEvent, useEffect, useRef, useState } from "react";
-import { CoursesComponents } from "../Pages/Resources/CourseDetails";
 type SearchProps = {
   handleOpenSearchbar: () => void;
 };
 
 export default function Searchbar({ handleOpenSearchbar }: SearchProps) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<string[]>([]);
   const searchDivRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -53,7 +51,7 @@ export default function Searchbar({ handleOpenSearchbar }: SearchProps) {
           />
         </form>
         <SearchResults>
-          <RenderList data={searchResults} />
+          {/* <RenderList data={searchResults} /> */}
         </SearchResults>
       </div>
     </SearchWrapper>
