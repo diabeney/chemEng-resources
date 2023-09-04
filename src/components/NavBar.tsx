@@ -30,6 +30,7 @@ function NavBar() {
     <>
       <NavContainer>
         {openSearch && <Searchbar handleOpenSearchbar={toggleSearchbox} />}
+        <Link to="/">CHEESA</Link>
         <Menu onClick={toggleNavBar}>
           <p style={{ color: "inherit" }}>Menu</p>
         </Menu>
@@ -110,6 +111,9 @@ const NavContainer = styled.div`
   width: 100vw;
   max-width: 1400px;
   margin-inline: auto;
+  display: flex;
+  align-items: center;
+  padding-inline: 0.5rem;
 
   @media (min-width: 50em) {
     height: auto;

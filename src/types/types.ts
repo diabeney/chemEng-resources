@@ -1,8 +1,14 @@
 type Topics = Record<"topics_title" | "topics_description", string>;
-type PBooks = Record<
-  "book_author" | "book_url" | "book_title" | "book_image",
-  string
->;
+type PBooks = {
+  book_title: string;
+  book_url: string;
+  book_image: {
+    asset: {
+      url: string;
+    };
+  };
+  book_author: string;
+};
 type Videos = Record<"video_title" | "video_url", string>;
 type QNA = Record<"qna_url" | "question_n_answers", string>;
 

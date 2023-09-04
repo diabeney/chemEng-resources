@@ -43,7 +43,7 @@ function CoursePage({
               <Book
                 title={book.book_title}
                 author={book.book_author}
-                imgUrl={book.book_image}
+                imgUrl={book.book_image.asset.url}
                 key={book.book_title}
               />
             );
