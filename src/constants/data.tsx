@@ -36,7 +36,7 @@ export const SECOND_YEAR_COURSES = [
   "Computer Application for Engineers",
   "Differential Equations",
   "Engineering In Society",
-  "Heat Transfer Process",
+  "Heat Transfer Processes",
   "Calculus of Several Variables",
   "Drawing for Engineers",
   "Strength of Materials",
@@ -61,7 +61,7 @@ export const THIRD_YEAR_COURSES = [
   "Numerical Methods for Engineers",
   "Material Science",
 ];
-export const FOURTH_YEAR_COURESES = ["Still", "In", "Progress"];
+export const FOURTH_YEAR_COURESES = ["Plant Design Project I & II"];
 
 export const COURSES: CoursesProps = {
   First: FIRST_YEAR_COURSES.map((course) => setCourseData(course)),
