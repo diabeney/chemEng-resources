@@ -27,9 +27,9 @@ function CoursePage({
       <Paragraph>{introduction}</Paragraph>
       <Subheading>Topics</Subheading>
       {topics &&
-        topics.map((topic, i) => {
+        topics.map((topic) => {
           return (
-            <div key={i}>
+            <div key={topic.topic_title}>
               <Lowheading>&bull; {topic.topic_title}</Lowheading>
               <Paragraph>{topic.topic_description}</Paragraph>
             </div>
@@ -38,13 +38,13 @@ function CoursePage({
       <Subheading>Books</Subheading>
       <BooksContainer>
         {popular_books &&
-          popular_books.map((book, i) => {
+          popular_books.map((book) => {
             return (
               <Book
                 title={book.book_title}
                 author={book.book_author}
                 imgUrl={book.book_image?.asset.url}
-                key={i}
+                key={book.book_author}
               />
             );
           })}
@@ -52,9 +52,9 @@ function CoursePage({
       <Subheading>Resources</Subheading>
       <Lowheading>Videos</Lowheading>
       {videos &&
-        videos.map((video, i) => {
+        videos.map((video) => {
           return (
-            <Paragraph key={i}>
+            <Paragraph key={video.video_title}>
               <PageLinks to={video.video_url}>
                 &bull; {video.video_title} - YouTube.
               </PageLinks>
@@ -63,9 +63,9 @@ function CoursePage({
         })}
       <Lowheading>Questions and Answers</Lowheading>
       {qna &&
-        qna.map((item, i) => {
+        qna.map((item) => {
           return (
-            <Paragraph key={i}>
+            <Paragraph key={item.question_n_answers}>
               <PageLinks to={item.qna_url}>
                 &bull; {item.question_n_answers}
               </PageLinks>
