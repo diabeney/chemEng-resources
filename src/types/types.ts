@@ -1,8 +1,8 @@
-type Topics = Record<"topics_title" | "topics_description", string>;
+type Topics = Record<"topic_title" | "topic_description", string>;
 type PBooks = {
   book_title: string;
   book_url: string;
-  book_image: {
+  book_image?: {
     asset: {
       url: string;
     };

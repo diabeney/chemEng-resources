@@ -119,7 +119,7 @@ export default {
                   type: 'object',
                   fields: [
                     {
-                      name: 'question_n_anwers',
+                      name: 'question_n_answers',
                       type: 'string',
                       title: 'Question and Answer',
                     },

@@ -29,9 +29,9 @@ function CoursePage({
       {topics &&
         topics.map((topic) => {
           return (
-            <div key={topic.topics_title}>
-              <Lowheading>&bull;{topic.topics_title}</Lowheading>
-              <Paragraph>{topic.topics_description}</Paragraph>
+            <div key={topic.topic_title}>
+              <Lowheading>&bull; {topic.topic_title}</Lowheading>
+              <Paragraph>{topic.topic_description}</Paragraph>
             </div>
           );
         })}
@@ -43,8 +43,8 @@ function CoursePage({
               <Book
                 title={book.book_title}
                 author={book.book_author}
-                imgUrl={book.book_image.asset.url}
-                key={book.book_title}
+                imgUrl={book.book_image?.asset.url}
+                key={book.book_author}
               />
             );
           })}
@@ -54,7 +54,7 @@ function CoursePage({
       {videos &&
         videos.map((video) => {
           return (
-            <Paragraph key={video.video_url}>
+            <Paragraph key={video.video_title}>
               <PageLinks to={video.video_url}>
                 &bull; {video.video_title} - YouTube.
               </PageLinks>
