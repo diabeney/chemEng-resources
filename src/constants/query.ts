@@ -23,7 +23,7 @@ export const courses_query = `
       video_url
     },
     qna[]{
-      question_n_anwers,
+      question_n_answers,
       qna_url
     }
   }
