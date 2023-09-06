@@ -5,7 +5,7 @@ export default function Book({
   title,
   author,
   imgUrl,
-}: Record<"title" | "author" | "imgUrl", string>) {
+}: Record<"title" | "author" | "imgUrl", string | undefined>) {
   return (
     <BookWrapper>
       <ImageContainer>
@@ -13,7 +13,9 @@ export default function Book({
           src={imgUrl}
           /*Just slicing up the title text 
           displayed in the alt when image isn't loaded for easy reading */
-          alt={`${title.length > 15 ? title.slice(0, 15) : title}'s picture`}
+          alt={`${
+            title && title.length > 15 ? title.slice(0, 15) : title
+          }'s picture`}
         />
       </ImageContainer>
       <DetailsContainer>
