@@ -90,10 +90,7 @@ function NavBar() {
                 <RiSunLine color={theme.foreground} />
               )}
             </div>
-            <PrimaryButton
-              href="https://bit.ly/cheesaknustwebsite"
-              variant="primary"
-            >
+            <PrimaryButton href="https://cheesa.vercel.app" variant="primary">
               Cheesa Website
             </PrimaryButton>
           </div>
