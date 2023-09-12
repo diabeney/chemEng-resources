@@ -7,7 +7,7 @@ import { ToggleTheme } from "./ThemeWrapper";
 import { PrimaryButton } from "../styles/reusableComponents";
 import { NavStyles } from "../constants/style-constants";
 import { Menu, NavWrapper } from "../styles/styledComponents";
-import { RiSearch2Line } from "react-icons/ri";
+// import { RiSearch2Line } from "react-icons/ri";
 import styled from "styled-components";
 import Searchbar from "./Searchbar";
 
@@ -77,10 +77,10 @@ function NavBar() {
             })}
           </ul>
           <SearchButton onClick={toggleSearchbox} className="search">
-            <RiSearch2Line size={20} />
-            <span>
+            {/* <RiSearch2Line size={20} /> */}
+            {/* <span>
               <p>Search</p>
-            </span>
+            </span> */}
           </SearchButton>
           <div className="buttons flex ">
             <div onClick={handleTheme} className="flex flex-cen">
